@@ -611,6 +611,7 @@ public class 物流任务表Impl implements I物流任务表Service {
                 wl.set物料规格(data.get(0).get物料规格());
                 wl.set起始站点(起始站点);
                 wl.set目的站点(目的站点);
+                wl.set批次(data.get(0).get批次());
                 wl.set数量(data.get(0).get数量());
                 wl.set备注("调拨");
                 物流任务表Dao.insert(wl);
@@ -810,6 +811,7 @@ public class 物流任务表Impl implements I物流任务表Service {
         wl.set类型代码(库存查询表s.get(0).get类型代码());
         wl.set类型名称(库存查询表s.get(0).get类型名称());
         wl.set物料规格(库存查询表s.get(0).get物料规格());
+        wl.set批次(库存查询表s.get(0).get生产批次());
         wl.set起始站点(起始站点);
         wl.set目的站点(目的站点);
         wl.set数量(库存查询表s.get(0).get物料重量());

@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.库存查询表Dao">
+    <!-- =========================================================== -->
+    <!-- 定义resultMap                Created by zzr on 2019/06/10                                                                                                                                                             -->
+    <!-- =========================================================== -->
+    <resultMap id="库存查询表Map" type="com.bean.库存查询表">
+        <id property="物料代码" column="Material_Code" jdbcType="VARCHAR"/>
+        <result property="物料名称" column="Material_Name" jdbcType="VARCHAR"/>
+        <result property="条码编号" column="Bar_Code" jdbcType="VARCHAR"/>
+        <result property="类型代码" column="Material_TypeCode" jdbcType="VARCHAR"/>
+        <result property="类型名称" column="Material_TypeName" jdbcType="VARCHAR"/>
+        <result property="托盘编号" column="Pallet_No" jdbcType="VARCHAR"/>
+        <result property="库位编号" column="Bin_No" jdbcType="VARCHAR"/>
+        <result property="库位类型" column="Bin_Type" jdbcType="VARCHAR"/>
+        <result property="库位状态" column="Bin_Status" jdbcType="VARCHAR"/>
+        <result property="库位禁用" column="Bin_UseFlag" jdbcType="INTEGER"/>
+        <result property="物料规格" column="Material_Spec" jdbcType="VARCHAR"/>
+        <result property="计划编号" column="Plan_No" jdbcType="VARCHAR"/>
+        <result property="生产批次" column="Batch_No" jdbcType="VARCHAR"/>
+        <result property="物料重量" column="Material_Weight" jdbcType="NUMERIC"/>
+        <result property="生产日期" column="Product_Date" jdbcType="TIMESTAMP"/>
+        <result property="入库时间" column="In_Date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <!-- =========================================================== -->
+    <!-- 一些公共变量设置                                                                                                                                                                             -->
+    <!-- =========================================================== -->
+    <!-- 字段 -->
+    <sql id="Base_Column_List" >
+        Material_Code
+        ,Material_Name
+        ,Bar_Code
+        ,Material_TypeCode
+        ,Material_TypeName
+        ,Pallet_No
+        ,Bin_No
+        ,Bin_Type
+        ,Bin_Status
+        ,Bin_UseFlag
+        ,Material_Spec
+        ,Plan_No
+        ,Batch_No
+        ,Material_Weight
+        ,Product_Date
+        ,In_Date
+    </sql>
+    <!-- =========================================================== -->
+    <!-- 基本增删改查方法                                                                                                    		 -->
+    <!-- =========================================================== -->
+    <insert id="insert" parameterType="com.bean.库存查询表" >
+        insert into IMOS_LO_Bin
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            Material_Code,
+            Material_Name,
+            Bar_Code,
+            Material_TypeCode,
+            Material_TypeName,
+            Pallet_No,
+            Bin_No,
+            Bin_Type,
+            Bin_Status,
+            Bin_UseFlag,
+            Material_Spec,
+            Plan_No,
+            Batch_No,
+            Material_Weight,
+            Product_Date,
+            In_Date,
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            #{物料代码, jdbcType=VARCHAR},
+            #{物料名称, jdbcType=VARCHAR},
+            #{条码编号, jdbcType=VARCHAR},
+            #{类型代码, jdbcType=VARCHAR},
+            #{类型名称, jdbcType=VARCHAR},
+            #{托盘编号, jdbcType=VARCHAR},
+            #{库位编号, jdbcType=VARCHAR},
+            #{库位类型, jdbcType=VARCHAR},
+            #{库位状态, jdbcType=VARCHAR},
+            #{库位禁用, jdbcType=INTEGER},
+            #{物料规格, jdbcType=VARCHAR},
+            #{计划编号, jdbcType=VARCHAR},
+            #{生产批次, jdbcType=VARCHAR},
+            #{物料重量, jdbcType=NUMERIC},
+            #{生产日期, jdbcType=TIMESTAMP},
+            #{入库时间, jdbcType=TIMESTAMP},
+        </trim>
+    </insert>
+    <insert id="insertSelective" parameterType="com.bean.库存查询表" >
+        insert into IMOS_LO_Bin
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="物料代码 != null">
+                Material_Code,
+            </if>
+            <if test="物料名称 != null">
+                Material_Name,
+            </if>
+            <if test="条码编号 != null">
+                Bar_Code,
+            </if>
+            <if test="类型代码 != null">
+                Material_TypeCode,
+            </if>
+            <if test="类型名称 != null">
+                Material_TypeName,
+            </if>
+            <if test="托盘编号 != null">
+                Pallet_No,
+            </if>
+            <if test="库位编号 != null">
+                Bin_No,
+            </if>
+            <if test="库位类型 != null">
+                Bin_Type,
+            </if>
+            <if test="库位状态 != null">
+                Bin_Status,
+            </if>
+            <if test="库位禁用 != null">
+                Bin_UseFlag,
+            </if>
+            <if test="物料规格 != null">
+                Material_Spec,
+            </if>
+            <if test="计划编号 != null">
+                Plan_No,
+            </if>
+            <if test="生产批次 != null">
+                Batch_No,
+            </if>
+            <if test="物料重量 != null">
+                Material_Weight,
+            </if>
+            <if test="生产日期 != null">
+                Product_Date,
+            </if>
+            <if test="入库时间 != null">
+                In_Date,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="物料代码 != null">
+                #{物料代码, jdbcType=VARCHAR},
+            </if>
+            <if test="物料名称 != null">
+                #{物料名称, jdbcType=VARCHAR},
+            </if>
+            <if test="条码编号 != null">
+                #{条码编号, jdbcType=VARCHAR},
+            </if>
+            <if test="类型代码 != null">
+                #{类型代码, jdbcType=VARCHAR},
+            </if>
+            <if test="类型名称 != null">
+                #{类型名称, jdbcType=VARCHAR},
+            </if>
+            <if test="托盘编号 != null">
+                #{托盘编号, jdbcType=VARCHAR},
+            </if>
+            <if test="库位编号 != null">
+                #{库位编号, jdbcType=VARCHAR},
+            </if>
+            <if test="库位类型 != null">
+                #{库位类型, jdbcType=VARCHAR},
+            </if>
+            <if test="库位状态 != null">
+                #{库位状态, jdbcType=VARCHAR},
+            </if>
+            <if test="库位禁用 != null">
+                #{库位禁用, jdbcType=INTEGER},
+            </if>
+            <if test="物料规格 != null">
+                #{物料规格, jdbcType=VARCHAR},
+            </if>
+            <if test="计划编号 != null">
+                #{计划编号, jdbcType=VARCHAR},
+            </if>
+            <if test="生产批次 != null">
+                #{生产批次, jdbcType=VARCHAR},
+            </if>
+            <if test="物料重量 != null">
+                #{物料重量, jdbcType=NUMERIC},
+            </if>
+            <if test="生产日期 != null">
+                #{生产日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="入库时间 != null">
+                #{入库时间, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <delete id="delete" parameterType="java.lang.String">
+        update IMOS_LO_Bin
+        set deleteFlag = 1, upTIMESTAMP = GETDATE()
+        where Material_Code = #{物料代码}
+    </delete>
+    <delete id="deleteAll">
+        update IMOS_LO_Bin
+        set deleteFlag = 1, upTIMESTAMP = GETDATE()
+        where Material_Code  in
+        <foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+    <update id="update" parameterType="com.bean.库存查询表">
+        update IMOS_LO_Bin
+        set
+        Material_Code = #{物料代码, jdbcType=VARCHAR}
+        ,Material_Name = #{物料名称, jdbcType=VARCHAR}
+        ,Bar_Code = #{条码编号, jdbcType=VARCHAR}
+        ,Material_TypeCode = #{类型代码, jdbcType=VARCHAR}
+        ,Material_TypeName = #{类型名称, jdbcType=VARCHAR}
+        ,Pallet_No = #{托盘编号, jdbcType=VARCHAR}
+        ,Bin_No = #{库位编号, jdbcType=VARCHAR}
+        ,Bin_Type = #{库位类型, jdbcType=VARCHAR}
+        ,Bin_Status = #{库位状态, jdbcType=VARCHAR}
+        ,Bin_UseFlag = #{库位禁用, jdbcType=INTEGER}
+        ,Material_Spec = #{物料规格, jdbcType=VARCHAR}
+        ,Plan_No = #{计划编号, jdbcType=VARCHAR}
+        ,Batch_No = #{生产批次, jdbcType=VARCHAR}
+        ,Material_Weight = #{物料重量, jdbcType=NUMERIC}
+        ,Product_Date = #{生产日期, jdbcType=TIMESTAMP}
+        ,In_Date = #{入库时间, jdbcType=TIMESTAMP}
+        where Material_Code = #{物料代码}
+    </update>
+    <update id="updateSelective" parameterType="com.bean.库存查询表">
+        update IMOS_LO_Bin
+        <set>
+            <if test="物料代码!= null">
+                Material_Code = #{物料代码, jdbcType=VARCHAR},
+            </if>
+            <if test="物料名称!= null">
+                Material_Name = #{物料名称, jdbcType=VARCHAR},
+            </if>
+            <if test="条码编号!= null">
+                Bar_Code = #{条码编号, jdbcType=VARCHAR},
+            </if>
+            <if test="类型代码!= null">
+                Material_TypeCode = #{类型代码, jdbcType=VARCHAR},
+            </if>
+            <if test="类型名称!= null">
+                Material_TypeName = #{类型名称, jdbcType=VARCHAR},
+            </if>
+            <if test="托盘编号!= null">
+                Pallet_No = #{托盘编号, jdbcType=VARCHAR},
+            </if>
+            <if test="库位编号!= null">
+                Bin_No = #{库位编号, jdbcType=VARCHAR},
+            </if>
+            <if test="库位类型!= null">
+                Bin_Type = #{库位类型, jdbcType=VARCHAR},
+            </if>
+            <if test="库位状态!= null">
+                Bin_Status = #{库位状态, jdbcType=VARCHAR},
+            </if>
+            <if test="库位禁用 != null">
+                Bin_UseFlag = #{库位禁用, jdbcType=INTEGER},
+            </if>
+            <if test="物料规格 != null">
+                Material_Spec = #{物料规格, jdbcType=VARCHAR},
+            </if>
+            <if test="计划编号 != null">
+                Plan_No = #{计划编号, jdbcType=VARCHAR},
+            </if>
+            <if test="生产批次 != null">
+                Batch_No = #{生产批次, jdbcType=VARCHAR},
+            </if>
+            <if test="物料重量 != null">
+                Material_Weight = #{物料重量, jdbcType=NUMERIC},
+            </if>
+            <if test="生产日期 != null">
+                Product_Date = #{生产日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="入库时间 != null">
+                In_Date = #{入库时间, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where Material_Code = #{物料代码}
+    </update>
+    <select id="selectByPrimaryKey" resultMap="库存查询表Map" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_LO_Bin
+        where Material_Code = #{物料代码}
+    </select>
+    <select id="selectAll" resultMap="库存查询表Map" >
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Bin
+    </select>
+    <select id="selectBySelectiveCount" resultType="java.lang.Long" parameterType="com.bean.库存查询表">
+        select
+        count(Material_Code) c
+        from IMOS_LO_Bin
+        <where>
+            <if test="条码编号!= null and 条码编号 != '' ">
+                and Bar_Code = #{条码编号, jdbcType=VARCHAR}
+            </if>
+            <if test="类型代码 != null and 类型代码 != '' ">
+                and Material_Name = #{物料名称, jdbcType=VARCHAR}
+            </if>
+            <if test="类型代码!= null and 类型代码 != '' ">
+                and Material_TypeCode = #{类型代码, jdbcType=VARCHAR}
+            </if>
+
+            <if test="类型名称 != null and 类型名称 != '' ">
+                and Material_TypeName = #{类型名称, jdbcType=VARCHAR}
+            </if>
+
+            <if test="托盘编号 != null and 托盘编号 != '' ">
+                and Pallet_No = #{托盘编号, jdbcType=VARCHAR}
+            </if>
+
+            <if test="库位编号 != null and 库位编号 != '' ">
+                and Bin_No = #{库位编号, jdbcType=VARCHAR}
+            </if>
+
+            <if test="库位类型 != null and 库位类型 != '' ">
+                and Bin_Type = #{库位类型, jdbcType=VARCHAR}
+            </if>
+
+            <if test="库位状态 != null and 库位状态 != '' ">
+                and Bin_Status = #{库位状态, jdbcType=VARCHAR}
+            </if>
+
+            <if test="库位禁用 != null and 库位禁用 != '' ">
+                and Bin_UseFlag = #{库位禁用, jdbcType=INTEGER}
+            </if>
+
+            <if test="物料规格 != null and 物料规格 != '' ">
+                and Material_Spec = #{物料规格, jdbcType=VARCHAR}
+            </if>
+
+            <if test="计划编号 != null and 计划编号 != '' ">
+                and Plan_No = #{计划编号, jdbcType=VARCHAR}
+            </if>
+
+            <if test="生产批次 != null and 生产批次 != '' ">
+                and Batch_No = #{生产批次, jdbcType=VARCHAR}
+            </if>
+
+            <if test="物料重量 != null and 物料重量 != '' ">
+                and Material_Weight = #{物料重量, jdbcType=NUMERIC}
+            </if>
+
+            <if test="生产日期 != null and 生产日期 != '' ">
+                and Product_Date = #{生产日期, jdbcType=TIMESTAMP}
+            </if>
+
+            <if test="入库时间 != null and 入库时间 != '' ">
+                and In_Date = #{入库时间, jdbcType=TIMESTAMP}
+            </if>
+
+        </where>
+    </select>
+    <select id="selectBySelective" resultMap="库存查询表Map" parameterType="com.bean.库存查询表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_LO_Bin
+        <where>
+            <if test="物料代码 != null and 物料代码 != '' ">
+                and Material_Code = #{物料代码, jdbcType=VARCHAR}
+            </if>
+            <if test="物料名称 != null and 物料名称 != '' ">
+                and Material_Name = #{物料名称, jdbcType=VARCHAR}
+            </if>
+            <if test="条码编号!= null and 条码编号 != '' ">
+                and Bar_Code = #{条码编号, jdbcType=VARCHAR}
+            </if>
+            <if test="类型代码!= null and 类型代码 != ''">
+                and Material_TypeCode = #{类型代码, jdbcType=VARCHAR}
+            </if>
+            <if test="类型名称 != null and 类型名称 != ''">
+                and Material_TypeName = #{类型名称, jdbcType=VARCHAR}
+            </if>
+            <if test="托盘编号 != null and 托盘编号 != '' ">
+                and Pallet_No = #{托盘编号, jdbcType=VARCHAR}
+            </if>
+            <if test="库位编号 != null and 库位编号 != '' ">
+                and Bin_No = #{库位编号, jdbcType=VARCHAR}
+            </if>
+            <if test="库位类型 != null and 库位类型 != '' ">
+                and Bin_Type = #{库位类型, jdbcType=VARCHAR}
+            </if>
+            <if test="库位状态 != null and 库位状态 != '' ">
+                and Bin_Status = #{库位状态, jdbcType=VARCHAR}
+            </if>
+            <if test="库位禁用 != null and 库位禁用 != '' ">
+                and Bin_UseFlag = #{库位禁用, jdbcType=INTEGER}
+            </if>
+            <if test="物料规格 != null and 物料规格 != '' ">
+                and Material_Spec = #{物料规格, jdbcType=VARCHAR}
+            </if>
+            <if test="计划编号 != null and 计划编号 != '' ">
+                and Plan_No = #{计划编号, jdbcType=VARCHAR}
+            </if>
+            <if test="生产批次 != null and 生产批次 != '' ">
+                and Batch_No = #{生产批次, jdbcType=VARCHAR}
+            </if>
+            <if test="物料重量 != null and 物料重量 != '' ">
+                and Material_Weight = #{物料重量, jdbcType=NUMERIC}
+            </if>
+            <if test="生产日期 != null and 生产日期 != '' ">
+                and Product_Date = #{生产日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="入库时间 != null and 入库时间 != '' ">
+                and In_Date = #{入库时间, jdbcType=TIMESTAMP}
+            </if>
+        </where>
+    </select>
+    <select id="selectByList" resultMap="库存查询表Map" parameterType="com.bean.库存查询表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_LO_Bin
+        <where>
+            Material_Code = #{物料代码}
+            OR Material_Name = #{物料名称}
+            OR Bar_Code = #{条码编号}
+            OR Material_TypeCode = #{类型代码}
+            OR Material_TypeName = #{类型名称}
+            OR Pallet_No = #{托盘编号}
+            OR Bin_No = #{库位编号}
+            OR Bin_Type = #{库位类型}
+            OR Bin_Status = #{库位状态}
+            OR Bin_UseFlag = #{库位禁用}
+            OR Material_Spec = #{物料规格}
+            OR Plan_No = #{计划编号}
+            OR Batch_No = #{生产批次}
+            OR Material_Weight = #{物料重量}
+            OR Product_Date = #{生产日期}
+            OR In_Date = #{入库时间}
+        </where>
+    </select>
+    <select id="searchAll" resultMap="库存查询表Map" >
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Bin
+        WHERE Bin_Status != '_'
+    </select>
+    <select id="search条码编号" resultMap="库存查询表Map" parameterType="com.bean.库存查询表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_LO_Bin
+        where Bar_Code = #{条码编号}
+    </select>
+    <update id="清空库位" parameterType="com.bean.库存查询表">
+        update IMOS_LO_Bin
+        set
+         Material_Code = NULL
+        ,Material_Name = NULL
+        ,Material_TypeCode = NULL
+        ,Material_TypeName = NULL
+        ,Pallet_No = NULL
+        ,Bin_Status = '_'
+        ,Bin_UseFlag = NULL
+        ,Bar_Code = NULL
+        ,Material_Spec = NULL
+        ,Plan_No = NULL
+        ,Batch_No = NULL
+        ,Material_Weight = NULL
+        ,Product_Date = NULL
+        ,In_Date = NULL
+        ,Creation_Date = NULL
+        ,Created_By = NULL
+        ,Last_Update_Date = NULL
+        ,Last_Updated_By = NULL
+        where Bin_No = #{库位编号}
+    </update>
+    <update id="改为占用状态" parameterType="com.bean.库存查询表">
+        update IMOS_LO_Bin
+        set
+        Bin_Status = #{库位状态}
+        where Bin_No = #{库位编号}
+    </update>
+    <update id="改为待检状态" parameterType="com.bean.库存查询表">
+        update IMOS_LO_Bin
+        set
+        Bin_Status = 'Q'
+        where Bin_No = #{库位编号}
+    </update>
+    <select id="search偶数空库位" resultMap="库存查询表Map" parameterType="com.bean.库存查询表">
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Bin
+        WHERE Bin_Status = '_' AND Bin_Type = 'E'
+    </select>
+    <select id="search奇数空库位" resultMap="库存查询表Map" parameterType="com.bean.库存查询表">
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Bin
+        WHERE Bin_Status = '_' AND Bin_Type = 'O'
+    </select>
+    <select id="search库位" resultMap="库存查询表Map" parameterType="com.bean.库存查询表">
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Bin
+        WHERE Bin_Status = '$' AND Material_Name = #{物料名称} AND Batch_No = #{生产批次} AND Material_Spec = #{物料规格}
+    </select>
+    <select id="search偶数库位" resultMap="库存查询表Map" parameterType="com.bean.库存查询表">
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Bin
+        WHERE Bin_Status = '$' AND Bin_Type = 'E' AND Material_Name = #{物料名称} AND Batch_No = #{生产批次} AND Material_Spec = #{物料规格}
+    </select>
+    <select id="search奇数库位" resultMap="库存查询表Map" parameterType="com.bean.库存查询表">
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Bin
+        WHERE Bin_Status = '$' AND Bin_Type = 'O' AND Material_Name = #{物料名称} AND Batch_No = #{生产批次} AND Material_Spec = #{物料规格}
+    </select>
+    <update id="入库任务更改库位信息" parameterType="com.bean.库存查询表">
+        update IMOS_LO_Bin
+        set
+        Material_Code = #{物料代码, jdbcType=VARCHAR}
+        ,Material_Name = #{物料名称, jdbcType=VARCHAR}
+        ,Material_TypeCode = #{类型代码, jdbcType=VARCHAR}
+        ,Material_TypeName = #{类型名称, jdbcType=VARCHAR}
+        ,Bar_Code = #{条码编号, jdbcType=VARCHAR}
+        ,Pallet_No = #{托盘编号, jdbcType=VARCHAR}
+        ,Bin_Status = #{库位状态, jdbcType=VARCHAR}
+        ,Bin_UseFlag = #{库位禁用, jdbcType=INTEGER}
+        ,Material_Spec = #{物料规格, jdbcType=VARCHAR}
+        ,Plan_No = #{计划编号, jdbcType=VARCHAR}
+        ,Batch_No = #{生产批次, jdbcType=VARCHAR}
+        ,Material_Weight = #{物料重量, jdbcType=NUMERIC}
+        ,Product_Date = #{生产日期, jdbcType=TIMESTAMP}
+        ,In_Date = #{入库时间, jdbcType=TIMESTAMP}
+        where Bin_No = #{库位编号}
+    </update>
+    <update id="盘点库位" parameterType="com.bean.库存查询表">
+        update IMOS_LO_Bin
+        set
+        Material_Code = #{物料代码}
+        ,Material_Name = #{物料名称}
+        ,Material_TypeCode = #{类型代码}
+        ,Material_TypeName = #{类型名称}
+        ,Pallet_No = #{托盘编号}
+        ,Material_Spec = #{物料规格}
+        ,Batch_No = #{生产批次}
+        ,Material_Weight = #{物料重量}
+        where Bin_No = #{库位编号}
+    </update>
+    <update id="盘点空库位" parameterType="com.bean.库存查询表">
+        update IMOS_LO_Bin
+        set
+        Material_Code = NULL
+        ,Material_Name = NULL
+        ,Material_TypeCode = NULL
+        ,Material_TypeName = NULL
+        ,Pallet_No = NULL
+        ,Bin_Status = '_'
+        ,Bar_Code = NULL
+        ,Bin_UseFlag = 0
+        ,Material_Spec = NULL
+        ,Plan_No = NULL
+        ,Batch_No = NULL
+        ,Material_Weight = NULL
+        ,Product_Date = NULL
+        ,In_Date = NULL
+        WHERE Bin_No = #{库位编号}
+    </update>
+</mapper>

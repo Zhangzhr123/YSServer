@@ -1,0 +1,1192 @@
+2019-09-04 09:02:40 -Adding PropertySource 'servletConfigInitParams' with lowest search precedence
+2019-09-04 09:02:40 -Adding PropertySource 'servletContextInitParams' with lowest search precedence
+2019-09-04 09:02:40 -Adding PropertySource 'systemProperties' with lowest search precedence
+2019-09-04 09:02:40 -Adding PropertySource 'systemEnvironment' with lowest search precedence
+2019-09-04 09:02:40 -Initialized StandardServletEnvironment with PropertySources [StubPropertySource {name='servletConfigInitParams'}, StubPropertySource {name='servletContextInitParams'}, MapPropertySource {name='systemProperties'}, SystemEnvironmentPropertySource {name='systemEnvironment'}]
+2019-09-04 09:02:40 -Starting VlandServerApplication on SKY-20190421RLR with PID 5140 (E:\SourceDocument\VlandServer\out\production\classes started by Administrator in E:\SourceDocument\VlandServer)
+2019-09-04 09:02:40 -No active profile set, falling back to default profiles: default
+2019-09-04 09:02:55 -Adding PropertySource 'applicationConfig: [classpath:/application.properties]' with search precedence immediately lower than 'applicationConfigurationProperties'
+2019-09-04 09:02:55 -Removing PropertySource 'applicationConfigurationProperties'
+2019-09-04 09:02:55 -Removing PropertySource 'defaultProperties'
+2019-09-04 09:02:59 -Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-09-04 09:02:59 -Root WebApplicationContext: initialization completed in 16637 ms
+2019-09-04 09:03:00 -Replacing PropertySource 'servletContextInitParams' with 'servletContextInitParams'
+2019-09-04 09:03:05 -Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@549949be: startup date [Wed Sep 04 09:02:42 CST 2019]; root of context hierarchy
+2019-09-04 09:03:05 -Looking for request mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@549949be: startup date [Wed Sep 04 09:02:42 CST 2019]; root of context hierarchy
+2019-09-04 09:03:05 -0 request handler methods found on class com.VlandServerApplication: {}
+2019-09-04 09:03:05 -13 request handler methods found on class com.controller.ERP单据明细表Controller: {public java.lang.String com.controller.ERP单据明细表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表]}, public com.bean.Result com.controller.ERP单据明细表Controller.update(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/update]}, public com.bean.Result com.controller.ERP单据明细表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/delete]}, public com.bean.Result com.controller.ERP单据明细表Controller.create(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/create]}, public com.bean.Result com.controller.ERP单据明细表Controller.getListData(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/getListData]}, public com.bean.JqueryResult com.controller.ERP单据明细表Controller.getListData(int,int,com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/getListDataPage]}, public com.bean.Result com.controller.ERP单据明细表Controller.查询调拨单(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/查询调拨单]}, public com.bean.Result com.controller.ERP单据明细表Controller.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/deleteAll]}, public com.bean.Result com.controller.ERP单据明细表Controller.完成入库(java.util.List,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/完成入库]}, public com.bean.Result com.controller.ERP单据明细表Controller.展示出库单据(java.util.List,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/展示出库单据]}, public com.bean.Result com.controller.ERP单据明细表Controller.查询入库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/查询入库单据]}, public com.bean.Result com.controller.ERP单据明细表Controller.查询出库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/查询出库单据]}, public com.bean.Result com.controller.ERP单据明细表Controller.展示入库单据(java.util.List,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/ERP单据明细表/展示入库单据]}}
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表]}" onto public java.lang.String com.controller.ERP单据明细表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/update]}" onto public com.bean.Result<com.bean.ERP单据明细表> com.controller.ERP单据明细表Controller.update(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/delete]}" onto public com.bean.Result<com.bean.ERP单据明细表> com.controller.ERP单据明细表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/create]}" onto public com.bean.Result<com.bean.ERP单据明细表> com.controller.ERP单据明细表Controller.create(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/getListData]}" onto public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.getListData(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.ERP单据明细表> com.controller.ERP单据明细表Controller.getListData(int,int,com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/查询调拨单]}" onto public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询调拨单(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/deleteAll]}" onto public com.bean.Result<com.bean.ERP单据明细表> com.controller.ERP单据明细表Controller.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/完成入库]}" onto public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.完成入库(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/展示出库单据]}" onto public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.展示出库单据(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/查询入库单据]}" onto public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询入库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/查询出库单据]}" onto public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询出库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/ERP单据明细表/展示入库单据]}" onto public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.展示入库单据(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -5 request handler methods found on class com.controller.LoginController: {public java.lang.String com.controller.LoginController.index(org.springframework.ui.Model)={[/login]}, public com.bean.Result com.controller.LoginController.validate(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/login/validate]}, public java.lang.String com.controller.LoginController.validate2(com.bean.User,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)={[/login/validate2]}, public java.lang.String com.controller.LoginController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/login/logout]}, public java.lang.String com.controller.LoginController.changeSessionLanauage(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)={[/login/changeSessionLanauage]}}
+2019-09-04 09:03:05 -Mapped "{[/login]}" onto public java.lang.String com.controller.LoginController.index(org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/login/validate]}" onto public com.bean.Result<com.bean.User> com.controller.LoginController.validate(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-04 09:03:05 -Mapped "{[/login/validate2]}" onto public java.lang.String com.controller.LoginController.validate2(com.bean.User,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/login/logout]}" onto public java.lang.String com.controller.LoginController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-04 09:03:05 -Mapped "{[/login/changeSessionLanauage]}" onto public java.lang.String com.controller.LoginController.changeSessionLanauage(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+2019-09-04 09:03:05 -7 request handler methods found on class com.controller.UserController: {public java.lang.String com.controller.UserController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/user]}, public com.bean.Result com.controller.UserController.update(com.bean.User,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/user/update]}, public com.bean.Result com.controller.UserController.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/user/delete]}, public com.bean.Result com.controller.UserController.create(com.bean.User,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/user/create]}, public com.bean.Result com.controller.UserController.getListData(com.bean.User,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/user/getListData]}, public com.bean.JqueryResult com.controller.UserController.getListData(int,int,com.bean.User,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/user/getListDataPage]}, public com.bean.Result com.controller.UserController.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/user/deleteAll]}}
+2019-09-04 09:03:05 -Mapped "{[/user]}" onto public java.lang.String com.controller.UserController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/user/update]}" onto public com.bean.Result<com.bean.User> com.controller.UserController.update(com.bean.User,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/user/delete]}" onto public com.bean.Result<com.bean.User> com.controller.UserController.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/user/create]}" onto public com.bean.Result<com.bean.User> com.controller.UserController.create(com.bean.User,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/user/getListData]}" onto public com.bean.Result<java.util.List<com.bean.User>> com.controller.UserController.getListData(com.bean.User,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/user/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.User> com.controller.UserController.getListData(int,int,com.bean.User,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/user/deleteAll]}" onto public com.bean.Result<com.bean.User> com.controller.UserController.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -9 request handler methods found on class com.controller.仓库单据明细表Controller: {public java.lang.String com.controller.仓库单据明细表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据明细表]}, public com.bean.Result com.controller.仓库单据明细表Controller.update(com.bean.仓库单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据明细表/update]}, public com.bean.Result com.controller.仓库单据明细表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据明细表/delete]}, public com.bean.Result com.controller.仓库单据明细表Controller.create(com.bean.仓库单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据明细表/create]}, public com.bean.Result com.controller.仓库单据明细表Controller.getListData(com.bean.仓库单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据明细表/getListData]}, public com.bean.JqueryResult com.controller.仓库单据明细表Controller.getListData(int,int,com.bean.仓库单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据明细表/getListDataPage]}, public com.bean.Result com.controller.仓库单据明细表Controller.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据明细表/deleteAll]}, public com.bean.Result com.controller.仓库单据明细表Controller.获取仓库单据明细(javax.servlet.http.HttpServletRequest,com.bean.仓库单据明细表)={[/仓库单据明细表/获取仓库单据明细]}, public com.bean.Result com.controller.仓库单据明细表Controller.根据物料编号获取仓库单据明细(javax.servlet.http.HttpServletRequest,com.bean.仓库单据明细表)={[/仓库单据明细表/根据物料编号获取仓库单据明细]}}
+2019-09-04 09:03:05 -Mapped "{[/仓库单据明细表]}" onto public java.lang.String com.controller.仓库单据明细表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据明细表/update]}" onto public com.bean.Result<com.bean.仓库单据明细表> com.controller.仓库单据明细表Controller.update(com.bean.仓库单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据明细表/delete]}" onto public com.bean.Result<com.bean.仓库单据明细表> com.controller.仓库单据明细表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据明细表/create]}" onto public com.bean.Result<com.bean.仓库单据明细表> com.controller.仓库单据明细表Controller.create(com.bean.仓库单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据明细表/getListData]}" onto public com.bean.Result<java.util.List<com.bean.仓库单据明细表>> com.controller.仓库单据明细表Controller.getListData(com.bean.仓库单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据明细表/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.仓库单据明细表> com.controller.仓库单据明细表Controller.getListData(int,int,com.bean.仓库单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据明细表/deleteAll]}" onto public com.bean.Result<com.bean.仓库单据明细表> com.controller.仓库单据明细表Controller.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据明细表/获取仓库单据明细]}" onto public com.bean.Result<java.util.List<com.bean.仓库单据明细表>> com.controller.仓库单据明细表Controller.获取仓库单据明细(javax.servlet.http.HttpServletRequest,com.bean.仓库单据明细表)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据明细表/根据物料编号获取仓库单据明细]}" onto public com.bean.Result<java.util.List<com.bean.仓库单据明细表>> com.controller.仓库单据明细表Controller.根据物料编号获取仓库单据明细(javax.servlet.http.HttpServletRequest,com.bean.仓库单据明细表)
+2019-09-04 09:03:05 -7 request handler methods found on class com.controller.仓库单据表Controller: {public java.lang.String com.controller.仓库单据表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据表]}, public com.bean.Result com.controller.仓库单据表Controller.update(com.bean.仓库单据表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据表/update]}, public com.bean.Result com.controller.仓库单据表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据表/delete]}, public com.bean.Result com.controller.仓库单据表Controller.create(com.bean.仓库单据表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据表/create]}, public com.bean.Result com.controller.仓库单据表Controller.getListData(com.bean.仓库单据表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据表/getListData]}, public com.bean.JqueryResult com.controller.仓库单据表Controller.getListData(int,int,com.bean.仓库单据表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据表/getListDataPage]}, public com.bean.Result com.controller.仓库单据表Controller.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/仓库单据表/deleteAll]}}
+2019-09-04 09:03:05 -Mapped "{[/仓库单据表]}" onto public java.lang.String com.controller.仓库单据表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据表/update]}" onto public com.bean.Result<com.bean.仓库单据表> com.controller.仓库单据表Controller.update(com.bean.仓库单据表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据表/delete]}" onto public com.bean.Result<com.bean.仓库单据表> com.controller.仓库单据表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据表/create]}" onto public com.bean.Result<com.bean.仓库单据表> com.controller.仓库单据表Controller.create(com.bean.仓库单据表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据表/getListData]}" onto public com.bean.Result<java.util.List<com.bean.仓库单据表>> com.controller.仓库单据表Controller.getListData(com.bean.仓库单据表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据表/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.仓库单据表> com.controller.仓库单据表Controller.getListData(int,int,com.bean.仓库单据表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/仓库单据表/deleteAll]}" onto public com.bean.Result<com.bean.仓库单据表> com.controller.仓库单据表Controller.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -10 request handler methods found on class com.controller.库存查询表Controller: {public java.lang.String com.controller.库存查询表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表]}, public com.bean.Result com.controller.库存查询表Controller.update(com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表/update]}, public com.bean.Result com.controller.库存查询表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表/delete]}, public com.bean.Result com.controller.库存查询表Controller.create(com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表/create]}, public com.bean.JqueryResult com.controller.库存查询表Controller.getListData(int,int,com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表/getListDataPage]}, public com.bean.Result com.controller.库存查询表Controller.getListData(com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表/getListData]}, public com.bean.Result com.controller.库存查询表Controller.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表/deleteAll]}, public com.bean.Result com.controller.库存查询表Controller.清空库位(java.util.List,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表/清空库位]}, public com.bean.Result com.controller.库存查询表Controller.查询空库位(java.util.List,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表/查询空库位]}, public com.bean.Result com.controller.库存查询表Controller.修改库存状态(com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/库存查询表/修改库存状态]}}
+2019-09-04 09:03:05 -Mapped "{[/库存查询表]}" onto public java.lang.String com.controller.库存查询表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/库存查询表/update]}" onto public com.bean.Result<com.bean.库存查询表> com.controller.库存查询表Controller.update(com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/库存查询表/delete]}" onto public com.bean.Result<com.bean.库存查询表> com.controller.库存查询表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/库存查询表/create]}" onto public com.bean.Result<com.bean.库存查询表> com.controller.库存查询表Controller.create(com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/库存查询表/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.库存查询表> com.controller.库存查询表Controller.getListData(int,int,com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/库存查询表/getListData]}" onto public com.bean.Result<java.util.List<com.bean.库存查询表>> com.controller.库存查询表Controller.getListData(com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/库存查询表/deleteAll]}" onto public com.bean.Result<com.bean.库存查询表> com.controller.库存查询表Controller.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/库存查询表/清空库位]}" onto public com.bean.Result<com.bean.库存查询表> com.controller.库存查询表Controller.清空库位(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/库存查询表/查询空库位]}" onto public com.bean.Result<java.util.List<com.bean.库存查询表>> com.controller.库存查询表Controller.查询空库位(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/库存查询表/修改库存状态]}" onto public com.bean.Result<com.bean.库存查询表> com.controller.库存查询表Controller.修改库存状态(com.bean.库存查询表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -7 request handler methods found on class com.controller.条码物料表Controller: {public java.lang.String com.controller.条码物料表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/条码物料表]}, public com.bean.Result com.controller.条码物料表Controller.update(com.bean.条码物料表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/条码物料表/update]}, public com.bean.Result com.controller.条码物料表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/条码物料表/delete]}, public com.bean.Result com.controller.条码物料表Controller.create(com.bean.条码物料表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/条码物料表/create]}, public com.bean.Result com.controller.条码物料表Controller.getListData(com.bean.条码物料表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/条码物料表/getListData]}, public com.bean.JqueryResult com.controller.条码物料表Controller.getListData(int,int,com.bean.条码物料表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/条码物料表/getListDataPage]}, public com.bean.Result com.controller.条码物料表Controller.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/条码物料表/deleteAll]}}
+2019-09-04 09:03:05 -Mapped "{[/条码物料表]}" onto public java.lang.String com.controller.条码物料表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/条码物料表/update]}" onto public com.bean.Result<com.bean.条码物料表> com.controller.条码物料表Controller.update(com.bean.条码物料表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/条码物料表/delete]}" onto public com.bean.Result<com.bean.条码物料表> com.controller.条码物料表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/条码物料表/create]}" onto public com.bean.Result<com.bean.条码物料表> com.controller.条码物料表Controller.create(com.bean.条码物料表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/条码物料表/getListData]}" onto public com.bean.Result<java.util.List<com.bean.条码物料表>> com.controller.条码物料表Controller.getListData(com.bean.条码物料表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/条码物料表/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.条码物料表> com.controller.条码物料表Controller.getListData(int,int,com.bean.条码物料表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/条码物料表/deleteAll]}" onto public com.bean.Result<com.bean.条码物料表> com.controller.条码物料表Controller.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -7 request handler methods found on class com.controller.物流任务历史表Controller: {public java.lang.String com.controller.物流任务历史表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务历史表]}, public com.bean.Result com.controller.物流任务历史表Controller.update(com.bean.物流任务历史表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务历史表/update]}, public com.bean.Result com.controller.物流任务历史表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务历史表/delete]}, public com.bean.Result com.controller.物流任务历史表Controller.create(com.bean.物流任务历史表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务历史表/create]}, public com.bean.Result com.controller.物流任务历史表Controller.getListData(com.bean.物流任务历史表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务历史表/getListData]}, public com.bean.JqueryResult com.controller.物流任务历史表Controller.getListData(int,int,com.bean.物流任务历史表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务历史表/getListDataPage]}, public com.bean.Result com.controller.物流任务历史表Controller.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务历史表/deleteAll]}}
+2019-09-04 09:03:05 -Mapped "{[/物流任务历史表]}" onto public java.lang.String com.controller.物流任务历史表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/物流任务历史表/update]}" onto public com.bean.Result<com.bean.物流任务历史表> com.controller.物流任务历史表Controller.update(com.bean.物流任务历史表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/物流任务历史表/delete]}" onto public com.bean.Result<com.bean.物流任务历史表> com.controller.物流任务历史表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/物流任务历史表/create]}" onto public com.bean.Result<com.bean.物流任务历史表> com.controller.物流任务历史表Controller.create(com.bean.物流任务历史表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/物流任务历史表/getListData]}" onto public com.bean.Result<java.util.List<com.bean.物流任务历史表>> com.controller.物流任务历史表Controller.getListData(com.bean.物流任务历史表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/物流任务历史表/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.物流任务历史表> com.controller.物流任务历史表Controller.getListData(int,int,com.bean.物流任务历史表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:05 -Mapped "{[/物流任务历史表/deleteAll]}" onto public com.bean.Result<com.bean.物流任务历史表> com.controller.物流任务历史表Controller.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -14 request handler methods found on class com.controller.物流任务表Controller: {public java.lang.String com.controller.物流任务表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表]}, public com.bean.Result com.controller.物流任务表Controller.update(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表/update]}, public com.bean.Result com.controller.物流任务表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表/delete]}, public com.bean.Result com.controller.物流任务表Controller.create(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表/create]}, public com.bean.Result com.controller.物流任务表Controller.getListData(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表/getListData]}, public com.bean.JqueryResult com.controller.物流任务表Controller.getListData(int,int,com.bean.物流任务表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表/getListDataPage]}, public com.bean.Result com.controller.物流任务表Controller.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表/deleteAll]}, public com.bean.Result com.controller.物流任务表Controller.查询任务(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)={[/物流任务表/查询任务]}, public com.bean.Result com.controller.物流任务表Controller.强制执行(java.util.List,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表/强制执行]}, public com.bean.Result com.controller.物流任务表Controller.调拨(java.util.List,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表/调拨]}, public com.bean.Result com.controller.物流任务表Controller.强制取消(java.util.List,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/物流任务表/强制取消]}, public com.bean.Result com.controller.物流任务表Controller.原料发布入库任务(java.util.List,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/物流任务表/原料发布入库任务]}, public com.bean.Result com.controller.物流任务表Controller.发布出库任务(java.util.List,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/物流任务表/发布出库任务]}, public com.bean.Result com.controller.物流任务表Controller.获取任务信息(java.util.List,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)={[/物流任务表/获取任务信息]}}
+2019-09-04 09:03:06 -Mapped "{[/物流任务表]}" onto public java.lang.String com.controller.物流任务表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/update]}" onto public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.update(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/delete]}" onto public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/create]}" onto public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.create(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/getListData]}" onto public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.getListData(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.物流任务表> com.controller.物流任务表Controller.getListData(int,int,com.bean.物流任务表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/deleteAll]}" onto public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/查询任务]}" onto public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.查询任务(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/强制执行]}" onto public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.强制执行(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/调拨]}" onto public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.调拨(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/强制取消]}" onto public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.强制取消(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/原料发布入库任务]}" onto public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.原料发布入库任务(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/发布出库任务]}" onto public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.发布出库任务(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-04 09:03:06 -Mapped "{[/物流任务表/获取任务信息]}" onto public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.获取任务信息(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)
+2019-09-04 09:03:06 -7 request handler methods found on class com.controller.盘点差异表Controller: {public java.lang.String com.controller.盘点差异表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点差异表]}, public com.bean.Result com.controller.盘点差异表Controller.update(com.bean.盘点差异表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点差异表/update]}, public com.bean.Result com.controller.盘点差异表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点差异表/delete]}, public com.bean.Result com.controller.盘点差异表Controller.create(com.bean.盘点差异表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点差异表/create]}, public com.bean.Result com.controller.盘点差异表Controller.getListData(com.bean.盘点差异表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点差异表/getListData]}, public com.bean.JqueryResult com.controller.盘点差异表Controller.getListData(int,int,com.bean.盘点差异表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点差异表/getListDataPage]}, public com.bean.Result com.controller.盘点差异表Controller.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点差异表/deleteAll]}}
+2019-09-04 09:03:06 -Mapped "{[/盘点差异表]}" onto public java.lang.String com.controller.盘点差异表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点差异表/update]}" onto public com.bean.Result<com.bean.盘点差异表> com.controller.盘点差异表Controller.update(com.bean.盘点差异表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点差异表/delete]}" onto public com.bean.Result<com.bean.盘点差异表> com.controller.盘点差异表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点差异表/create]}" onto public com.bean.Result<com.bean.盘点差异表> com.controller.盘点差异表Controller.create(com.bean.盘点差异表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点差异表/getListData]}" onto public com.bean.Result<java.util.List<com.bean.盘点差异表>> com.controller.盘点差异表Controller.getListData(com.bean.盘点差异表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点差异表/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.盘点差异表> com.controller.盘点差异表Controller.getListData(int,int,com.bean.盘点差异表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点差异表/deleteAll]}" onto public com.bean.Result<com.bean.盘点差异表> com.controller.盘点差异表Controller.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -11 request handler methods found on class com.controller.盘点计划表Controller: {public java.lang.String com.controller.盘点计划表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点计划表]}, public com.bean.Result com.controller.盘点计划表Controller.update(com.bean.盘点计划表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点计划表/update]}, public com.bean.Result com.controller.盘点计划表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点计划表/delete]}, public com.bean.Result com.controller.盘点计划表Controller.create(com.bean.盘点计划表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点计划表/create]}, public com.bean.JqueryResult com.controller.盘点计划表Controller.getListData(int,int,com.bean.盘点计划表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点计划表/getListDataPage]}, public com.bean.Result com.controller.盘点计划表Controller.getListData(com.bean.盘点计划表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点计划表/getListData]}, public com.bean.Result com.controller.盘点计划表Controller.deleteAll(com.bean.Param,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)={[/盘点计划表/deleteAll]}, public com.bean.Result com.controller.盘点计划表Controller.已完成(javax.servlet.http.HttpServletRequest,com.bean.盘点计划表)={[/盘点计划表/已完成]}, public com.bean.Result com.controller.盘点计划表Controller.获取盘点计划(javax.servlet.http.HttpServletRequest,com.bean.盘点计划表)={[/盘点计划表/获取盘点计划]}, public com.bean.Result com.controller.盘点计划表Controller.修改完成程度(javax.servlet.http.HttpServletRequest,com.bean.盘点计划表)={[/盘点计划表/修改完成程度]}, public com.bean.Result com.controller.盘点计划表Controller.根据计划编号获取盘点计划(javax.servlet.http.HttpServletRequest,com.bean.盘点计划表)={[/盘点计划表/根据计划编号获取盘点计划]}}
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表]}" onto public java.lang.String com.controller.盘点计划表Controller.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/update]}" onto public com.bean.Result<com.bean.盘点计划表> com.controller.盘点计划表Controller.update(com.bean.盘点计划表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/delete]}" onto public com.bean.Result<com.bean.盘点计划表> com.controller.盘点计划表Controller.delete(java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/create]}" onto public com.bean.Result<com.bean.盘点计划表> com.controller.盘点计划表Controller.create(com.bean.盘点计划表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/getListDataPage]}" onto public com.bean.JqueryResult<com.bean.盘点计划表> com.controller.盘点计划表Controller.getListData(int,int,com.bean.盘点计划表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/getListData]}" onto public com.bean.Result<java.util.List<com.bean.盘点计划表>> com.controller.盘点计划表Controller.getListData(com.bean.盘点计划表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/deleteAll]}" onto public com.bean.Result<com.bean.盘点计划表> com.controller.盘点计划表Controller.deleteAll(com.bean.Param<java.util.List<java.lang.String>>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/已完成]}" onto public com.bean.Result<com.bean.盘点计划表> com.controller.盘点计划表Controller.已完成(javax.servlet.http.HttpServletRequest,com.bean.盘点计划表)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/获取盘点计划]}" onto public com.bean.Result<java.util.List<com.bean.盘点计划表>> com.controller.盘点计划表Controller.获取盘点计划(javax.servlet.http.HttpServletRequest,com.bean.盘点计划表)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/修改完成程度]}" onto public com.bean.Result<com.bean.盘点计划表> com.controller.盘点计划表Controller.修改完成程度(javax.servlet.http.HttpServletRequest,com.bean.盘点计划表)
+2019-09-04 09:03:06 -Mapped "{[/盘点计划表/根据计划编号获取盘点计划]}" onto public com.bean.Result<java.util.List<com.bean.盘点计划表>> com.controller.盘点计划表Controller.根据计划编号获取盘点计划(javax.servlet.http.HttpServletRequest,com.bean.盘点计划表)
+2019-09-04 09:03:06 -2 request handler methods found on class org.springframework.boot.autoconfigure.web.BasicErrorController: {public org.springframework.http.ResponseEntity org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)={[/error]}, public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/error],produces=[text/html]}}
+2019-09-04 09:03:06 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-09-04 09:03:06 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-04 09:03:06 -Looking for URL mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@549949be: startup date [Wed Sep 04 09:02:42 CST 2019]; root of context hierarchy
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.context.event.internalEventListenerProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.context.event.internalEventListenerFactory': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'vlandServerApplication': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'ERP单据明细表Controller': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'loginController': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'userController': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '仓库单据明细表Controller': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '仓库单据表Controller': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '库存查询表Controller': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '条码物料表Controller': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '物流任务历史表Controller': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '物流任务表Controller': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '盘点差异表Controller': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '盘点计划表Controller': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'ERP单据明细表Impl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'userServiceImpl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '仓库单据明细表Impl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '仓库单据表Impl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '库存查询表Impl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '条码物料表Impl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '物流任务历史表Impl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '物流任务表Impl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '盘点差异表Impl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '盘点计划表Impl': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'myTask': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.scheduling.annotation.SchedulingConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.context.annotation.internalScheduledAnnotationProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'ERP单据明细表Dao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'userDao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '仓库单据明细表Dao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '仓库单据表Dao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '库存查询表Dao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '条码物料表Dao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '物流任务历史表Dao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '物流任务表Dao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '盘点差异表Dao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name '盘点计划表Dao': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'messageSource': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'propertySourcesPlaceholderConfigurer': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'standardJacksonObjectMapperBuilderCustomizer': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'jacksonObjectMapperBuilder': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'jacksonObjectMapper': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'jsonComponentModule': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration$TomcatWebSocketConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'websocketContainerCustomizer': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'tomcatEmbeddedServletContainerFactory': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'embeddedServletContainerCustomizerBeanPostProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'errorPageRegistrarBeanPostProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'dispatcherServlet': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'spring.mvc-org.springframework.boot.autoconfigure.web.WebMvcProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'dispatcherServletRegistration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'defaultValidator': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'methodValidationPostProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'error': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'beanNameViewResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'conventionErrorViewResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'errorAttributes': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'basicErrorController': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'errorPageCustomizer': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'preserveErrorControllerTargetClassPostProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'requestMappingHandlerAdapter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'requestMappingHandlerMapping': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mvcValidator': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mvcContentNegotiationManager': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mvcPathMatcher': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mvcUrlPathHelper': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'viewControllerHandlerMapping': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'beanNameHandlerMapping': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'resourceHandlerMapping': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mvcResourceUrlProvider': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'defaultServletHandlerMapping': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mvcConversionService': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mvcUriComponentsContributor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'httpRequestHandlerAdapter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'simpleControllerHandlerAdapter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'handlerExceptionResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mvcViewResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mvcHandlerMappingIntrospector': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'faviconHandlerMapping': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'faviconRequestHandler': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'defaultViewResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'viewResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'welcomePageHandlerMapping': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'requestContextFilter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'hiddenHttpMethodFilter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'httpPutFormContentFilter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'dataSource': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$TomcatDataSourcePoolMetadataProviderConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'tomcatPoolDataSourceMetadataProvider': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'dataSourceInitializer': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'dataSourceInitializerPostProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'sqlSessionFactory': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'sqlSessionTemplate': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mbeanExporter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'objectNamingStrategy': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mbeanServer': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'springApplicationAdminRegistrar': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'persistenceExceptionTranslationPostProcessor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'gson': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'stringHttpMessageConverter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'spring.http.encoding-org.springframework.boot.autoconfigure.web.HttpEncodingProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'mappingJackson2HttpMessageConverter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.GsonHttpMessageConvertersConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'messageConverters': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'transactionManager': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'jdbcTemplate': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'namedParameterJdbcTemplate': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.transaction.config.internalTransactionAdvisor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'transactionAttributeSource': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'transactionInterceptor': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.transaction.config.internalTransactionalEventListenerFactory': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration$CglibAutoProxyConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.aop.config.internalAutoProxyCreator': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'transactionTemplate': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'platformTransactionManagerCustomizers': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafResourceHandlingConfig': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafWebLayoutConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'layoutDialect': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'templateEngine': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$Thymeleaf2Configuration$Thymeleaf2ViewResolverConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'thymeleafViewResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$Thymeleaf2Configuration$DefaultTemplateResolverConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'thymeleafResourceResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'defaultTemplateResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$Thymeleaf2Configuration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'spring.thymeleaf-org.springframework.boot.autoconfigure.thymeleaf.ThymeleafProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'characterEncodingFilter': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'localeCharsetMappingsCustomizer': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'multipartConfigElement': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'multipartResolver': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'spring.http.multipart-org.springframework.boot.autoconfigure.web.MultipartProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'serverProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'duplicateServerPropertiesDetector': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration$RestTemplateConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'restTemplateBuilder': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'autoConfigurationReport': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'springApplicationArguments': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'springBootBanner': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'springBootLoggingSystem': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'environment': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'systemProperties': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'systemEnvironment': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'applicationEventMulticaster': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'servletContext': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'contextParameters': no URL paths identified
+2019-09-04 09:03:06 -Rejected bean name 'contextAttributes': no URL paths identified
+2019-09-04 09:03:06 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-04 09:03:06 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-04 09:03:06 -Looking for exception mappings: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@549949be: startup date [Wed Sep 04 09:02:42 CST 2019]; root of context hierarchy
+2019-09-04 09:03:06 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-04 09:03:10 -Looking for resource handler mappings
+2019-09-04 09:03:10 -Found resource handler mapping: URL pattern="/**/favicon.ico", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7bc239db]
+2019-09-04 09:03:10 -Found resource handler mapping: URL pattern="/webjars/**", locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@709c6768]
+2019-09-04 09:03:10 -Found resource handler mapping: URL pattern="/**", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@3e356ed6]
+2019-09-04 09:03:10 -Adding PropertySource 'server.ports' with highest search precedence
+2019-09-04 09:03:10 -Started VlandServerApplication in 32.528 seconds (JVM running for 46.934)
+2019-09-04 09:03:14 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:03:14 -==> Parameters: 
+2019-09-04 09:03:16 -<==      Total: 0
+2019-09-04 09:03:16 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:03:16 -==> Parameters: 
+2019-09-04 09:03:16 -<==      Total: 0
+2019-09-04 09:03:16 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:03:16 -==> Parameters: 
+2019-09-04 09:03:16 -<==      Total: 0
+2019-09-04 09:04:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:04:10 -==> Parameters: 
+2019-09-04 09:04:10 -<==      Total: 0
+2019-09-04 09:04:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:04:10 -==> Parameters: 
+2019-09-04 09:04:10 -<==      Total: 0
+2019-09-04 09:04:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:04:10 -==> Parameters: 
+2019-09-04 09:04:10 -<==      Total: 0
+2019-09-04 09:05:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:05:10 -==> Parameters: 
+2019-09-04 09:05:10 -<==      Total: 0
+2019-09-04 09:05:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:05:10 -==> Parameters: 
+2019-09-04 09:05:10 -<==      Total: 0
+2019-09-04 09:05:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:05:10 -==> Parameters: 
+2019-09-04 09:05:10 -<==      Total: 0
+2019-09-04 09:06:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:06:10 -==> Parameters: 
+2019-09-04 09:06:10 -<==      Total: 0
+2019-09-04 09:06:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:06:10 -==> Parameters: 
+2019-09-04 09:06:10 -<==      Total: 0
+2019-09-04 09:06:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:06:10 -==> Parameters: 
+2019-09-04 09:06:10 -<==      Total: 0
+2019-09-04 09:07:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:07:10 -==> Parameters: 
+2019-09-04 09:07:10 -<==      Total: 0
+2019-09-04 09:07:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:07:10 -==> Parameters: 
+2019-09-04 09:07:10 -<==      Total: 0
+2019-09-04 09:07:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:07:10 -==> Parameters: 
+2019-09-04 09:07:10 -<==      Total: 0
+2019-09-04 09:08:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:08:10 -==> Parameters: 
+2019-09-04 09:08:10 -<==      Total: 0
+2019-09-04 09:08:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:08:10 -==> Parameters: 
+2019-09-04 09:08:10 -<==      Total: 0
+2019-09-04 09:08:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:08:10 -==> Parameters: 
+2019-09-04 09:08:10 -<==      Total: 0
+2019-09-04 09:09:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:09:10 -==> Parameters: 
+2019-09-04 09:09:10 -<==      Total: 0
+2019-09-04 09:09:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:09:10 -==> Parameters: 
+2019-09-04 09:09:10 -<==      Total: 0
+2019-09-04 09:09:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:09:10 -==> Parameters: 
+2019-09-04 09:09:10 -<==      Total: 0
+2019-09-04 09:10:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:10:10 -==> Parameters: 
+2019-09-04 09:10:10 -<==      Total: 0
+2019-09-04 09:10:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:10:10 -==> Parameters: 
+2019-09-04 09:10:10 -<==      Total: 0
+2019-09-04 09:10:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:10:10 -==> Parameters: 
+2019-09-04 09:10:10 -<==      Total: 0
+2019-09-04 09:11:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:11:10 -==> Parameters: 
+2019-09-04 09:11:10 -<==      Total: 0
+2019-09-04 09:11:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:11:10 -==> Parameters: 
+2019-09-04 09:11:10 -<==      Total: 0
+2019-09-04 09:11:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:11:10 -==> Parameters: 
+2019-09-04 09:11:10 -<==      Total: 0
+2019-09-04 09:12:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:12:10 -==> Parameters: 
+2019-09-04 09:12:10 -<==      Total: 0
+2019-09-04 09:12:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:12:10 -==> Parameters: 
+2019-09-04 09:12:10 -<==      Total: 0
+2019-09-04 09:12:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:12:10 -==> Parameters: 
+2019-09-04 09:12:10 -<==      Total: 0
+2019-09-04 09:13:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:13:10 -==> Parameters: 
+2019-09-04 09:13:10 -<==      Total: 0
+2019-09-04 09:13:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:13:10 -==> Parameters: 
+2019-09-04 09:13:10 -<==      Total: 0
+2019-09-04 09:13:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:13:10 -==> Parameters: 
+2019-09-04 09:13:10 -<==      Total: 0
+2019-09-04 09:14:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:14:10 -==> Parameters: 
+2019-09-04 09:14:10 -<==      Total: 0
+2019-09-04 09:14:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:14:10 -==> Parameters: 
+2019-09-04 09:14:10 -<==      Total: 0
+2019-09-04 09:14:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:14:10 -==> Parameters: 
+2019-09-04 09:14:10 -<==      Total: 0
+2019-09-04 09:15:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:15:10 -==> Parameters: 
+2019-09-04 09:15:10 -<==      Total: 0
+2019-09-04 09:15:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:15:10 -==> Parameters: 
+2019-09-04 09:15:10 -<==      Total: 0
+2019-09-04 09:15:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:15:10 -==> Parameters: 
+2019-09-04 09:15:10 -<==      Total: 0
+2019-09-04 09:15:24 -Initializing servlet 'dispatcherServlet'
+2019-09-04 09:15:24 -FrameworkServlet 'dispatcherServlet': initialization started
+2019-09-04 09:15:24 -Using MultipartResolver [org.springframework.web.multipart.support.StandardServletMultipartResolver@62ad5f35]
+2019-09-04 09:15:24 -Unable to locate LocaleResolver with name 'localeResolver': using default [org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@52e1d5b7]
+2019-09-04 09:15:24 -Unable to locate ThemeResolver with name 'themeResolver': using default [org.springframework.web.servlet.theme.FixedThemeResolver@1425311d]
+2019-09-04 09:15:24 -Unable to locate RequestToViewNameTranslator with name 'viewNameTranslator': using default [org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@56be6dc2]
+2019-09-04 09:15:24 -Unable to locate FlashMapManager with name 'flashMapManager': using default [org.springframework.web.servlet.support.SessionFlashMapManager@541823c]
+2019-09-04 09:15:24 -Published WebApplicationContext of servlet 'dispatcherServlet' as ServletContext attribute with name [org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet]
+2019-09-04 09:15:24 -FrameworkServlet 'dispatcherServlet': initialization completed in 137 ms
+2019-09-04 09:15:24 -Servlet 'dispatcherServlet' configured successfully
+2019-09-04 09:15:24 -DispatcherServlet with name 'dispatcherServlet' processing GET request for [/login/validate]
+2019-09-04 09:15:24 -Looking up handler method for path /login/validate
+2019-09-04 09:15:24 -Returning handler method [public com.bean.Result<com.bean.User> com.controller.LoginController.validate(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)]
+2019-09-04 09:15:24 -Last-Modified value for [/login/validate] is: -1
+2019-09-04 09:15:25 -==>  Preparing: select User_Code ,User_Name ,User_PassWord ,Dept_Code ,Dept_Name ,User_TelNo ,User_EMail ,Remark from Sys_BaseUser where User_Code = ? 
+2019-09-04 09:15:25 -==> Parameters: admin(String)
+2019-09-04 09:15:25 -<==      Total: 1
+2019-09-04 09:15:25 -==>  Preparing: select User_Code ,User_Name ,User_PassWord ,Dept_Code ,Dept_Name ,User_TelNo ,User_EMail ,Remark from Sys_BaseUser where User_Code = ? and User_PassWord = ? 
+2019-09-04 09:15:25 -==> Parameters: admin(String), 202CB962AC59075B964B07152D234B70(String)
+2019-09-04 09:15:25 -<==      Total: 1
+2019-09-04 09:15:25 -Written [com.bean.Result@7bf022e0] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:15:25 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:15:25 -Successfully completed request
+2019-09-04 09:16:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:16:10 -==> Parameters: 
+2019-09-04 09:16:10 -<==      Total: 0
+2019-09-04 09:16:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:16:10 -==> Parameters: 
+2019-09-04 09:16:10 -<==      Total: 0
+2019-09-04 09:16:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:16:10 -==> Parameters: 
+2019-09-04 09:16:10 -<==      Total: 0
+2019-09-04 09:17:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:17:10 -==> Parameters: 
+2019-09-04 09:17:10 -<==      Total: 0
+2019-09-04 09:17:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:17:10 -==> Parameters: 
+2019-09-04 09:17:10 -<==      Total: 0
+2019-09-04 09:17:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:17:10 -==> Parameters: 
+2019-09-04 09:17:10 -<==      Total: 0
+2019-09-04 09:18:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:18:10 -==> Parameters: 
+2019-09-04 09:18:10 -<==      Total: 0
+2019-09-04 09:18:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:18:10 -==> Parameters: 
+2019-09-04 09:18:10 -<==      Total: 0
+2019-09-04 09:18:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:18:10 -==> Parameters: 
+2019-09-04 09:18:10 -<==      Total: 0
+2019-09-04 09:19:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:19:10 -==> Parameters: 
+2019-09-04 09:19:10 -<==      Total: 0
+2019-09-04 09:19:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:19:10 -==> Parameters: 
+2019-09-04 09:19:10 -<==      Total: 0
+2019-09-04 09:19:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:19:10 -==> Parameters: 
+2019-09-04 09:19:10 -<==      Total: 0
+2019-09-04 09:20:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:20:10 -==> Parameters: 
+2019-09-04 09:20:10 -<==      Total: 0
+2019-09-04 09:20:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:20:10 -==> Parameters: 
+2019-09-04 09:20:10 -<==      Total: 0
+2019-09-04 09:20:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:20:10 -==> Parameters: 
+2019-09-04 09:20:10 -<==      Total: 0
+2019-09-04 09:21:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:21:10 -==> Parameters: 
+2019-09-04 09:21:10 -<==      Total: 0
+2019-09-04 09:21:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:21:10 -==> Parameters: 
+2019-09-04 09:21:10 -<==      Total: 0
+2019-09-04 09:21:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:21:10 -==> Parameters: 
+2019-09-04 09:21:10 -<==      Total: 0
+2019-09-04 09:22:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:22:10 -==> Parameters: 
+2019-09-04 09:22:10 -<==      Total: 0
+2019-09-04 09:22:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:22:10 -==> Parameters: 
+2019-09-04 09:22:10 -<==      Total: 0
+2019-09-04 09:22:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:22:10 -==> Parameters: 
+2019-09-04 09:22:10 -<==      Total: 0
+2019-09-04 09:23:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:23:10 -==> Parameters: 
+2019-09-04 09:23:10 -<==      Total: 0
+2019-09-04 09:23:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:23:10 -==> Parameters: 
+2019-09-04 09:23:10 -<==      Total: 0
+2019-09-04 09:23:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:23:10 -==> Parameters: 
+2019-09-04 09:23:10 -<==      Total: 0
+2019-09-04 09:23:54 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E5%85%A5%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:23:54 -Looking up handler method for path /ERP单据明细表/查询入库单据
+2019-09-04 09:23:54 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询入库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:23:54 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_Type = 'DJ1' OR List_Type = 'DJ7' AND List_Falg = 0 
+2019-09-04 09:23:54 -==> Parameters: 
+2019-09-04 09:23:54 -<==      Total: 0
+2019-09-04 09:23:54 -Written [com.bean.Result@76e8720a] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:23:54 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:23:54 -Successfully completed request
+2019-09-04 09:24:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:24:10 -==> Parameters: 
+2019-09-04 09:24:10 -<==      Total: 0
+2019-09-04 09:24:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:24:10 -==> Parameters: 
+2019-09-04 09:24:10 -<==      Total: 0
+2019-09-04 09:24:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:24:10 -==> Parameters: 
+2019-09-04 09:24:10 -<==      Total: 0
+2019-09-04 09:25:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:25:10 -==> Parameters: 
+2019-09-04 09:25:10 -<==      Total: 0
+2019-09-04 09:25:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:25:10 -==> Parameters: 
+2019-09-04 09:25:10 -<==      Total: 0
+2019-09-04 09:25:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:25:10 -==> Parameters: 
+2019-09-04 09:25:10 -<==      Total: 0
+2019-09-04 09:26:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:26:10 -==> Parameters: 
+2019-09-04 09:26:10 -<==      Total: 0
+2019-09-04 09:26:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:26:10 -==> Parameters: 
+2019-09-04 09:26:10 -<==      Total: 0
+2019-09-04 09:26:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:26:10 -==> Parameters: 
+2019-09-04 09:26:10 -<==      Total: 0
+2019-09-04 09:27:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:27:10 -==> Parameters: 
+2019-09-04 09:27:10 -<==      Total: 0
+2019-09-04 09:27:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:27:10 -==> Parameters: 
+2019-09-04 09:27:10 -<==      Total: 0
+2019-09-04 09:27:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:27:10 -==> Parameters: 
+2019-09-04 09:27:10 -<==      Total: 0
+2019-09-04 09:28:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:28:10 -==> Parameters: 
+2019-09-04 09:28:10 -<==      Total: 0
+2019-09-04 09:28:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:28:10 -==> Parameters: 
+2019-09-04 09:28:10 -<==      Total: 0
+2019-09-04 09:28:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:28:10 -==> Parameters: 
+2019-09-04 09:28:10 -<==      Total: 0
+2019-09-04 09:29:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:29:10 -==> Parameters: 
+2019-09-04 09:29:10 -<==      Total: 0
+2019-09-04 09:29:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:29:10 -==> Parameters: 
+2019-09-04 09:29:10 -<==      Total: 0
+2019-09-04 09:29:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:29:10 -==> Parameters: 
+2019-09-04 09:29:10 -<==      Total: 0
+2019-09-04 09:29:43 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E5%85%A5%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:29:43 -Looking up handler method for path /ERP单据明细表/查询入库单据
+2019-09-04 09:29:43 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询入库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:29:43 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_Type = 'DJ1' OR List_Type = 'DJ7' AND List_Falg = 0 
+2019-09-04 09:29:43 -==> Parameters: 
+2019-09-04 09:29:43 -<==      Total: 1
+2019-09-04 09:29:43 -Written [com.bean.Result@7d7823b5] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:29:43 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:29:43 -Successfully completed request
+2019-09-04 09:30:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:30:10 -==> Parameters: 
+2019-09-04 09:30:10 -<==      Total: 0
+2019-09-04 09:30:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:30:10 -==> Parameters: 
+2019-09-04 09:30:10 -<==      Total: 0
+2019-09-04 09:30:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:30:10 -==> Parameters: 
+2019-09-04 09:30:10 -<==      Total: 0
+2019-09-04 09:30:14 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E5%B1%95%E7%A4%BA%E5%85%A5%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:30:14 -Looking up handler method for path /ERP单据明细表/展示入库单据
+2019-09-04 09:30:14 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.展示入库单据(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:30:15 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:30:15 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_No = ? AND List_Type = ? AND Material_Name = ? 
+2019-09-04 09:30:15 -==> Parameters: 1(String), DJ1(String), 重质碳酸钙(String)
+2019-09-04 09:30:15 -<==      Total: 1
+2019-09-04 09:30:15 -Written [com.bean.Result@307af149] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:30:15 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:30:15 -Successfully completed request
+2019-09-04 09:31:01 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E5%87%BA%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:31:01 -Looking up handler method for path /ERP单据明细表/查询出库单据
+2019-09-04 09:31:01 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询出库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:31:01 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_Type = 'DJ3' OR List_Type = 'DJ5' AND List_Falg = 0 OR List_Type = 'DJ6' AND List_Falg = 0 
+2019-09-04 09:31:01 -==> Parameters: 
+2019-09-04 09:31:01 -<==      Total: 1
+2019-09-04 09:31:01 -Written [com.bean.Result@3a6401a7] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:31:01 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:31:01 -Successfully completed request
+2019-09-04 09:31:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:31:10 -==> Parameters: 
+2019-09-04 09:31:10 -<==      Total: 0
+2019-09-04 09:31:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:31:10 -==> Parameters: 
+2019-09-04 09:31:10 -<==      Total: 0
+2019-09-04 09:31:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:31:10 -==> Parameters: 
+2019-09-04 09:31:10 -<==      Total: 0
+2019-09-04 09:31:28 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E5%B1%95%E7%A4%BA%E5%87%BA%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:31:28 -Looking up handler method for path /ERP单据明细表/展示出库单据
+2019-09-04 09:31:28 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.展示出库单据(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:31:28 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:31:28 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_No = ? AND List_Type = ? AND Material_Name = ? 
+2019-09-04 09:31:28 -==> Parameters: 2(String), DJ3(String), 枯草杆菌(String)
+2019-09-04 09:31:28 -<==      Total: 1
+2019-09-04 09:31:28 -Written [com.bean.Result@5cb66569] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:31:28 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:31:28 -Successfully completed request
+2019-09-04 09:32:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:32:10 -==> Parameters: 
+2019-09-04 09:32:10 -<==      Total: 0
+2019-09-04 09:32:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:32:10 -==> Parameters: 
+2019-09-04 09:32:10 -<==      Total: 0
+2019-09-04 09:32:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:32:10 -==> Parameters: 
+2019-09-04 09:32:10 -<==      Total: 0
+2019-09-04 09:32:23 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E8%B0%83%E6%8B%A8%E5%8D%95]
+2019-09-04 09:32:23 -Looking up handler method for path /ERP单据明细表/查询调拨单
+2019-09-04 09:32:23 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询调拨单(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:32:24 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_Type = 'DJ4' 
+2019-09-04 09:32:24 -==> Parameters: 
+2019-09-04 09:32:24 -<==      Total: 1
+2019-09-04 09:32:24 -Written [com.bean.Result@e589169] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:32:24 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:32:24 -Successfully completed request
+2019-09-04 09:33:07 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E4%BB%BB%E5%8A%A1]
+2019-09-04 09:33:07 -Looking up handler method for path /物流任务表/查询任务
+2019-09-04 09:33:07 -Returning handler method [public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.查询任务(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+2019-09-04 09:33:07 -Read [class com.bean.物流任务表] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:33:07 -==>  Preparing: select Task_No, List_No, [AGV_Code]=CASE WHEN [AGV_Code] = '1' THEN '01号车' WHEN [AGV_Code] = '2' THEN '02号车' ELSE 'NULL' END, Task_Type, Task_Status, Task_Priority, List_DetailNo, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Start_Station, End_Station, Batch_No, Qty, Remark, Start_Time, End_Time from IMOS_LO_Task WHERE Task_Status != 2 AND Task_Status != 3 AND Task_Status != 4 
+2019-09-04 09:33:07 -==> Parameters: 
+2019-09-04 09:33:07 -<==      Total: 0
+2019-09-04 09:33:07 -Written [com.bean.Result@2076ef31] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:33:07 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:33:07 -Successfully completed request
+2019-09-04 09:33:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:33:10 -==> Parameters: 
+2019-09-04 09:33:10 -<==      Total: 0
+2019-09-04 09:33:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:33:10 -==> Parameters: 
+2019-09-04 09:33:10 -<==      Total: 0
+2019-09-04 09:33:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:33:10 -==> Parameters: 
+2019-09-04 09:33:10 -<==      Total: 0
+2019-09-04 09:33:22 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E5%85%A5%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:33:22 -Looking up handler method for path /ERP单据明细表/查询入库单据
+2019-09-04 09:33:22 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询入库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:33:22 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_Type = 'DJ1' OR List_Type = 'DJ7' AND List_Falg = 0 
+2019-09-04 09:33:22 -==> Parameters: 
+2019-09-04 09:33:22 -<==      Total: 1
+2019-09-04 09:33:22 -Written [com.bean.Result@2d8baa0e] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:33:22 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:33:22 -Successfully completed request
+2019-09-04 09:33:24 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E5%B1%95%E7%A4%BA%E5%85%A5%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:33:24 -Looking up handler method for path /ERP单据明细表/展示入库单据
+2019-09-04 09:33:24 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.展示入库单据(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:33:24 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:33:24 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_No = ? AND List_Type = ? AND Material_Name = ? 
+2019-09-04 09:33:24 -==> Parameters: 1(String), DJ1(String), 重质碳酸钙(String)
+2019-09-04 09:33:24 -<==      Total: 1
+2019-09-04 09:33:24 -Written [com.bean.Result@3c82183b] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:33:24 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:33:24 -Successfully completed request
+2019-09-04 09:33:29 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E5%8E%9F%E6%96%99%E5%8F%91%E5%B8%83%E5%85%A5%E5%BA%93%E4%BB%BB%E5%8A%A1]
+2019-09-04 09:33:29 -Looking up handler method for path /物流任务表/原料发布入库任务
+2019-09-04 09:33:29 -Returning handler method [public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.原料发布入库任务(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)]
+2019-09-04 09:33:29 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:33:29 -==>  Preparing: select Material_Code ,Material_Name ,Bar_Code ,Material_TypeCode ,Material_TypeName ,Pallet_No ,Bin_No ,Bin_Type ,Bin_Status ,Bin_UseFlag ,Material_Spec ,Plan_No ,Batch_No ,Material_Weight ,Product_Date ,In_Date from IMOS_LO_Bin WHERE Bin_Status = '_' AND Bin_Type = 'E' 
+2019-09-04 09:33:29 -==> Parameters: 
+2019-09-04 09:33:29 -<==      Total: 20
+2019-09-04 09:33:29 -==>  Preparing: select Material_Code ,Material_Name ,Bar_Code ,Material_TypeCode ,Material_TypeName ,Pallet_No ,Bin_No ,Bin_Type ,Bin_Status ,Bin_UseFlag ,Material_Spec ,Plan_No ,Batch_No ,Material_Weight ,Product_Date ,In_Date from IMOS_LO_Bin WHERE Bin_Status = '_' AND Bin_Type = 'O' 
+2019-09-04 09:33:29 -==> Parameters: 
+2019-09-04 09:33:29 -<==      Total: 20
+2019-09-04 09:33:29 -==>  Preparing: insert into IMOS_LO_Task ( Task_No, List_No, AGV_Code, Task_Type, Task_Status, Task_Priority, List_DetailNo, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Start_Station, End_Station, Batch_No, Qty, Remark, Start_Time, End_Time ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-09-04 09:33:29 -==> Parameters: TH1909040001(String), 1(String), null, T(String), 0(String), 0(String), null, YL001(String), 重质碳酸钙(String), 1002(String), 重质碳酸钙(String), 5*5(String), B010101(String), 010203(String), 19090216CN1A(String), 1000.0(Double), null, null, null
+2019-09-04 09:33:29 -<==    Updates: 1
+2019-09-04 09:33:29 -==>  Preparing: update IMOS_LO_Bin set Bin_Status = ? where Bin_No = ? 
+2019-09-04 09:33:29 -==> Parameters: I(String), 010203(String)
+2019-09-04 09:33:29 -<==    Updates: 1
+2019-09-04 09:33:29 -Written [com.bean.Result@17ce965d] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:33:29 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:33:29 -Successfully completed request
+2019-09-04 09:33:29 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E5%AE%8C%E6%88%90%E5%85%A5%E5%BA%93]
+2019-09-04 09:33:29 -Looking up handler method for path /ERP单据明细表/完成入库
+2019-09-04 09:33:29 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.完成入库(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:33:29 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:33:30 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_No = ? and Material_Name = ? and Qty = ? 
+2019-09-04 09:33:30 -==> Parameters: 1(String), 重质碳酸钙(String), 10000.0(Double)
+2019-09-04 09:33:30 -<==      Total: 1
+2019-09-04 09:33:30 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE List_No = ? and Material_Name = ? 
+2019-09-04 09:33:30 -==> Parameters: 1(String), 重质碳酸钙(String)
+2019-09-04 09:33:30 -<==      Total: 1
+2019-09-04 09:33:30 -Written [com.bean.Result@11e95ab7] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:33:30 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:33:30 -Successfully completed request
+2019-09-04 09:34:04 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E5%B1%95%E7%A4%BA%E5%85%A5%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:34:04 -Looking up handler method for path /ERP单据明细表/展示入库单据
+2019-09-04 09:34:04 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.展示入库单据(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:34:04 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:34:04 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_No = ? AND List_Type = ? AND Material_Name = ? 
+2019-09-04 09:34:04 -==> Parameters: 1(String), DJ1(String), 重质碳酸钙(String)
+2019-09-04 09:34:04 -<==      Total: 1
+2019-09-04 09:34:04 -Written [com.bean.Result@262d7752] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:34:04 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:34:04 -Successfully completed request
+2019-09-04 09:34:04 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E5%85%A5%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:34:04 -Looking up handler method for path /ERP单据明细表/查询入库单据
+2019-09-04 09:34:04 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询入库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:34:04 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_Type = 'DJ1' OR List_Type = 'DJ7' AND List_Falg = 0 
+2019-09-04 09:34:04 -==> Parameters: 
+2019-09-04 09:34:04 -<==      Total: 1
+2019-09-04 09:34:04 -Written [com.bean.Result@241fd284] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:34:04 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:34:04 -Successfully completed request
+2019-09-04 09:34:06 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E5%B1%95%E7%A4%BA%E5%85%A5%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:34:06 -Looking up handler method for path /ERP单据明细表/展示入库单据
+2019-09-04 09:34:06 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.展示入库单据(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:34:06 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:34:06 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_No = ? AND List_Type = ? AND Material_Name = ? 
+2019-09-04 09:34:06 -==> Parameters: 1(String), DJ1(String), 重质碳酸钙(String)
+2019-09-04 09:34:06 -<==      Total: 1
+2019-09-04 09:34:06 -Written [com.bean.Result@7b590b9c] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:34:06 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:34:06 -Successfully completed request
+2019-09-04 09:34:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:34:10 -==> Parameters: 
+2019-09-04 09:34:10 -<==      Total: 0
+2019-09-04 09:34:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:34:10 -==> Parameters: 
+2019-09-04 09:34:10 -<==      Total: 0
+2019-09-04 09:34:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:34:10 -==> Parameters: 
+2019-09-04 09:34:10 -<==      Total: 0
+2019-09-04 09:34:31 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E4%BB%BB%E5%8A%A1]
+2019-09-04 09:34:31 -Looking up handler method for path /物流任务表/查询任务
+2019-09-04 09:34:31 -Returning handler method [public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.查询任务(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+2019-09-04 09:34:31 -Read [class com.bean.物流任务表] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:34:32 -==>  Preparing: select Task_No, List_No, [AGV_Code]=CASE WHEN [AGV_Code] = '1' THEN '01号车' WHEN [AGV_Code] = '2' THEN '02号车' ELSE 'NULL' END, Task_Type, Task_Status, Task_Priority, List_DetailNo, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Start_Station, End_Station, Batch_No, Qty, Remark, Start_Time, End_Time from IMOS_LO_Task WHERE Task_Status != 2 AND Task_Status != 3 AND Task_Status != 4 
+2019-09-04 09:34:32 -==> Parameters: 
+2019-09-04 09:34:32 -<==      Total: 1
+2019-09-04 09:34:32 -Written [com.bean.Result@225dcb01] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:34:32 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:34:32 -Successfully completed request
+2019-09-04 09:34:56 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E8%8E%B7%E5%8F%96%E4%BB%BB%E5%8A%A1%E4%BF%A1%E6%81%AF]
+2019-09-04 09:34:56 -Looking up handler method for path /物流任务表/获取任务信息
+2019-09-04 09:34:56 -Returning handler method [public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.获取任务信息(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+2019-09-04 09:34:56 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:34:56 -==>  Preparing: select Task_No, List_No, [AGV_Code]=CASE WHEN [AGV_Code] = '1' THEN '01号车' WHEN [AGV_Code] = '2' THEN '02号车' ELSE 'NULL' END, Task_Type, Task_Status, Task_Priority, List_DetailNo, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Start_Station, End_Station, Batch_No, Qty, Remark, Start_Time, End_Time from IMOS_LO_Task WHERE Task_No = ? 
+2019-09-04 09:34:56 -==> Parameters: TH1909040001(String)
+2019-09-04 09:34:56 -<==      Total: 1
+2019-09-04 09:34:56 -Written [com.bean.Result@7ee056b4] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:34:56 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:34:56 -Successfully completed request
+2019-09-04 09:35:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:35:10 -==> Parameters: 
+2019-09-04 09:35:10 -<==      Total: 0
+2019-09-04 09:35:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:35:10 -==> Parameters: 
+2019-09-04 09:35:10 -<==      Total: 0
+2019-09-04 09:35:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:35:10 -==> Parameters: 
+2019-09-04 09:35:10 -<==      Total: 0
+2019-09-04 09:35:32 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E8%B0%83%E6%8B%A8%E5%8D%95]
+2019-09-04 09:35:32 -Looking up handler method for path /ERP单据明细表/查询调拨单
+2019-09-04 09:35:32 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询调拨单(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:35:32 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_Type = 'DJ4' 
+2019-09-04 09:35:32 -==> Parameters: 
+2019-09-04 09:35:32 -<==      Total: 1
+2019-09-04 09:35:32 -Written [com.bean.Result@5ce488ca] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:35:32 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:35:32 -Successfully completed request
+2019-09-04 09:35:35 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E8%B0%83%E6%8B%A8]
+2019-09-04 09:35:35 -Looking up handler method for path /物流任务表/调拨
+2019-09-04 09:35:35 -Returning handler method [public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.调拨(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:35:35 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:35:35 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE Start_Station = ? and End_Station = ? 
+2019-09-04 09:35:35 -==> Parameters: 030202(String), 030301(String)
+2019-09-04 09:35:35 -<==      Total: 1
+2019-09-04 09:35:35 -==>  Preparing: insert into IMOS_LO_Task ( Task_No, List_No, AGV_Code, Task_Type, Task_Status, Task_Priority, List_DetailNo, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Start_Station, End_Station, Batch_No, Qty, Remark, Start_Time, End_Time ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-09-04 09:35:35 -==> Parameters: TH1909040002(String), null, null, E(String), 0(String), 0(String), null, CP001(String), 枯草杆菌(String), 1004(String), 枯草杆菌(String), 5*8(String), 030202(String), 030301(String), null, 1000.0(Double), 调拨(String), null, null
+2019-09-04 09:35:35 -<==    Updates: 1
+2019-09-04 09:35:35 -==>  Preparing: update IMOS_LO_Bin set Bin_Status = ? where Bin_No = ? 
+2019-09-04 09:35:35 -==> Parameters: O(String), 030202(String)
+2019-09-04 09:35:35 -<==    Updates: 1
+2019-09-04 09:35:36 -==>  Preparing: update IMOS_LO_Bin set Bin_Status = ? where Bin_No = ? 
+2019-09-04 09:35:36 -==> Parameters: I(String), 030301(String)
+2019-09-04 09:35:36 -<==    Updates: 1
+2019-09-04 09:35:36 -Written [com.bean.Result@30db0ad8] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:35:36 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:35:36 -Successfully completed request
+2019-09-04 09:36:00 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/ERP%E5%8D%95%E6%8D%AE%E6%98%8E%E7%BB%86%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E5%87%BA%E5%BA%93%E5%8D%95%E6%8D%AE]
+2019-09-04 09:36:00 -Looking up handler method for path /ERP单据明细表/查询出库单据
+2019-09-04 09:36:00 -Returning handler method [public com.bean.Result<java.util.List<com.bean.ERP单据明细表>> com.controller.ERP单据明细表Controller.查询出库单据(com.bean.ERP单据明细表,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:36:00 -==>  Preparing: select ID, List_No, List_Type, List_Falg, List_Status, List_Date, Operator_Code, Operator_Name, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Material_Unit, Qty, Plan_Qty, Base_Metering_Qty, Base_Metering_Unit, Metering_Unit, Batch_No, Product_Code, Object_Type, Business_Date, Plan_Start_Date, Plan_End_Date, Product_Return_Date, Store_Code, Start_Station, End_Station, Cost_Object, Cost_Center from IMOS_ERP_List WHERE List_Falg = 0 AND List_Type = 'DJ3' OR List_Type = 'DJ5' AND List_Falg = 0 OR List_Type = 'DJ6' AND List_Falg = 0 
+2019-09-04 09:36:00 -==> Parameters: 
+2019-09-04 09:36:00 -<==      Total: 1
+2019-09-04 09:36:00 -Written [com.bean.Result@7dbf1200] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:00 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:36:00 -Successfully completed request
+2019-09-04 09:36:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:36:10 -==> Parameters: 
+2019-09-04 09:36:10 -<==      Total: 0
+2019-09-04 09:36:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:36:10 -==> Parameters: 
+2019-09-04 09:36:10 -<==      Total: 0
+2019-09-04 09:36:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:36:10 -==> Parameters: 
+2019-09-04 09:36:10 -<==      Total: 0
+2019-09-04 09:36:26 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E4%BB%BB%E5%8A%A1]
+2019-09-04 09:36:26 -Looking up handler method for path /物流任务表/查询任务
+2019-09-04 09:36:26 -Returning handler method [public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.查询任务(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+2019-09-04 09:36:26 -Read [class com.bean.物流任务表] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:26 -==>  Preparing: select Task_No, List_No, [AGV_Code]=CASE WHEN [AGV_Code] = '1' THEN '01号车' WHEN [AGV_Code] = '2' THEN '02号车' ELSE 'NULL' END, Task_Type, Task_Status, Task_Priority, List_DetailNo, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Start_Station, End_Station, Batch_No, Qty, Remark, Start_Time, End_Time from IMOS_LO_Task WHERE Task_Status != 2 AND Task_Status != 3 AND Task_Status != 4 
+2019-09-04 09:36:26 -==> Parameters: 
+2019-09-04 09:36:26 -<==      Total: 2
+2019-09-04 09:36:26 -Written [com.bean.Result@4c06b719] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:26 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:36:26 -Successfully completed request
+2019-09-04 09:36:29 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E8%8E%B7%E5%8F%96%E4%BB%BB%E5%8A%A1%E4%BF%A1%E6%81%AF]
+2019-09-04 09:36:29 -Looking up handler method for path /物流任务表/获取任务信息
+2019-09-04 09:36:29 -Returning handler method [public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.获取任务信息(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+2019-09-04 09:36:29 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:29 -==>  Preparing: select Task_No, List_No, [AGV_Code]=CASE WHEN [AGV_Code] = '1' THEN '01号车' WHEN [AGV_Code] = '2' THEN '02号车' ELSE 'NULL' END, Task_Type, Task_Status, Task_Priority, List_DetailNo, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Start_Station, End_Station, Batch_No, Qty, Remark, Start_Time, End_Time from IMOS_LO_Task WHERE Task_No = ? 
+2019-09-04 09:36:29 -==> Parameters: TH1909040002(String)
+2019-09-04 09:36:30 -<==      Total: 1
+2019-09-04 09:36:30 -Written [com.bean.Result@5d34cb38] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:30 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:36:30 -Successfully completed request
+2019-09-04 09:36:31 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E5%BC%BA%E5%88%B6%E5%8F%96%E6%B6%88]
+2019-09-04 09:36:31 -Looking up handler method for path /物流任务表/强制取消
+2019-09-04 09:36:31 -Returning handler method [public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.强制取消(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:36:31 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:31 -==>  Preparing: update IMOS_LO_Task set Task_Status = ? where Task_No = ? 
+2019-09-04 09:36:31 -==> Parameters: 3(String), TH1909040002(String)
+2019-09-04 09:36:31 -<==    Updates: 1
+2019-09-04 09:36:31 -Written [com.bean.Result@22ee1451] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:31 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:36:31 -Successfully completed request
+2019-09-04 09:36:36 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E6%9F%A5%E8%AF%A2%E4%BB%BB%E5%8A%A1]
+2019-09-04 09:36:36 -Looking up handler method for path /物流任务表/查询任务
+2019-09-04 09:36:36 -Returning handler method [public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.查询任务(com.bean.物流任务表,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+2019-09-04 09:36:36 -Read [class com.bean.物流任务表] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:36 -==>  Preparing: select Task_No, List_No, [AGV_Code]=CASE WHEN [AGV_Code] = '1' THEN '01号车' WHEN [AGV_Code] = '2' THEN '02号车' ELSE 'NULL' END, Task_Type, Task_Status, Task_Priority, List_DetailNo, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Start_Station, End_Station, Batch_No, Qty, Remark, Start_Time, End_Time from IMOS_LO_Task WHERE Task_Status != 2 AND Task_Status != 3 AND Task_Status != 4 
+2019-09-04 09:36:36 -==> Parameters: 
+2019-09-04 09:36:36 -<==      Total: 1
+2019-09-04 09:36:36 -Written [com.bean.Result@7ae96c55] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:36 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:36:36 -Successfully completed request
+2019-09-04 09:36:38 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E8%8E%B7%E5%8F%96%E4%BB%BB%E5%8A%A1%E4%BF%A1%E6%81%AF]
+2019-09-04 09:36:38 -Looking up handler method for path /物流任务表/获取任务信息
+2019-09-04 09:36:38 -Returning handler method [public com.bean.Result<java.util.List<com.bean.物流任务表>> com.controller.物流任务表Controller.获取任务信息(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+2019-09-04 09:36:38 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:38 -==>  Preparing: select Task_No, List_No, [AGV_Code]=CASE WHEN [AGV_Code] = '1' THEN '01号车' WHEN [AGV_Code] = '2' THEN '02号车' ELSE 'NULL' END, Task_Type, Task_Status, Task_Priority, List_DetailNo, Material_Code, Material_Name, Material_Type_Code, Material_Type_Name, Material_Spec, Start_Station, End_Station, Batch_No, Qty, Remark, Start_Time, End_Time from IMOS_LO_Task WHERE Task_No = ? 
+2019-09-04 09:36:38 -==> Parameters: TH1909040001(String)
+2019-09-04 09:36:38 -<==      Total: 1
+2019-09-04 09:36:38 -Written [com.bean.Result@1bd170f2] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:38 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:36:38 -Successfully completed request
+2019-09-04 09:36:42 -DispatcherServlet with name 'dispatcherServlet' processing POST request for [/%E7%89%A9%E6%B5%81%E4%BB%BB%E5%8A%A1%E8%A1%A8/%E5%BC%BA%E5%88%B6%E5%8F%96%E6%B6%88]
+2019-09-04 09:36:42 -Looking up handler method for path /物流任务表/强制取消
+2019-09-04 09:36:42 -Returning handler method [public com.bean.Result<com.bean.物流任务表> com.controller.物流任务表Controller.强制取消(java.util.List<java.lang.String>,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)]
+2019-09-04 09:36:42 -Read [java.util.List<java.lang.String>] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:42 -==>  Preparing: update IMOS_LO_Task set Task_Status = ? where Task_No = ? 
+2019-09-04 09:36:42 -==> Parameters: 3(String), TH1909040001(String)
+2019-09-04 09:36:42 -<==    Updates: 1
+2019-09-04 09:36:42 -Written [com.bean.Result@63c99651] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@2709e075]
+2019-09-04 09:36:42 -Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2019-09-04 09:36:42 -Successfully completed request
+2019-09-04 09:37:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:37:10 -==> Parameters: 
+2019-09-04 09:37:10 -<==      Total: 2
+2019-09-04 09:37:10 -==>  Preparing: update IMOS_LO_Bin set Bin_Status = ? where Bin_No = ? 
+2019-09-04 09:37:10 -==> Parameters: _(String), 010203(String)
+2019-09-04 09:37:10 -<==    Updates: 1
+2019-09-04 09:37:10 -==>  Preparing: INSERT INTO IMOS_LO_Task_History SELECT [Task_No] ,[Company_Code] ,[Company_Name] ,[Factory_Code] ,[Factory_Name] ,[Product_Line_Code] ,[Product_Line_Name] ,[AGV_Code] ,[Task_Type] ,[Task_Status] ,[Task_Priority] ,[List_No] ,[List_DetailNo] ,[Material_Code] ,[Material_Name] ,[Material_Type_Code] ,[Material_Type_Name] ,[Material_Spec] ,[Pallet_No] ,[Batch_No] ,[Start_Station] ,[End_Station] ,[Creation_Time] ,[Start_Time] ,[End_Time] ,[Qty] ,[Remark] ,[Creation_Date] ,[Created_By] ,[Last_Update_Date] ,[Last_Updated_By] from dbo.IMOS_LO_Task where Task_No = ? 
+2019-09-04 09:37:10 -==> Parameters: TH1909040001(String)
+2019-09-04 09:37:10 -<==    Updates: 1
+2019-09-04 09:37:10 -==>  Preparing: delete from IMOS_LO_Task where Task_No = ? 
+2019-09-04 09:37:10 -==> Parameters: TH1909040001(String)
+2019-09-04 09:37:10 -<==    Updates: 1
+2019-09-04 09:37:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:37:10 -==> Parameters: 
+2019-09-04 09:37:10 -<==      Total: 1
+2019-09-04 09:37:10 -==>  Preparing: update IMOS_LO_Bin set Bin_Status = ? where Bin_No = ? 
+2019-09-04 09:37:10 -==> Parameters: $(String), 030202(String)
+2019-09-04 09:37:10 -<==    Updates: 1
+2019-09-04 09:37:10 -==>  Preparing: INSERT INTO IMOS_LO_Task_History SELECT [Task_No] ,[Company_Code] ,[Company_Name] ,[Factory_Code] ,[Factory_Name] ,[Product_Line_Code] ,[Product_Line_Name] ,[AGV_Code] ,[Task_Type] ,[Task_Status] ,[Task_Priority] ,[List_No] ,[List_DetailNo] ,[Material_Code] ,[Material_Name] ,[Material_Type_Code] ,[Material_Type_Name] ,[Material_Spec] ,[Pallet_No] ,[Batch_No] ,[Start_Station] ,[End_Station] ,[Creation_Time] ,[Start_Time] ,[End_Time] ,[Qty] ,[Remark] ,[Creation_Date] ,[Created_By] ,[Last_Update_Date] ,[Last_Updated_By] from dbo.IMOS_LO_Task where Task_No = ? 
+2019-09-04 09:37:10 -==> Parameters: TH1909040002(String)
+2019-09-04 09:37:10 -<==    Updates: 1
+2019-09-04 09:37:10 -==>  Preparing: delete from IMOS_LO_Task where Task_No = ? 
+2019-09-04 09:37:10 -==> Parameters: TH1909040002(String)
+2019-09-04 09:37:10 -<==    Updates: 1
+2019-09-04 09:37:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:37:10 -==> Parameters: 
+2019-09-04 09:37:10 -<==      Total: 0
+2019-09-04 09:38:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:38:10 -==> Parameters: 
+2019-09-04 09:38:10 -<==      Total: 0
+2019-09-04 09:38:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:38:10 -==> Parameters: 
+2019-09-04 09:38:10 -<==      Total: 0
+2019-09-04 09:38:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:38:10 -==> Parameters: 
+2019-09-04 09:38:10 -<==      Total: 0
+2019-09-04 09:39:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:39:10 -==> Parameters: 
+2019-09-04 09:39:10 -<==      Total: 0
+2019-09-04 09:39:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:39:10 -==> Parameters: 
+2019-09-04 09:39:10 -<==      Total: 0
+2019-09-04 09:39:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:39:10 -==> Parameters: 
+2019-09-04 09:39:10 -<==      Total: 0
+2019-09-04 09:40:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:40:10 -==> Parameters: 
+2019-09-04 09:40:10 -<==      Total: 0
+2019-09-04 09:40:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:40:10 -==> Parameters: 
+2019-09-04 09:40:10 -<==      Total: 0
+2019-09-04 09:40:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:40:10 -==> Parameters: 
+2019-09-04 09:40:10 -<==      Total: 0
+2019-09-04 09:41:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:41:10 -==> Parameters: 
+2019-09-04 09:41:10 -<==      Total: 0
+2019-09-04 09:41:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:41:10 -==> Parameters: 
+2019-09-04 09:41:10 -<==      Total: 0
+2019-09-04 09:41:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:41:10 -==> Parameters: 
+2019-09-04 09:41:10 -<==      Total: 0
+2019-09-04 09:42:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:42:10 -==> Parameters: 
+2019-09-04 09:42:10 -<==      Total: 0
+2019-09-04 09:42:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:42:10 -==> Parameters: 
+2019-09-04 09:42:10 -<==      Total: 0
+2019-09-04 09:42:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:42:10 -==> Parameters: 
+2019-09-04 09:42:10 -<==      Total: 0
+2019-09-04 09:43:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:43:10 -==> Parameters: 
+2019-09-04 09:43:10 -<==      Total: 0
+2019-09-04 09:43:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:43:10 -==> Parameters: 
+2019-09-04 09:43:10 -<==      Total: 0
+2019-09-04 09:43:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:43:10 -==> Parameters: 
+2019-09-04 09:43:10 -<==      Total: 0
+2019-09-04 09:44:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:44:10 -==> Parameters: 
+2019-09-04 09:44:10 -<==      Total: 0
+2019-09-04 09:44:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:44:10 -==> Parameters: 
+2019-09-04 09:44:10 -<==      Total: 0
+2019-09-04 09:44:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:44:10 -==> Parameters: 
+2019-09-04 09:44:10 -<==      Total: 0
+2019-09-04 09:45:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:45:10 -==> Parameters: 
+2019-09-04 09:45:10 -<==      Total: 0
+2019-09-04 09:45:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:45:10 -==> Parameters: 
+2019-09-04 09:45:10 -<==      Total: 0
+2019-09-04 09:45:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:45:10 -==> Parameters: 
+2019-09-04 09:45:10 -<==      Total: 0
+2019-09-04 09:46:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:46:10 -==> Parameters: 
+2019-09-04 09:46:10 -<==      Total: 0
+2019-09-04 09:46:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:46:10 -==> Parameters: 
+2019-09-04 09:46:10 -<==      Total: 0
+2019-09-04 09:46:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:46:10 -==> Parameters: 
+2019-09-04 09:46:10 -<==      Total: 0
+2019-09-04 09:47:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:47:10 -==> Parameters: 
+2019-09-04 09:47:10 -<==      Total: 0
+2019-09-04 09:47:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:47:10 -==> Parameters: 
+2019-09-04 09:47:10 -<==      Total: 0
+2019-09-04 09:47:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:47:10 -==> Parameters: 
+2019-09-04 09:47:10 -<==      Total: 0
+2019-09-04 09:48:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:48:10 -==> Parameters: 
+2019-09-04 09:48:10 -<==      Total: 0
+2019-09-04 09:48:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:48:10 -==> Parameters: 
+2019-09-04 09:48:10 -<==      Total: 0
+2019-09-04 09:48:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:48:10 -==> Parameters: 
+2019-09-04 09:48:10 -<==      Total: 0
+2019-09-04 09:49:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:49:10 -==> Parameters: 
+2019-09-04 09:49:10 -<==      Total: 0
+2019-09-04 09:49:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:49:10 -==> Parameters: 
+2019-09-04 09:49:10 -<==      Total: 0
+2019-09-04 09:49:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:49:10 -==> Parameters: 
+2019-09-04 09:49:10 -<==      Total: 0
+2019-09-04 09:50:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:50:10 -==> Parameters: 
+2019-09-04 09:50:10 -<==      Total: 0
+2019-09-04 09:50:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:50:10 -==> Parameters: 
+2019-09-04 09:50:10 -<==      Total: 0
+2019-09-04 09:50:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:50:10 -==> Parameters: 
+2019-09-04 09:50:10 -<==      Total: 0
+2019-09-04 09:51:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:51:10 -==> Parameters: 
+2019-09-04 09:51:10 -<==      Total: 0
+2019-09-04 09:51:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:51:10 -==> Parameters: 
+2019-09-04 09:51:10 -<==      Total: 0
+2019-09-04 09:51:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:51:10 -==> Parameters: 
+2019-09-04 09:51:10 -<==      Total: 0
+2019-09-04 09:52:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:52:10 -==> Parameters: 
+2019-09-04 09:52:10 -<==      Total: 0
+2019-09-04 09:52:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:52:10 -==> Parameters: 
+2019-09-04 09:52:10 -<==      Total: 0
+2019-09-04 09:52:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:52:10 -==> Parameters: 
+2019-09-04 09:52:10 -<==      Total: 0
+2019-09-04 09:53:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:53:10 -==> Parameters: 
+2019-09-04 09:53:10 -<==      Total: 0
+2019-09-04 09:53:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:53:10 -==> Parameters: 
+2019-09-04 09:53:10 -<==      Total: 0
+2019-09-04 09:53:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:53:10 -==> Parameters: 
+2019-09-04 09:53:10 -<==      Total: 0
+2019-09-04 09:54:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:54:10 -==> Parameters: 
+2019-09-04 09:54:10 -<==      Total: 0
+2019-09-04 09:54:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:54:10 -==> Parameters: 
+2019-09-04 09:54:10 -<==      Total: 0
+2019-09-04 09:54:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:54:10 -==> Parameters: 
+2019-09-04 09:54:10 -<==      Total: 0
+2019-09-04 09:55:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:55:10 -==> Parameters: 
+2019-09-04 09:55:10 -<==      Total: 0
+2019-09-04 09:55:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:55:10 -==> Parameters: 
+2019-09-04 09:55:10 -<==      Total: 0
+2019-09-04 09:55:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:55:10 -==> Parameters: 
+2019-09-04 09:55:10 -<==      Total: 0
+2019-09-04 09:56:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:56:10 -==> Parameters: 
+2019-09-04 09:56:10 -<==      Total: 0
+2019-09-04 09:56:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:56:10 -==> Parameters: 
+2019-09-04 09:56:10 -<==      Total: 0
+2019-09-04 09:56:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:56:10 -==> Parameters: 
+2019-09-04 09:56:10 -<==      Total: 0
+2019-09-04 09:57:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:57:10 -==> Parameters: 
+2019-09-04 09:57:10 -<==      Total: 0
+2019-09-04 09:57:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:57:10 -==> Parameters: 
+2019-09-04 09:57:10 -<==      Total: 0
+2019-09-04 09:57:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:57:10 -==> Parameters: 
+2019-09-04 09:57:10 -<==      Total: 0
+2019-09-04 09:58:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:58:10 -==> Parameters: 
+2019-09-04 09:58:10 -<==      Total: 0
+2019-09-04 09:58:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:58:10 -==> Parameters: 
+2019-09-04 09:58:10 -<==      Total: 0
+2019-09-04 09:58:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:58:10 -==> Parameters: 
+2019-09-04 09:58:10 -<==      Total: 0
+2019-09-04 09:59:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:59:10 -==> Parameters: 
+2019-09-04 09:59:10 -<==      Total: 0
+2019-09-04 09:59:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:59:10 -==> Parameters: 
+2019-09-04 09:59:10 -<==      Total: 0
+2019-09-04 09:59:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 09:59:10 -==> Parameters: 
+2019-09-04 09:59:10 -<==      Total: 0
+2019-09-04 10:00:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 10:00:10 -==> Parameters: 
+2019-09-04 10:00:10 -<==      Total: 0
+2019-09-04 10:00:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 10:00:10 -==> Parameters: 
+2019-09-04 10:00:10 -<==      Total: 0
+2019-09-04 10:00:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 10:00:10 -==> Parameters: 
+2019-09-04 10:00:10 -<==      Total: 0
+2019-09-04 10:01:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 10:01:10 -==> Parameters: 
+2019-09-04 10:01:10 -<==      Total: 0
+2019-09-04 10:01:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 10:01:10 -==> Parameters: 
+2019-09-04 10:01:10 -<==      Total: 0
+2019-09-04 10:01:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 10:01:10 -==> Parameters: 
+2019-09-04 10:01:10 -<==      Total: 0
+2019-09-04 10:02:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 10:02:10 -==> Parameters: 
+2019-09-04 10:02:10 -<==      Total: 0
+2019-09-04 10:02:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 10:02:10 -==> Parameters: 
+2019-09-04 10:02:10 -<==      Total: 0
+2019-09-04 10:02:10 -==>  Preparing: select Task_No ,List_No ,AGV_Code ,Task_Type ,Task_Status ,Task_Priority ,List_DetailNo ,Material_Code ,Material_Name ,Material_Type_Code ,Material_Type_Name ,Material_Spec ,Start_Station ,End_Station ,Batch_No ,Qty ,Remark ,Start_Time ,End_Time from IMOS_LO_Task WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4 
+2019-09-04 10:02:10 -==> Parameters: 
+2019-09-04 10:02:10 -<==      Total: 0

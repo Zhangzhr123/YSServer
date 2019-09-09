@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserDao">
+	<!-- =========================================================== -->
+	<!-- 定义resultMap        Created by zzr on 2019/06/10                                                                                                                                              -->
+	<!-- =========================================================== -->
+	<resultMap id="UserMap" type="com.bean.User">
+		<id property="用户编号" column="User_Code" jdbcType="VARCHAR"/>
+		<result property="用户名称" column="User_Name" jdbcType="VARCHAR"/>
+		<result property="用户密码" column="User_PassWord" jdbcType="VARCHAR"/>
+		<result property="部门编号" column="Dept_Code" jdbcType="VARCHAR"/>
+		<result property="部门名称" column="Dept_Name" jdbcType="VARCHAR"/>
+		<result property="用户手机" column="User_TelNo" jdbcType="VARCHAR"/>
+		<result property="用户邮箱" column="User_EMail" jdbcType="VARCHAR"/>
+		<result property="备注" column="Remark" jdbcType="VARCHAR"/>
+	</resultMap>
+	<!-- =========================================================== -->
+	<!-- 一些公共变量设置                                                                                                                                                                             -->
+	<!-- =========================================================== -->
+	<!-- 字段 -->
+	<sql id="Base_Column_List" >
+		User_Code
+		,User_Name
+		,User_PassWord
+		,Dept_Code
+		,Dept_Name
+		,User_TelNo
+		,User_EMail
+		,Remark
+	</sql>
+	<!-- =========================================================== -->
+	<!-- 基本增删改查方法                                                                                                    		 -->
+	<!-- =========================================================== -->
+	<insert id="insert" parameterType="com.bean.User" >
+		insert into Sys_BaseUser
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			User_Code,
+			User_Name,
+			User_PassWord,
+			Dept_Code,
+			Dept_Name,
+			User_TelNo,
+			User_EMail,
+			Remark,
+		</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			#{用户编号, jdbcType=VARCHAR},
+			#{用户名称, jdbcType=VARCHAR},
+			#{用户密码, jdbcType=VARCHAR},
+			#{部门编号, jdbcType=VARCHAR},
+			#{部门名称, jdbcType=VARCHAR},
+			#{用户手机, jdbcType=VARCHAR},
+			#{用户邮箱, jdbcType=VARCHAR},
+			#{备注, jdbcType=VARCHAR},
+		</trim>
+	</insert>
+	<insert id="insertSelective" parameterType="com.bean.User" >
+		insert into Sys_BaseUser
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="用户编号 != null">
+				User_Code,
+			</if>
+			<if test="用户名称 != null">
+				User_Name,
+			</if>
+			<if test="用户密码 != null">
+				User_PassWord,
+			</if>
+			<if test="部门编号 != null">
+				Dept_Code,
+			</if>
+			<if test="部门名称 != null">
+				Dept_Name,
+			</if>
+			<if test="用户手机 != null">
+				User_TelNo,
+			</if>
+			<if test="用户邮箱 != null">
+				User_EMail,
+			</if>
+			<if test="备注 != null">
+				Remark,
+			</if>
+		</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="用户编号 != null">
+				#{用户编号, jdbcType=VARCHAR},
+			</if>
+			<if test="用户名称 != null">
+				#{用户名称, jdbcType=VARCHAR},
+			</if>
+			<if test="用户密码 != null">
+				#{用户密码, jdbcType=VARCHAR},
+			</if>
+			<if test="部门编号 != null">
+				#{部门编号, jdbcType=VARCHAR},
+			</if>
+			<if test="部门名称 != null">
+				#{部门名称, jdbcType=VARCHAR},
+			</if>
+			<if test="用户手机 != null">
+				#{用户手机, jdbcType=VARCHAR},
+			</if>
+			<if test="用户邮箱 != null">
+				#{用户邮箱, jdbcType=VARCHAR},
+			</if>
+			<if test="备注 != null">
+				#{备注, jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<delete id="delete" parameterType="java.lang.String">
+		update Sys_BaseUser
+		set deleteFlag = 1, updateTime = GETDATE()
+		where User_Code = #{用户编号}
+	</delete>
+	<delete id="deleteAll">
+		update Sys_BaseUser
+		set deleteFlag = 1, updateTime = GETDATE()
+		where User_Code  in
+		<foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	<update id="update" parameterType="com.bean.User">
+		update Sys_BaseUser
+		set
+		User_Code = #{用户编号, jdbcType=VARCHAR}
+		,User_Name = #{用户名称, jdbcType=VARCHAR}
+		,User_PassWord = #{用户密码, jdbcType=VARCHAR}
+		,Dept_Code = #{部门编号, jdbcType=VARCHAR}
+		,Dept_Name = #{部门名称, jdbcType=VARCHAR}
+		,User_TelNo = #{用户手机, jdbcType=VARCHAR}
+		,User_EMail = #{用户邮箱, jdbcType=VARCHAR}
+		,Remark = #{备注, jdbcType=VARCHAR}
+		where User_Code = #{用户编号}
+	</update>
+	<update id="updateSelective" parameterType="com.bean.User">
+		update Sys_BaseUser
+		<set>
+			<if test="用户编号!= null">
+				User_Code = #{用户编号, jdbcType=VARCHAR},
+			</if>
+			<if test="用户名称!= null">
+				User_Name = #{用户名称, jdbcType=VARCHAR},
+			</if>
+			<if test="用户密码!= null">
+				User_PassWord = #{password, jdbcType=VARCHAR},
+			</if>
+			<if test="部门编号!= null">
+				Dept_Code = #{部门编号, jdbcType=VARCHAR},
+			</if>
+			<if test="部门名称!= null">
+				Dept_Name = #{部门名称, jdbcType=VARCHAR},
+			</if>
+			<if test="用户手机!= null">
+				User_TelNo = #{用户手机, jdbcType=VARCHAR},
+			</if>
+			<if test="用户邮箱!= null">
+				User_EMail = #{用户邮箱, jdbcType=VARCHAR},
+			</if>
+			<if test="备注!= null">
+				Remark = #{备注, jdbcType=VARCHAR},
+			</if>
+		</set>
+		where User_Code = #{用户编号}
+	</update>
+	<select id="selectByPrimaryKey" resultMap="UserMap" parameterType="java.lang.String" >
+		select
+		<include refid="Base_Column_List" />
+		from Sys_BaseUser
+		where User_Code = #{用户编号}
+	</select>
+	<select id="selectAll" resultMap="UserMap" >
+		select
+		<include refid="Base_Column_List" />
+		from  Sys_BaseUser
+	</select>
+	<select id="selectBySelectiveCount" resultType="java.lang.Long" parameterType="com.bean.User">
+		select
+		count(User_Code) c
+		from Sys_BaseUser
+		<where>
+			<if test="用户名称 != null and 用户名称 != '' ">
+				and User_Name = #{用户名称, jdbcType=VARCHAR}
+			</if>
+			<if test="用户密码!= null and 用户密码 != '' ">
+				and User_PassWord = #{用户密码, jdbcType=VARCHAR}
+			</if>
+
+			<if test="部门编号 != null  and 部门编号 != '' ">
+				and Dept_Code = #{部门编号, jdbcType=VARCHAR}
+			</if>
+
+			<if test="部门名称 != null and 部门名称 != '' ">
+				and Dept_Name = #{部门名称, jdbcType=VARCHAR}
+			</if>
+
+			<if test="用户手机 != null and 用户手机 != '' ">
+				and User_TelNo = #{用户手机, jdbcType=VARCHAR}
+			</if>
+
+			<if test="用户邮箱 != null and 用户邮箱 != '' ">
+				and User_EMail = #{用户邮箱, jdbcType=VARCHAR}
+			</if>
+
+			<if test="备注 != null and 备注 != '' ">
+				and Remark = #{备注, jdbcType=VARCHAR}
+			</if>
+
+		</where>
+	</select>
+	<select id="selectBySelective" resultMap="UserMap" parameterType="com.bean.User">
+		select
+		<include refid="Base_Column_List" />
+		from Sys_BaseUser
+		<where>
+			<if test="用户编号 != null and 用户编号 != '' ">
+				and User_Code = #{用户编号, jdbcType=VARCHAR}
+			</if>
+			<if test="用户名称 != null and 用户名称 != '' ">
+				and User_Name = #{用户名称, jdbcType=VARCHAR}
+			</if>
+			<if test="用户密码!= null and 用户密码 != '' ">
+				and User_PassWord = #{用户密码, jdbcType=VARCHAR}
+			</if>
+			<if test="部门编号 != null and 部门编号 != '' ">
+				and Dept_Code = #{部门编号, jdbcType=VARCHAR}
+			</if>
+			<if test="部门名称 != null and name != '' ">
+				and Dept_Name = #{部门名称, jdbcType=VARCHAR}
+			</if>
+			<if test="用户手机 != null and 用户手机 != '' ">
+				and User_TelNo = #{用户手机, jdbcType=VARCHAR}
+			</if>
+			<if test="用户邮箱 != null and 用户邮箱 != '' ">
+				and User_EMail = #{用户邮箱, jdbcType=VARCHAR}
+			</if>
+			<if test="备注 != null and 备注 != '' ">
+				and Remark = #{备注, jdbcType=VARCHAR}
+			</if>
+		</where>
+	</select>
+	<select id="login" resultMap="UserMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+        from Sys_BaseUser
+		where User_Code = #{用户编号} and User_PassWord = #{用户密码}
+	</select>
+</mapper>

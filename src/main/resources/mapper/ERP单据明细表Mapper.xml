@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ERP单据明细表Dao">
+    <!-- =========================================================== -->
+    <!-- 定义resultMap                 Created by zzr on 2019/06/10                                                                                                                                                            -->
+    <!-- =========================================================== -->
+    <resultMap id="ERP单据明细表Map" type="com.bean.ERP单据明细表">
+        <id property="ID" column="ID" jdbcType="INTEGER"/>
+        <result property="单据编号" column="List_No" jdbcType="VARCHAR"/>
+        <result property="单据类型" column="List_Type" jdbcType="VARCHAR"/>
+        <result property="单据标识" column="List_Falg" jdbcType="INTEGER"/>
+        <result property="单据状态" column="List_Status" jdbcType="VARCHAR"/>
+        <result property="单据日期" column="List_Date" jdbcType="TIMESTAMP"/>
+        <result property="操作人编号" column="Operator_Code" jdbcType="VARCHAR"/>
+        <result property="操作人名称" column="Operator_Name" jdbcType="VARCHAR"/>
+        <result property="物料编号" column="Material_Code" jdbcType="VARCHAR"/>
+        <result property="物料名称" column="Material_Name" jdbcType="VARCHAR"/>
+        <result property="类型代码" column="Material_Type_Code" jdbcType="VARCHAR"/>
+        <result property="类型名称" column="Material_Type_Name" jdbcType="VARCHAR"/>
+        <result property="物料规格" column="Material_Spec" jdbcType="VARCHAR"/>
+        <result property="物料单位" column="Material_Unit" jdbcType="VARCHAR"/>
+        <result property="数量" column="Qty" jdbcType="NUMERIC"/>
+        <result property="计划数量" column="Plan_Qty" jdbcType="NUMERIC"/>
+        <result property="基本计量单位数量" column="Base_Metering_Qty" jdbcType="NUMERIC"/>
+        <result property="基本计量单位" column="Base_Metering_Unit" jdbcType="VARCHAR"/>
+        <result property="计量单位" column="Metering_Unit" jdbcType="VARCHAR"/>
+        <result property="批次" column="Batch_No" jdbcType="VARCHAR"/>
+        <result property="产品编码" column="Product_Code" jdbcType="VARCHAR"/>
+        <result property="事物类型" column="Object_Type" jdbcType="VARCHAR"/>
+        <result property="业务日期" column="Business_Date" jdbcType="TIMESTAMP"/>
+        <result property="计划开工日期" column="Plan_Start_Date" jdbcType="TIMESTAMP"/>
+        <result property="计划完工日期" column="Plan_End_Date" jdbcType="TIMESTAMP"/>
+        <result property="生产订单回传日期" column="Product_Return_Date" jdbcType="TIMESTAMP"/>
+        <result property="仓库" column="Store_Code" jdbcType="VARCHAR"/>
+        <result property="起始站点" column="Start_Station" jdbcType="VARCHAR"/>
+        <result property="目的站点" column="End_Station" jdbcType="VARCHAR"/>
+        <result property="成本对象" column="Cost_Object" jdbcType="VARCHAR"/>
+        <result property="成本中心" column="Cost_Center" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!-- =========================================================== -->
+    <!-- 一些公共变量设置                                                                                                                                                                             -->
+    <!-- =========================================================== -->
+    <!-- 字段 -->
+    <sql id="Base_Column_List" >
+        ID,
+        List_No,
+        List_Type,
+        List_Falg,
+        List_Status,
+        List_Date,
+        Operator_Code,
+        Operator_Name,
+        Material_Code,
+        Material_Name,
+        Material_Type_Code,
+        Material_Type_Name,
+        Material_Spec,
+        Material_Unit,
+        Qty,
+        Plan_Qty,
+        Base_Metering_Qty,
+        Base_Metering_Unit,
+        Metering_Unit,
+        Batch_No,
+        Product_Code,
+        Object_Type,
+        Business_Date,
+        Plan_Start_Date,
+        Plan_End_Date,
+        Product_Return_Date,
+        Store_Code,
+        Start_Station,
+        End_Station,
+        Cost_Object,
+        Cost_Center
+    </sql>
+    <!-- =========================================================== -->
+    <!-- 基本增删改查方法                                                                                                    		 -->
+    <!-- =========================================================== -->
+    <insert id="insert" parameterType="com.bean.ERP单据明细表" >
+        insert into IMOS_ERP_List
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            List_No,
+            List_Type,
+            List_Falg,
+            List_Status,
+            List_Date,
+            Operator_Code,
+            Operator_Name,
+            Material_Code,
+            Material_Name,
+            Material_Type_Code,
+            Material_Type_Name,
+            Material_Spec,
+            Material_Unit,
+            Qty,
+            Plan_Qty,
+            Base_Metering_Qty,
+            Base_Metering_Unit,
+            Metering_Unit,
+            Batch_No,
+            Product_Code,
+            Object_Type,
+            Business_Date,
+            Plan_Start_Date,
+            Plan_End_Date,
+            Product_Return_Date,
+            Store_Code,
+            Start_Station,
+            End_Station,
+            Cost_Object,
+            Cost_Center
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            #{单据编号, jdbcType=VARCHAR},
+            #{单据类型, jdbcType=VARCHAR},
+            #{单据标识, jdbcType=INTEGER},
+            #{单据状态, jdbcType=VARCHAR},
+            #{单据日期, jdbcType=TIMESTAMP},
+            #{操作人编号, jdbcType=VARCHAR},
+            #{操作人名称, jdbcType=VARCHAR},
+            #{物料编号, jdbcType=VARCHAR},
+            #{物料名称, jdbcType=VARCHAR},
+            #{类型代码, jdbcType=VARCHAR},
+            #{类型名称, jdbcType=VARCHAR},
+            #{物料规格, jdbcType=VARCHAR},
+            #{物料单位, jdbcType=VARCHAR},
+            #{数量, jdbcType=NUMERIC},
+            #{计划数量, jdbcType=NUMERIC},
+            #{基本计量单位数量, jdbcType=NUMERIC},
+            #{基本计量单位, jdbcType=VARCHAR},
+            #{计量单位, jdbcType=VARCHAR},
+            #{批次, jdbcType=VARCHAR},
+            #{产品编码, jdbcType=VARCHAR},
+            #{事物类型, jdbcType=VARCHAR},
+            #{业务日期, jdbcType=TIMESTAMP},
+            #{计划开工日期, jdbcType=TIMESTAMP},
+            #{计划完工日期, jdbcType=TIMESTAMP},
+            #{生产订单回传日期, jdbcType=TIMESTAMP},
+            #{仓库, jdbcType=VARCHAR},
+            #{起始站点, jdbcType=VARCHAR},
+            #{目的站点, jdbcType=VARCHAR},
+            #{成本对象, jdbcType=VARCHAR},
+            #{成本中心, jdbcType=VARCHAR}
+        </trim>
+    </insert>
+    <insert id="insertSelective" parameterType="com.bean.ERP单据明细表" >
+        insert into IMOS_ERP_List
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="单据编号 != null">
+                List_No,
+            </if>
+            <if test="单据类型 != null">
+                List_Type,
+            </if>
+            <if test="单据标识 != null">
+                List_Falg,
+            </if>
+            <if test="单据状态 != null">
+                List_Status,
+            </if>
+            <if test="单据日期 != null">
+                List_Date,
+            </if>
+            <if test="操作人编号 != null">
+                Operator_Code,
+            </if>
+            <if test="操作人名称 != null">
+                Operator_Name,
+            </if>
+            <if test="物料编号 != null">
+                Material_Code,
+            </if>
+            <if test="物料名称 != null">
+                Material_Name,
+            </if>
+            <if test="类型代码 != null">
+                Material_Type_Code,
+            </if>
+            <if test="类型名称 != null">
+                Material_Type_Name,
+            </if>
+            <if test="物料规格 != null">
+                Material_Spec,
+            </if>
+            <if test="物料单位 != null">
+                Material_Unit,
+            </if>
+            <if test="数量 != null">
+                Qty,
+            </if>
+            <if test="计划数量 != null">
+                Plan_Qty,
+            </if>
+            <if test="基本计量单位数量 != null">
+                Base_Metering_Qty,
+            </if>
+            <if test="基本计量单位 != null">
+                Base_Metering_Unit,
+            </if>
+            <if test="计量单位 != null">
+                Metering_Unit,
+            </if>
+            <if test="批次 != null">
+                Batch_No,
+            </if>
+            <if test="产品编码 != null">
+                Product_Code,
+            </if>
+            <if test="事物类型 != null">
+                Object_Type,
+            </if>
+            <if test="业务日期 != null">
+                Business_Date,
+            </if>
+            <if test="计划开工日期 != null">
+                Plan_Start_Date,
+            </if>
+            <if test="计划完工日期 != null">
+                Plan_End_Date,
+            </if>
+            <if test="生产订单回传日期 != null">
+                Product_Return_Date,
+            </if>
+            <if test="仓库 != null">
+                Store_Code,
+            </if>
+            <if test="起始站点 != null">
+                Start_Station,
+            </if>
+            <if test="目的站点 != null">
+                End_Station,
+            </if>
+            <if test="成本对象 != null">
+                Cost_Object,
+            </if>
+            <if test="成本中心 != null">
+                Cost_Center,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="单据编号 != null">
+                #{单据编号, jdbcType=VARCHAR},
+            </if>
+            <if test="单据类型 != null">
+                #{单据类型, jdbcType=VARCHAR},
+            </if>
+            <if test="单据标识 != null">
+                #{单据标识, jdbcType=INTEGER},
+            </if>
+            <if test="单据状态 != null">
+                #{单据状态, jdbcType=VARCHAR},
+            </if>
+            <if test="单据日期 != null">
+                #{单据日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="操作人编号 != null">
+                #{操作人编号, jdbcType=VARCHAR},
+            </if>
+            <if test="操作人名称 != null">
+                #{操作人名称, jdbcType=VARCHAR},
+            </if>
+            <if test="物料编号 != null">
+                #{物料编号, jdbcType=VARCHAR},
+            </if>
+            <if test="物料名称 != null">
+                #{物料名称, jdbcType=VARCHAR},
+            </if>
+            <if test="类型代码 != null">
+                #{类型代码, jdbcType=VARCHAR},
+            </if>
+            <if test="类型名称 != null">
+                #{类型名称, jdbcType=VARCHAR},
+            </if>
+            <if test="物料规格 != null">
+                #{物料规格, jdbcType=VARCHAR},
+            </if>
+            <if test="物料单位 != null">
+                #{物料单位, jdbcType=VARCHAR},
+            </if>
+            <if test="数量 != null">
+                #{数量, jdbcType=NUMERIC},
+            </if>
+            <if test="计划数量 != null">
+                #{计划数量, jdbcType=NUMERIC},
+            </if>
+            <if test="基本计量单位数量 != null">
+                #{基本计量单位数量, jdbcType=NUMERIC},
+            </if>
+            <if test="基本计量单位 != null">
+                #{基本计量单位, jdbcType=VARCHAR},
+            </if>
+            <if test="计量单位 != null">
+                #{计量单位, jdbcType=VARCHAR},
+            </if>
+            <if test="批次 != null">
+                #{批次, jdbcType=VARCHAR},
+            </if>
+            <if test="产品编码 != null">
+                #{产品编码, jdbcType=VARCHAR},
+            </if>
+            <if test="事物类型 != null">
+                #{事物类型, jdbcType=VARCHAR},
+            </if>
+            <if test="业务日期 != null">
+                #{业务日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="计划开工日期 != null">
+                #{计划开工日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="计划完工日期 != null">
+                #{计划完工日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="生产订单回传日期 != null">
+                #{生产订单回传日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="仓库 != null">
+                #{仓库, jdbcType=VARCHAR},
+            </if>
+            <if test="起始站点 != null">
+                #{起始站点, jdbcType=VARCHAR},
+            </if>
+            <if test="目的站点 != null">
+                #{目的站点, jdbcType=VARCHAR},
+            </if>
+            <if test="成本对象 != null">
+                #{成本对象, jdbcType=VARCHAR},
+            </if>
+            <if test="成本中心 != null">
+                #{成本中心, jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <delete id="delete" parameterType="java.lang.String">
+        update IMOS_ERP_List
+        set deleteFlag = 1, updateTime = GETDATE()
+        where List_No = #{单据编号}
+    </delete>
+    <delete id="deleteAll">
+        update IMOS_ERP_List
+        set deleteFlag = 1, updateTime = GETDATE()
+        where List_No  in
+        <foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+    <update id="update" parameterType="com.bean.ERP单据明细表">
+        update IMOS_ERP_List
+        set
+        List_No = #{单据编号, jdbcType=VARCHAR},
+        List_Type = #{单据类型, jdbcType=VARCHAR},
+        List_Falg = #{单据标识, jdbcType=INTEGER},
+        List_Status = #{单据状态, jdbcType=VARCHAR},
+        List_Date = #{单据日期, jdbcType=TIMESTAMP},
+        Operator_Code = #{操作人编号, jdbcType=VARCHAR},
+        Operator_Name = #{操作人名称, jdbcType=VARCHAR},
+        Material_Code = #{物料编号, jdbcType=VARCHAR},
+        Material_Name = #{物料名称, jdbcType=VARCHAR},
+        Material_Type_Code = #{类型代码, jdbcType=VARCHAR},
+        Material_Type_Name = #{类型名称, jdbcType=VARCHAR},
+        Material_Spec = #{物料规格, jdbcType=VARCHAR},
+        Material_Unit = #{物料单位, jdbcType=VARCHAR},
+        Qty = #{数量, jdbcType=NUMERIC},
+        Plan_Qty = #{计划数量, jdbcType=NUMERIC},
+        Base_Metering_Qty = #{基本计量单位数量, jdbcType=NUMERIC},
+        Base_Metering_Unit = #{基本计量单位, jdbcType=VARCHAR},
+        Metering_Unit = #{计量单位, jdbcType=VARCHAR},
+        Batch_No = #{批次, jdbcType=VARCHAR},
+        Product_Code = #{产品编码, jdbcType=VARCHAR},
+        Object_Type = #{事物类型, jdbcType=VARCHAR},
+        Business_Date = #{业务日期, jdbcType=TIMESTAMP},
+        Plan_Start_Date = #{计划开工日期, jdbcType=TIMESTAMP},
+        Plan_End_Date = #{计划完工日期, jdbcType=TIMESTAMP},
+        Product_Return_Date = #{生产订单回传日期, jdbcType=TIMESTAMP},
+        Store_Code = #{仓库, jdbcType=VARCHAR},
+        Start_Station = #{起始站点, jdbcType=VARCHAR},
+        End_Station = #{目的站点, jdbcType=VARCHAR},
+        Cost_Object = #{成本对象, jdbcType=VARCHAR},
+        Cost_Center = #{成本中心, jdbcType=VARCHAR}
+        where List_No = #{单据编号}
+    </update>
+    <update id="updateSelective" parameterType="com.bean.ERP单据明细表">
+        update IMOS_ERP_List
+        <set>
+            <if test="单据编号!= null">
+                List_No = #{单据编号, jdbcType=VARCHAR},
+            </if>
+            <if test="单据类型!= null">
+                List_Type = #{单据类型, jdbcType=VARCHAR},
+            </if>
+            <if test="单据标识!= null">
+                List_Falg = #{单据标识, jdbcType=INTEGER},
+            </if>
+            <if test="单据状态!= null">
+                List_Status = #{单据状态, jdbcType=VARCHAR},
+            </if>
+            <if test="单据日期!= null">
+                List_Date = #{单据日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="操作人编号!= null">
+                Operator_Code = #{操作人编号, jdbcType=VARCHAR},
+            </if>
+            <if test="操作人名称!= null">
+                Operator_Name = #{操作人名称, jdbcType=VARCHAR},
+            </if>
+            <if test="物料编号!= null">
+                Material_Code = #{物料编号, jdbcType=VARCHAR},
+            </if>
+            <if test="物料名称!= null">
+                Material_Name = #{物料名称, jdbcType=VARCHAR},
+            </if>
+            <if test="类型代码!= null">
+                Material_Type_Code = #{类型代码, jdbcType=VARCHAR},
+            </if>
+            <if test="类型名称 != null">
+                Material_Type_Name = #{类型名称, jdbcType=VARCHAR},
+            </if>
+            <if test="物料规格 != null">
+                Material_Spec = #{物料规格, jdbcType=VARCHAR},
+            </if>
+            <if test="物料单位 != null">
+                Material_Unit = #{物料单位, jdbcType=VARCHAR},
+            </if>
+            <if test="数量 != null">
+                Qty = #{数量, jdbcType=NUMERIC},
+            </if>
+            <if test="计划数量 != null">
+                Plan_Qty = #{计划数量, jdbcType=NUMERIC},
+            </if>
+            <if test="基本计量单位数量 != null">
+                Base_Metering_Qty = #{基本计量单位数量, jdbcType=NUMERIC},
+            </if>
+            <if test="基本计量单位 != null">
+                Base_Metering_Unit = #{基本计量单位, jdbcType=VARCHAR},
+            </if>
+            <if test="计量单位 != null">
+                Metering_Unit = #{计量单位, jdbcType=VARCHAR},
+            </if>
+            <if test="批次 != null">
+                Batch_No = #{批次, jdbcType=VARCHAR},
+            </if>
+            <if test="产品编码 != null">
+                Product_Code = #{产品编码, jdbcType=VARCHAR},
+            </if>
+            <if test="事物类型 != null">
+                Object_Type = #{事物类型, jdbcType=VARCHAR},
+            </if>
+            <if test="业务日期 != null">
+                Business_Date = #{业务日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="计划开工日期 != null">
+                Plan_Start_Date = #{计划开工日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="计划完工日期 != null">
+                Plan_End_Date = #{计划完工日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="生产订单回传日期 != null">
+                Product_Return_Date = #{生产订单回传日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="仓库 != null">
+                Store_Code = #{仓库, jdbcType=VARCHAR},
+            </if>
+            <if test="起始站点 != null">
+                Start_Station = #{起始站点, jdbcType=VARCHAR},
+            </if>
+            <if test="目的站点 != null">
+                End_Station = #{目的站点, jdbcType=VARCHAR},
+            </if>
+            <if test="成本对象 != null">
+                Cost_Object = #{成本对象, jdbcType=VARCHAR},
+            </if>
+            <if test="成本中心 != null">
+                Cost_Center = #{成本中心, jdbcType=VARCHAR}
+            </if>
+        </set>
+        where List_No = #{单据编号}
+    </update>
+    <select id="selectByPrimaryKey" resultMap="ERP单据明细表Map" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_ERP_List
+        where List_No = #{单据编号}
+    </select>
+    <select id="selectAll" resultMap="ERP单据明细表Map" >
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_ERP_List
+    </select>
+    <select id="selectBySelectiveCount" resultType="java.lang.Long" parameterType="com.bean.ERP单据明细表">
+        select
+        count(List_No) c
+        from IMOS_ERP_List
+        <where>
+            <if test="单据标识 != null and 单据标识 != '' ">
+               List_Type = #{单据类型, jdbcType=VARCHAR}
+            </if>
+            <if test="单据标识!= null and 单据标识 != '' ">
+                and List_Falg = #{单据标识, jdbcType=INTEGER}
+            </if>
+            <if test="单据状态 != null and 单据状态 != '' ">
+                and List_Status = #{单据状态, jdbcType=VARCHAR}
+            </if>
+            <if test="单据日期 != null and 单据日期 != '' ">
+                and List_Date = #{单据日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="操作人编号 != null and 操作人编号 != '' ">
+                and Operator_Code = #{操作人编号, jdbcType=VARCHAR}
+            </if>
+            <if test="操作人名称 != null and 操作人名称 != '' ">
+                and Operator_Name = #{操作人名称, jdbcType=VARCHAR}
+            </if>
+            <if test="物料编号!= null and 物料编号 != '' ">
+                and Material_Code = #{物料编号, jdbcType=VARCHAR}
+            </if>
+            <if test="物料名称!= null and 物料名称 != '' ">
+                and Material_Name = #{物料名称, jdbcType=VARCHAR}
+            </if>
+            <if test="类型代码!= null and 类型代码 != '' ">
+                and Material_Type_Code = #{类型代码, jdbcType=VARCHAR}
+            </if>
+            <if test="类型名称 != null and 类型名称 != ''">
+                and Material_Type_Name = #{类型名称, jdbcType=VARCHAR}
+            </if>
+            <if test="物料规格 != null and 物料规格 != '' ">
+                and Material_Spec = #{物料规格, jdbcType=VARCHAR}
+            </if>
+            <if test="物料单位 != null and 物料单位 != '' ">
+                and Material_Unit = #{物料单位, jdbcType=VARCHAR}
+            </if>
+            <if test="数量 != null and 数量 != '' ">
+                and Qty = #{数量, jdbcType=NUMERIC}
+            </if>
+            <if test="计划数量 != null and 计划数量 != '' ">
+                and Plan_Qty = #{计划数量, jdbcType=NUMERIC}
+            </if>
+            <if test="基本计量单位数量 != null and 基本计量单位数量 != '' ">
+                and Base_Metering_Qty = #{基本计量单位数量, jdbcType=NUMERIC}
+            </if>
+            <if test="基本计量单位 != null and 基本计量单位 != '' ">
+                and Base_Metering_Unit = #{基本计量单位, jdbcType=VARCHAR}
+            </if>
+            <if test="计量单位 != null and 计量单位 != '' ">
+                and Metering_Unit = #{计量单位, jdbcType=VARCHAR}
+            </if>
+            <if test="批次 != null and 批次 != '' ">
+                and Batch_No = #{批次, jdbcType=VARCHAR}
+            </if>
+            <if test="产品编码 != null and 产品编码 != '' ">
+                and Product_Code = #{产品编码, jdbcType=VARCHAR}
+            </if>
+            <if test="事物类型 != null and 事物类型 != '' ">
+                and Object_Type = #{事物类型, jdbcType=VARCHAR}
+            </if>
+            <if test="业务日期 != null and 业务日期 != '' ">
+                and Business_Date = #{业务日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="计划开工日期 != null and 计划开工日期 != '' ">
+                and Plan_Start_Date = #{计划开工日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="计划完工日期 != null and 计划完工日期 != '' ">
+                and Plan_End_Date = #{计划完工日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="生产订单回传日期 != null and 生产订单回传日期 != '' ">
+                and Product_Return_Date = #{生产订单回传日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="仓库 != null and 仓库 != '' ">
+                and Store_Code = #{仓库, jdbcType=VARCHAR}
+            </if>
+            <if test="起始站点 != null and 起始站点 != '' ">
+                and Start_Station = #{起始站点, jdbcType=VARCHAR}
+            </if>
+            <if test="目的站点 != null and 目的站点 != '' ">
+                and End_Station = #{目的站点, jdbcType=VARCHAR}
+            </if>
+            <if test="成本对象 != null and 成本对象 != '' ">
+                and Cost_Object = #{成本对象, jdbcType=VARCHAR}
+            </if>
+            <if test="成本中心 != null and 成本中心 != '' ">
+                and Cost_Center = #{成本中心, jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+    <select id="selectBySelective" resultMap="ERP单据明细表Map" parameterType="com.bean.ERP单据明细表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_ERP_List
+        <where>
+            <if test="单据编号 != null and 单据编号 != '' ">
+                List_No = #{单据编号, jdbcType=VARCHAR}
+            </if>
+            <if test="单据类型 != null and 单据类型 != '' ">
+                and List_Type = #{单据类型, jdbcType=VARCHAR}
+            </if>
+            <if test="单据标识!= null and 单据标识 != '' ">
+                and List_Falg = #{单据标识, jdbcType=INTEGER}
+            </if>
+            <if test="单据状态 != null and 单据状态 != '' ">
+                and List_Status = #{单据状态, jdbcType=VARCHAR}
+            </if>
+            <if test="单据日期 != null and 单据日期 != '' ">
+                and List_Date = #{单据日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="操作人编号 != null and 操作人编号 != '' ">
+                and Operator_Code = #{操作人编号, jdbcType=VARCHAR}
+            </if>
+            <if test="操作人名称 != null and 操作人名称 != '' ">
+                and Operator_Name = #{操作人名称, jdbcType=VARCHAR}
+            </if>
+            <if test="物料编号!= null and 物料编号 != '' ">
+                and Material_Code = #{物料编号, jdbcType=VARCHAR}
+            </if>
+            <if test="物料名称!= null and 物料名称 != '' ">
+                and Material_Name = #{物料名称, jdbcType=VARCHAR}
+            </if>
+            <if test="类型代码!= null and 类型代码 != '' ">
+                and Material_Type_Code = #{类型代码, jdbcType=VARCHAR}
+            </if>
+            <if test="类型名称 != null and 类型名称 != ''">
+                and Material_Type_Name = #{类型名称, jdbcType=VARCHAR}
+            </if>
+            <if test="物料规格 != null and 物料规格 != '' ">
+                and Material_Spec = #{物料规格, jdbcType=VARCHAR}
+            </if>
+            <if test="物料单位 != null and 物料单位 != '' ">
+                and Material_Unit = #{物料单位, jdbcType=VARCHAR}
+            </if>
+            <if test="数量 != null and 数量 != '' ">
+                and Qty = #{数量, jdbcType=NUMERIC}
+            </if>
+            <if test="计划数量 != null and 计划数量 != '' ">
+                and Plan_Qty = #{计划数量, jdbcType=NUMERIC}
+            </if>
+            <if test="基本计量单位数量 != null and 基本计量单位数量 != '' ">
+                and Base_Metering_Qty = #{基本计量单位数量, jdbcType=NUMERIC}
+            </if>
+            <if test="基本计量单位 != null and 基本计量单位 != '' ">
+                and Base_Metering_Unit = #{基本计量单位, jdbcType=VARCHAR}
+            </if>
+            <if test="计量单位 != null and 计量单位 != '' ">
+                and Metering_Unit = #{计量单位, jdbcType=VARCHAR}
+            </if>
+            <if test="批次 != null and 批次 != '' ">
+                and Batch_No = #{批次, jdbcType=VARCHAR}
+            </if>
+            <if test="产品编码 != null and 产品编码 != '' ">
+                and Product_Code = #{产品编码, jdbcType=VARCHAR}
+            </if>
+            <if test="事物类型 != null and 事物类型 != '' ">
+                and Object_Type = #{事物类型, jdbcType=VARCHAR}
+            </if>
+            <if test="业务日期 != null and 业务日期 != '' ">
+                and Business_Date = #{业务日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="计划开工日期 != null and 计划开工日期 != '' ">
+                and Plan_Start_Date = #{计划开工日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="计划完工日期 != null and 计划完工日期 != '' ">
+                and Plan_End_Date = #{计划完工日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="生产订单回传日期 != null and 生产订单回传日期 != '' ">
+                and Product_Return_Date = #{生产订单回传日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="仓库 != null and 仓库 != '' ">
+                and Store_Code = #{仓库, jdbcType=VARCHAR}
+            </if>
+            <if test="起始站点 != null and 起始站点 != '' ">
+                and Start_Station = #{起始站点, jdbcType=VARCHAR}
+            </if>
+            <if test="目的站点 != null and 目的站点 != '' ">
+                and End_Station = #{目的站点, jdbcType=VARCHAR}
+            </if>
+            <if test="成本对象 != null and 成本对象 != '' ">
+                and Cost_Object = #{成本对象, jdbcType=VARCHAR}
+            </if>
+            <if test="成本中心 != null and 成本中心 != '' ">
+                and Cost_Center = #{成本中心, jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+    <select id="查询调拨单" resultMap="ERP单据明细表Map" parameterType="com.bean.ERP单据明细表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_ERP_List
+        WHERE List_Falg = 0 AND List_Type = 'DJ4'
+    </select>
+    <select id="查询入库单据" resultMap="ERP单据明细表Map" parameterType="com.bean.ERP单据明细表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_ERP_List
+        WHERE List_Falg = 0 AND List_Type = 'DJ1' OR List_Type = 'DJ7' AND List_Falg = 0
+    </select>
+    <select id="查询出库单据" resultMap="ERP单据明细表Map" parameterType="com.bean.ERP单据明细表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_ERP_List
+        WHERE List_Falg = 0 AND List_Type = 'DJ3' OR List_Type = 'DJ5' AND List_Falg = 0 OR List_Type = 'DJ6' AND List_Falg = 0
+    </select>
+    <update id="修改单据标识" parameterType="com.bean.ERP单据明细表">
+        update IMOS_ERP_List
+        set
+        List_Falg = 1
+        where List_Falg = 0 AND List_No = #{单据编号} AND List_Type = #{单据类型} AND Material_Name = #{物料名称}
+    </update>
+    <select id="展示单据" resultMap="ERP单据明细表Map" parameterType="com.bean.ERP单据明细表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_ERP_List
+        WHERE List_Falg = 0 AND List_No = #{单据编号} AND List_Type = #{单据类型} AND Material_Name = #{物料名称}
+    </select>
+</mapper>

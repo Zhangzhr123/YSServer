@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.物流任务表Dao">
+    <!-- =========================================================== -->
+    <!-- 定义resultMap                  Created by zzr on 2019/06/10                                                                                                                                                           -->
+    <!-- =========================================================== -->
+    <resultMap id="物流任务表Map" type="com.bean.物流任务表">
+        <id property="任务编号" column="Task_No" jdbcType="VARCHAR"/>
+        <result property="单据编号" column="List_No" jdbcType="VARCHAR"/>
+        <result property="叉车编号" column="AGV_Code" jdbcType="VARCHAR"/>
+        <result property="叉车名称" column="AGV_Name" jdbcType="VARCHAR"/>
+        <result property="任务类型" column="Task_Type" jdbcType="VARCHAR"/>
+        <result property="任务状态" column="Task_Status" jdbcType="VARCHAR"/>
+        <result property="任务优先级" column="Task_Priority" jdbcType="VARCHAR"/>
+        <result property="单据明细编号" column="List_DetailNo" jdbcType="VARCHAR"/>
+        <result property="物料编号" column="Material_Code" jdbcType="VARCHAR"/>
+        <result property="物料名称" column="Material_Name" jdbcType="VARCHAR"/>
+        <result property="类型代码" column="Material_Type_Code" jdbcType="VARCHAR"/>
+        <result property="类型名称" column="Material_Type_Name" jdbcType="VARCHAR"/>
+        <result property="物料规格" column="Material_Spec" jdbcType="VARCHAR"/>
+        <result property="起始站点" column="Start_Station" jdbcType="VARCHAR"/>
+        <result property="目的站点" column="End_Station" jdbcType="VARCHAR"/>
+        <result property="批次" column="Batch_No" jdbcType="VARCHAR"/>
+        <result property="数量" column="Qty" jdbcType="NUMERIC"/>
+        <result property="备注" column="Remark" jdbcType="VARCHAR"/>
+        <result property="开始时间" column="Start_Time" jdbcType="TIMESTAMP"/>
+        <result property="结束时间" column="End_Time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <!-- =========================================================== -->
+    <!-- 一些公共变量设置                                                                                                                                                                             -->
+    <!-- =========================================================== -->
+    <!-- 字段 -->
+    <sql id="Base_Column_List" >
+        Task_No
+        ,List_No
+        ,AGV_Code
+        ,Task_Type
+        ,Task_Status
+        ,Task_Priority
+        ,List_DetailNo
+        ,Material_Code
+        ,Material_Name
+        ,Material_Type_Code
+        ,Material_Type_Name
+        ,Material_Spec
+        ,Start_Station
+        ,End_Station
+        ,Batch_No
+        ,Qty
+        ,Remark
+        ,Start_Time
+        ,End_Time
+    </sql>
+    <!-- =========================================================== -->
+    <!-- 基本增删改查方法                                                                                                    		 -->
+    <!-- =========================================================== -->
+    <insert id="insert" parameterType="com.bean.物流任务表" >
+        insert into IMOS_LO_Task
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            Task_No,
+            List_No,
+            AGV_Code,
+            Task_Type,
+            Task_Status,
+            Task_Priority,
+            List_DetailNo,
+            Material_Code,
+            Material_Name,
+            Material_Type_Code,
+            Material_Type_Name,
+            Material_Spec,
+            Start_Station,
+            End_Station,
+            Batch_No,
+            Qty,
+            Remark,
+            Start_Time,
+            End_Time,
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            #{任务编号, jdbcType=VARCHAR},
+            #{单据编号, jdbcType=VARCHAR},
+            #{叉车编号, jdbcType=VARCHAR},
+            #{任务类型, jdbcType=VARCHAR},
+            #{任务状态, jdbcType=VARCHAR},
+            #{任务优先级, jdbcType=VARCHAR},
+            #{单据明细编号, jdbcType=VARCHAR},
+            #{物料编号, jdbcType=VARCHAR},
+            #{物料名称, jdbcType=VARCHAR},
+            #{类型代码, jdbcType=VARCHAR},
+            #{类型名称, jdbcType=VARCHAR},
+            #{物料规格, jdbcType=VARCHAR},
+            #{起始站点, jdbcType=VARCHAR},
+            #{目的站点, jdbcType=VARCHAR},
+            #{批次, jdbcType=VARCHAR},
+            #{数量, jdbcType=NUMERIC},
+            #{备注, jdbcType=VARCHAR},
+            #{开始时间, jdbcType=TIMESTAMP},
+            #{结束时间, jdbcType=TIMESTAMP},
+        </trim>
+    </insert>
+    <insert id="insertSelective" parameterType="com.bean.物流任务表" >
+        insert into IMOS_LO_Task
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="任务编号 != null">
+                 Task_No,
+            </if>
+            <if test="单据编号 != null">
+                List_No,
+            </if>
+            <if test="叉车编号 != null">
+                AGV_Code,
+            </if>
+            <if test="任务类型 != null">
+                Task_Type,
+            </if>
+            <if test="任务状态 != null">
+                Task_Status,
+            </if>
+            <if test="任务优先级 != null">
+                Task_Priority,
+            </if>
+            <if test="单据明细编号 != null">
+                List_DetailNo,
+            </if>
+            <if test="物料编号 != null">
+                Material_Code,
+            </if>
+            <if test="物料名称 != null">
+                Material_Name,
+            </if>
+            <if test="类型代码 != null">
+                Material_Type_Code,
+            </if>
+            <if test="类型名称 != null">
+                Material_Type_Name,
+            </if>
+            <if test="物料规格 != null">
+                Material_Spec,
+            </if>
+            <if test="起始站点 != null">
+                Start_Station,
+            </if>
+            <if test="目的站点 != null">
+                End_Station,
+            </if>
+            <if test="批次 != null">
+                Batch_No,
+            </if>
+            <if test="数量 != null">
+                Qty,
+            </if>
+            <if test="备注 != null">
+                Remark,
+            </if>
+            <if test="开始时间 != null">
+                Start_Time,
+            </if>
+            <if test="结束时间 != null">
+                End_Time,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="任务编号 != null">
+                #{任务编号, jdbcType=VARCHAR},
+            </if>
+            <if test="单据编号 != null">
+                #{单据编号, jdbcType=VARCHAR},
+            </if>
+            <if test="叉车编号 != null">
+                #{叉车编号, jdbcType=VARCHAR},
+            </if>
+            <if test="任务类型 != null">
+                #{任务类型, jdbcType=VARCHAR},
+            </if>
+            <if test="任务状态 != null">
+                #{任务状态, jdbcType=VARCHAR},
+            </if>
+            <if test="任务优先级 != null">
+                #{任务优先级, jdbcType=VARCHAR},
+            </if>
+            <if test="单据明细编号 != null">
+                #{单据明细编号, jdbcType=VARCHAR},
+            </if>
+            <if test="物料编号 != null">
+                #{物料编号, jdbcType=VARCHAR},
+            </if>
+            <if test="物料名称 != null">
+                #{物料名称, jdbcType=VARCHAR},
+            </if>
+            <if test="类型代码 != null">
+                #{类型代码, jdbcType=VARCHAR},
+            </if>
+            <if test="类型名称 != null">
+                #{类型名称, jdbcType=VARCHAR},
+            </if>
+            <if test="物料规格 != null">
+                #{物料规格, jdbcType=VARCHAR},
+            </if>
+            <if test="起始站点 != null">
+                #{起始站点, jdbcType=VARCHAR},
+            </if>
+            <if test="目的站点 != null">
+                #{目的站点, jdbcType=VARCHAR},
+            </if>
+            <if test="批次 != null">
+                #{批次, jdbcType=VARCHAR},
+            </if>
+            <if test="数量 != null">
+                #{数量, jdbcType=NUMERIC},
+            </if>
+            <if test="备注 != null">
+                #{备注, jdbcType=VARCHAR},
+            </if>
+            <if test="开始时间 != null">
+                #{开始时间, jdbcType=TIMESTAMP},
+            </if>
+            <if test="结束时间 != null">
+                #{结束时间, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <delete id="delete" parameterType="java.lang.String">
+        update IMOS_LO_Task
+        set deleteFlag = 1, upTIMESTAMP = GETDATE()
+        where  Task_No = #{任务编号}
+    </delete>
+    <delete id="deleteAll">
+        update IMOS_LO_Task
+        set deleteFlag = 1, upTIMESTAMP = GETDATE()
+        where  Task_No  in
+        <foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+    <update id="update" parameterType="com.bean.物流任务表">
+        update IMOS_LO_Task
+        set
+         Task_No = #{任务编号, jdbcType=VARCHAR}
+        ,List_No = #{单据编号, jdbcType=VARCHAR}
+        ,AGV_Code = #{叉车编号, jdbcType=VARCHAR}
+        ,Task_Type = #{任务类型, jdbcType=VARCHAR}
+        ,Task_Status = #{任务状态, jdbcType=VARCHAR}
+        ,Task_Priority = #{任务优先级, jdbcType=VARCHAR}
+        ,List_DetailNo = #{单据明细编号, jdbcType=VARCHAR}
+        ,Material_Code = #{物料编号, jdbcType=VARCHAR}
+        ,Material_Name = #{物料名称, jdbcType=VARCHAR}
+        ,Material_Type_Code = #{类型代码, jdbcType=VARCHAR}
+        ,Material_Type_Name = #{类型名称, jdbcType=VARCHAR}
+        ,Material_Spec = #{物料规格, jdbcType=VARCHAR}
+        ,Start_Station = #{起始站点, jdbcType=VARCHAR}
+        ,End_Station = #{目的站点, jdbcType=VARCHAR}
+        ,Batch_No = #{批次, jdbcType=VARCHAR}
+        ,Qty = #{数量, jdbcType=NUMERIC}
+        ,Remark = #{备注, jdbcType=VARCHAR}
+        ,Start_Time = #{开始时间, jdbcType=TIMESTAMP}
+        ,End_Time = #{结束时间, jdbcType=TIMESTAMP}
+        where  Task_No = #{任务编号}
+    </update>
+    <update id="updateSelective" parameterType="com.bean.物流任务表">
+        update IMOS_LO_Task
+        <set>
+            <if test="任务编号!= null">
+                 Task_No = #{任务编号, jdbcType=VARCHAR},
+            </if>
+            <if test="单据编号!= null">
+                List_No = #{单据编号, jdbcType=VARCHAR},
+            </if>
+            <if test="叉车编号!= null">
+                AGV_Code = #{叉车编号, jdbcType=VARCHAR},
+            </if>
+            <if test="任务类型!= null">
+                Task_Type = #{任务类型, jdbcType=VARCHAR},
+            </if>
+            <if test="任务状态!= null">
+                Task_Status = #{任务状态, jdbcType=VARCHAR},
+            </if>
+            <if test="任务优先级!= null">
+                Task_Priority = #{任务优先级, jdbcType=VARCHAR},
+            </if>
+            <if test="单据明细编号!= null">
+                List_DetailNo = #{单据明细编号, jdbcType=VARCHAR},
+            </if>
+            <if test="物料编号!= null">
+                Material_Code = #{物料编号, jdbcType=VARCHAR},
+            </if>
+            <if test="物料名称!= null">
+                Material_Name = #{物料名称, jdbcType=VARCHAR},
+            </if>
+            <if test="类型代码 != null">
+                Material_Type_Code = #{类型代码, jdbcType=VARCHAR},
+            </if>
+            <if test="类型名称 != null">
+                Material_Type_Name = #{类型名称, jdbcType=VARCHAR},
+            </if>
+            <if test="物料规格 != null">
+                Material_Spec = #{物料规格, jdbcType=VARCHAR},
+            </if>
+            <if test="起始站点 != null">
+                Start_Station = #{起始站点, jdbcType=VARCHAR},
+            </if>
+            <if test="目的站点 != null">
+                End_Station = #{目的站点, jdbcType=VARCHAR},
+            </if>
+            <if test="批次 != null">
+                Batch_No = #{批次, jdbcType=VARCHAR},
+            </if>
+            <if test="数量 != null">
+                Qty = #{数量, jdbcType=NUMERIC},
+            </if>
+            <if test="备注 != null">
+                Remark = #{备注, jdbcType=VARCHAR},
+            </if>
+            <if test="开始时间 != null">
+                Start_Time = #{开始时间, jdbcType=TIMESTAMP},
+            </if>
+            <if test="结束时间 != null">
+                End_Time = #{结束时间, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where  Task_No = #{任务编号}
+    </update>
+    <select id="selectByPrimaryKey" resultMap="物流任务表Map" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_LO_Task
+        where  Task_No = #{任务编号}
+    </select>
+    <select id="selectAll" resultMap="物流任务表Map" >
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Task
+    </select>
+    <select id="selectBySelectiveCount" resultType="java.lang.Long" parameterType="com.bean.物流任务表">
+        select
+        count( Task_No) c
+        from IMOS_LO_Task
+        <where>
+            <if test="叉车编号!= null and 叉车编号 != '' ">
+                and AGV_Code = #{叉车编号, jdbcType=VARCHAR}
+            </if>
+            <if test="单据编号!= null and 单据编号 != '' ">
+                and List_No = #{单据编号, jdbcType=VARCHAR}
+            </if>
+            <if test="任务类型 != null and 任务类型 != '' ">
+                and Task_Type = #{任务类型, jdbcType=VARCHAR}
+            </if>
+
+            <if test="任务状态!= null and 任务状态 != '' ">
+                and Task_Status = #{任务状态, jdbcType=VARCHAR}
+            </if>
+
+            <if test="任务优先级 != null and 任务优先级 != '' ">
+                and Task_Priority = #{任务优先级, jdbcType=VARCHAR}
+            </if>
+
+            <if test="单据明细编号 != null and 单据明细编号 != '' ">
+                and List_DetailNo = #{单据明细编号, jdbcType=VARCHAR}
+            </if>
+
+            <if test="物料编号 != null and 物料编号 != '' ">
+                and Material_Code = #{物料编号, jdbcType=VARCHAR}
+            </if>
+
+            <if test="物料名称 != null and 物料名称 != '' ">
+                and Material_Name = #{物料名称, jdbcType=VARCHAR}
+            </if>
+
+            <if test="类型代码 != null and 类型代码 != '' ">
+                and Material_Type_Code = #{类型代码, jdbcType=VARCHAR}
+            </if>
+
+            <if test="类型名称 != null and 类型名称 != '' ">
+                and Material_Type_Name = #{类型名称, jdbcType=VARCHAR}
+            </if>
+
+            <if test="物料规格 != null and 物料规格 != '' ">
+                and Material_Spec = #{物料规格, jdbcType=VARCHAR}
+            </if>
+
+            <if test="起始站点 != null and 起始站点 != '' ">
+                and Start_Station = #{起始站点, jdbcType=VARCHAR}
+            </if>
+
+            <if test="目的站点 != null and 目的站点 != '' ">
+                and End_Station = #{目的站点, jdbcType=VARCHAR}
+            </if>
+            <if test="批次 != null and 批次 != '' ">
+                and Batch_No = #{批次, jdbcType=VARCHAR}
+            </if>
+            <if test="数量 != null and 数量 != '' ">
+                and Qty = #{数量, jdbcType=NUMERIC}
+            </if>
+
+            <if test="备注 != null and 备注 != '' ">
+                and Remark = #{备注, jdbcType=VARCHAR}
+            </if>
+
+            <if test="开始时间 != null and 开始时间 != '' ">
+                and Start_Time = #{开始时间, jdbcType=TIMESTAMP}
+            </if>
+
+            <if test="结束时间 != null and 结束时间 != '' ">
+                and End_Time = #{结束时间, jdbcType=TIMESTAMP}
+            </if>
+
+        </where>
+    </select>
+    <select id="selectBySelective" resultMap="物流任务表Map" parameterType="com.bean.物流任务表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_LO_Task
+        <where>
+            <if test="任务编号 != null and 任务编号 != '' ">
+                and  Task_No = #{任务编号, jdbcType=VARCHAR}
+            </if>
+            <if test="单据编号!= null and 单据编号 != '' ">
+                and List_No = #{单据编号, jdbcType=VARCHAR}
+            </if>
+            <if test="叉车编号!= null and 叉车编号 != '' ">
+                and AGV_Code = #{叉车编号, jdbcType=VARCHAR}
+            </if>
+            <if test="任务类型 != null and 任务类型 != '' ">
+                and Task_Type = #{任务类型, jdbcType=VARCHAR}
+            </if>
+            <if test="任务状态!= null and 任务状态 != '' ">
+                and Task_Status = #{任务状态, jdbcType=VARCHAR}
+            </if>
+            <if test="任务优先级 != null and 任务优先级 != '' ">
+                and Task_Priority = #{任务优先级, jdbcType=VARCHAR}
+            </if>
+            <if test="单据明细编号 != null and 单据明细编号 != '' ">
+                and List_DetailNo = #{单据明细编号, jdbcType=VARCHAR}
+            </if>
+            <if test="物料编号 != null and 物料编号 != '' ">
+                and Material_Code = #{物料编号, jdbcType=VARCHAR}
+            </if>
+            <if test="物料名称 != null and 物料名称 != '' ">
+                and Material_Name = #{物料名称, jdbcType=VARCHAR}
+            </if>
+            <if test="类型代码 != null and 类型代码 != '' ">
+                and Material_Type_Code = #{类型代码, jdbcType=VARCHAR}
+            </if>
+            <if test="类型名称 != null and 类型名称 != '' ">
+                and Material_Type_Name = #{类型名称, jdbcType=VARCHAR}
+            </if>
+            <if test="物料规格 != null and 物料规格 != '' ">
+                and Material_Spec = #{物料规格, jdbcType=VARCHAR}
+            </if>
+            <if test="起始站点 != null and 起始站点 != '' ">
+                and Start_Station = #{起始站点, jdbcType=VARCHAR}
+            </if>
+            <if test="目的站点 != null and 目的站点 != '' ">
+                and End_Station = #{目的站点, jdbcType=VARCHAR}
+            </if>
+            <if test="批次 != null and 批次 != '' ">
+                and Batch_No = #{批次, jdbcType=VARCHAR}
+            </if>
+            <if test="数量 != null and 数量 != '' ">
+                and Qty = #{数量, jdbcType=NUMERIC}
+            </if>
+            <if test="备注 != null and 备注 != '' ">
+                and Remark = #{备注, jdbcType=VARCHAR}
+            </if>
+            <if test="开始时间 != null and 开始时间 != '' ">
+                and Start_Time = #{开始时间, jdbcType=TIMESTAMP}
+            </if>
+            <if test="结束时间 != null and 结束时间 != '' ">
+                and End_Time = #{结束时间, jdbcType=TIMESTAMP}
+            </if>
+        </where>
+    </select>
+    <select id="selectByList" resultMap="物流任务表Map" parameterType="com.bean.物流任务表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_LO_Task
+        <where>
+            List_No = #{单据编号}
+            AND Material_Name = #{物料名称}
+            AND Qty = #{数量}
+        </where>
+    </select>
+    <select id="search任务" resultMap="物流任务表Map" parameterType="com.bean.物流任务表">
+        select
+        Task_No,
+        List_No,
+        [AGV_Code]=CASE WHEN [AGV_Code] = '1' THEN '01号车'
+        WHEN [AGV_Code] = '2' THEN '02号车'
+        ELSE 'NULL'
+        END,
+        Task_Type,
+        Task_Status,
+        Task_Priority,
+        List_DetailNo,
+        Material_Code,
+        Material_Name,
+        Material_Type_Code,
+        Material_Type_Name,
+        Material_Spec,
+        Start_Station,
+        End_Station,
+        Batch_No,
+        Qty,
+        Remark,
+        Start_Time,
+        End_Time
+        from IMOS_LO_Task
+        WHERE Task_Status != 2 AND Task_Status != 3 AND Task_Status != 4
+    </select>
+    <update id="强制执行" parameterType="com.bean.物流任务表">
+        update IMOS_LO_Task
+        set
+        Task_Status = #{任务状态}
+        where  Task_No = #{任务编号}
+    </update>
+    <update id="强制取消" parameterType="com.bean.物流任务表">
+        update IMOS_LO_Task
+        set
+        Task_Status = #{任务状态}
+        where  Task_No = #{任务编号}
+    </update>
+    <select id="异常AGV" resultMap="物流任务表Map" parameterType="com.bean.物流任务表">
+        select
+        Task_No,
+        List_No,
+        [AGV_Code]=CASE WHEN [AGV_Code] = '1' THEN '01号车'
+        WHEN [AGV_Code] = '2' THEN '02号车'
+        ELSE 'NULL'
+        END,
+        Task_Type,
+        Task_Status,
+        Task_Priority,
+        List_DetailNo,
+        Material_Code,
+        Material_Name,
+        Material_Type_Code,
+        Material_Type_Name,
+        Material_Spec,
+        Start_Station,
+        End_Station,
+        Batch_No,
+        Qty,
+        Remark,
+        Start_Time,
+        End_Time
+        from IMOS_LO_Task
+        WHERE Task_No = #{任务编号}
+    </select>
+    <select id="search完成" resultMap="物流任务表Map" parameterType="com.bean.物流任务表">
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Task
+        WHERE Task_Status = 2 OR Task_Status = 3 OR Task_Status = 4
+    </select>
+    <select id="search单据编号" resultMap="物流任务表Map" parameterType="com.bean.物流任务表">
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Task
+        WHERE List_No = #{单据编号}
+    </select>
+    <insert id="添加到历史表" parameterType="com.bean.物流任务表" >
+        INSERT INTO IMOS_LO_Task_History
+        SELECT
+        [Task_No]
+      ,[Company_Code]
+      ,[Company_Name]
+      ,[Factory_Code]
+      ,[Factory_Name]
+      ,[Product_Line_Code]
+      ,[Product_Line_Name]
+      ,[AGV_Code]
+      ,[Task_Type]
+      ,[Task_Status]
+      ,[Task_Priority]
+      ,[List_No]
+      ,[List_DetailNo]
+      ,[Material_Code]
+      ,[Material_Name]
+      ,[Material_Type_Code]
+      ,[Material_Type_Name]
+      ,[Material_Spec]
+      ,[Pallet_No]
+      ,[Batch_No]
+      ,[Start_Station]
+      ,[End_Station]
+      ,[Creation_Time]
+      ,[Start_Time]
+      ,[End_Time]
+      ,[Qty]
+      ,[Remark]
+      ,[Creation_Date]
+      ,[Created_By]
+      ,[Last_Update_Date]
+      ,[Last_Updated_By]
+        from dbo.IMOS_LO_Task
+        where Task_No = #{任务编号}
+    </insert>
+    <delete id="删除任务" parameterType="com.bean.物流任务表">
+        delete from IMOS_LO_Task
+        where Task_No = #{任务编号}
+    </delete>
+</mapper>

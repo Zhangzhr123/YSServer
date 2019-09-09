@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.仓库单据表Dao">
+    <!-- =========================================================== -->
+    <!-- 定义resultMap            Created by zzr on 2019/06/10                                                                                                                                                                 -->
+    <!-- =========================================================== -->
+    <resultMap id="仓库单据表Map" type="com.bean.仓库单据表">
+        <id property="单据编号" column="List_No" jdbcType="VARCHAR"/>
+        <result property="单据类型" column="List_Type" jdbcType="VARCHAR"/>
+        <result property="单据标识" column="List_Flag" jdbcType="INTEGER"/>
+        <result property="单据状态" column="List_Status" jdbcType="VARCHAR"/>
+        <result property="单据日期" column="List_Date" jdbcType="TIMESTAMP"/>
+        <result property="操作人编号" column="Operator_Code" jdbcType="VARCHAR"/>
+        <result property="操作人名称" column="Operator_Name" jdbcType="VARCHAR"/>
+        <result property="备注" column="Remark" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!-- =========================================================== -->
+    <!-- 一些公共变量设置                                                                                                                                                                             -->
+    <!-- =========================================================== -->
+    <!-- 字段 -->
+    <sql id="Base_Column_List" >
+        List_No
+        ,List_Type
+        ,List_Flag
+        ,List_Status
+        ,List_Date
+        ,Operator_Code
+        ,Operator_Name
+        ,Remark
+    </sql>
+    <!-- =========================================================== -->
+    <!-- 基本增删改查方法                                                                                                    		 -->
+    <!-- =========================================================== -->
+    <insert id="insert" parameterType="com.bean.仓库单据表" >
+        insert into IMOS_WMS_List
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            List_No,
+            List_Type,
+            List_Flag,
+            List_Status,
+            List_Date,
+            Operator_Code,
+            Operator_Name,
+            Remark,
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            #{单据编号, jdbcType=VARCHAR},
+            #{单据类型, jdbcType=VARCHAR},
+            #{单据标识, jdbcType=INTEGER},
+            #{单据状态, jdbcType=VARCHAR},
+            #{单据日期, jdbcType=TIMESTAMP},
+            #{操作人编号, jdbcType=VARCHAR},
+            #{操作人名称, jdbcType=VARCHAR},
+            #{备注, jdbcType=VARCHAR},
+        </trim>
+    </insert>
+    <insert id="insertSelective" parameterType="com.bean.仓库单据表" >
+        insert into IMOS_WMS_List
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="单据编号 != null">
+                List_No,
+            </if>
+            <if test="单据类型 != null">
+                List_Type,
+            </if>
+            <if test="单据标识 != null">
+                List_Flag,
+            </if>
+            <if test="单据状态 != null">
+                List_Status,
+            </if>
+            <if test="单据日期 != null">
+                List_Date,
+            </if>
+            <if test="操作人编号 != null">
+                Operator_Code,
+            </if>
+            <if test="操作人名称 != null">
+                Operator_Name,
+            </if>
+            <if test="备注 != null">
+                Remark,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="单据编号 != null">
+                #{单据编号, jdbcType=VARCHAR},
+            </if>
+            <if test="单据类型 != null">
+                #{单据类型, jdbcType=VARCHAR},
+            </if>
+            <if test="单据标识 != null">
+                #{单据标识, jdbcType=INTEGER},
+            </if>
+            <if test="单据状态 != null">
+                #{单据状态, jdbcType=VARCHAR},
+            </if>
+            <if test="单据日期 != null">
+                #{单据日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="操作人编号 != null">
+                #{操作人编号, jdbcType=VARCHAR},
+            </if>
+            <if test="操作人名称 != null">
+                #{操作人名称, jdbcType=VARCHAR},
+            </if>
+            <if test="备注 != null">
+                #{备注, jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <delete id="delete" parameterType="java.lang.String">
+        update IMOS_WMS_List
+        set deleteFlag = 1, upTIMESTAMP = GETDATE()
+        where List_No = #{单据编号}
+    </delete>
+    <delete id="deleteAll">
+        update IMOS_WMS_List
+        set deleteFlag = 1, upTIMESTAMP = GETDATE()
+        where List_No  in
+        <foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+    <update id="update" parameterType="com.bean.仓库单据表">
+        update IMOS_WMS_List
+        set
+        List_No = #{单据编号, jdbcType=VARCHAR}
+        ,List_Type = #{单据类型, jdbcType=VARCHAR}
+        ,List_Flag = #{单据标识, jdbcType=INTEGER}
+        ,List_Status = #{单据状态, jdbcType=VARCHAR}
+        ,List_Date = #{单据日期, jdbcType=TIMESTAMP}
+        ,Operator_Code = #{操作人编号, jdbcType=VARCHAR}
+        ,Operator_Name = #{操作人名称, jdbcType=VARCHAR}
+        ,Remark = #{备注, jdbcType=VARCHAR}
+        where List_No = #{单据编号}
+    </update>
+    <update id="updateSelective" parameterType="com.bean.仓库单据表">
+        update IMOS_WMS_List
+        <set>
+            <if test="单据编号!= null">
+                List_No = #{单据编号, jdbcType=VARCHAR},
+            </if>
+            <if test="单据类型!= null">
+                List_Type = #{单据类型, jdbcType=VARCHAR},
+            </if>
+            <if test="单据标识!= null">
+                List_Flag = #{单据标识, jdbcType=INTEGER},
+            </if>
+            <if test="单据状态!= null">
+                List_Status = #{单据状态, jdbcType=VARCHAR},
+            </if>
+            <if test="单据日期!= null">
+                List_Date = #{单据日期, jdbcType=TIMESTAMP},
+            </if>
+            <if test="操作人编号!= null">
+                Operator_Code = #{操作人编号, jdbcType=VARCHAR},
+            </if>
+            <if test="操作人名称!= null">
+                Operator_Name = #{操作人名称, jdbcType=VARCHAR},
+            </if>
+            <if test="备注!= null">
+                Remark = #{备注, jdbcType=VARCHAR},
+            </if>
+        </set>
+        where List_No = #{单据编号}
+    </update>
+    <select id="selectByPrimaryKey" resultMap="仓库单据表Map" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_WMS_List
+        where List_No = #{单据编号}
+    </select>
+    <select id="selectAll" resultMap="仓库单据表Map" >
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_WMS_List
+    </select>
+    <select id="selectBySelectiveCount" resultType="java.lang.Long" parameterType="com.bean.仓库单据表">
+        select
+        count(List_No) c
+        from IMOS_WMS_List
+        <where>
+            <if test="单据类型 != null and 单据类型 != '' ">
+                and List_Type = #{单据类型, jdbcType=VARCHAR}
+            </if>
+            <if test="单据标识!= null and 单据标识 != '' ">
+                and List_Flag = #{单据标识, jdbcType=INTEGER}
+            </if>
+
+            <if test="单据状态 != null and 单据状态 != '' ">
+                and List_Status = #{单据状态, jdbcType=VARCHAR}
+            </if>
+
+            <if test="单据日期 != null and 单据日期 != '' ">
+                and List_Date = #{单据日期, jdbcType=TIMESTAMP}
+            </if>
+
+            <if test="操作人编号 != null and 操作人编号 != '' ">
+                and Operator_Code = #{操作人编号, jdbcType=VARCHAR}
+            </if>
+
+            <if test="操作人名称 != null and 操作人名称 != '' ">
+                and Operator_Name = #{操作人名称, jdbcType=VARCHAR}
+            </if>
+
+            <if test="备注 != null and 备注 != '' ">
+                and Remark = #{备注, jdbcType=VARCHAR}
+            </if>
+
+        </where>
+    </select>
+    <select id="selectBySelective" resultMap="仓库单据表Map" parameterType="com.bean.仓库单据表">
+        select
+        <include refid="Base_Column_List" />
+        from IMOS_WMS_List
+        <where>
+            <if test="单据编号 != null and 单据编号 != '' ">
+                and List_No = #{单据编号, jdbcType=VARCHAR}
+            </if>
+            <if test="单据类型 != null and 单据类型 != '' ">
+                and List_Type = #{单据类型, jdbcType=VARCHAR}
+            </if>
+            <if test="单据标识!= null and 单据标识 != '' ">
+                and List_Flag = #{单据标识, jdbcType=INTEGER}
+            </if>
+            <if test="单据状态 != null and 单据状态 != '' ">
+                and List_Status = #{单据状态, jdbcType=VARCHAR}
+            </if>
+            <if test="单据日期 != null and 单据日期 != '' ">
+                and List_Date = #{单据日期, jdbcType=TIMESTAMP}
+            </if>
+            <if test="操作人编号 != null and 操作人编号 != '' ">
+                and Operator_Code = #{操作人编号, jdbcType=VARCHAR}
+            </if>
+            <if test="操作人名称 != null and 操作人名称 != '' ">
+                and Operator_Name = #{操作人名称, jdbcType=VARCHAR}
+            </if>
+            <if test="备注 != null and 备注 != '' ">
+                and Remark = #{备注, jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+    <select id="selectByList" resultMap="仓库单据表Map" parameterType="com.bean.仓库单据表">
+    select
+    <include refid="Base_Column_List" />
+    from IMOS_WMS_List
+    <where>
+        List_No = #{单据编号}
+        OR List_Type = #{单据类型}
+        OR List_Flag = #{单据标识}
+        OR List_Status = #{单据状态}
+        OR List_Date = #{单据日期}
+        OR Operator_Code = #{操作人编号}
+        OR Operator_Name = #{操作人名称}
+        OR Remark = #{备注}
+    </where>
+</select>
+</mapper>

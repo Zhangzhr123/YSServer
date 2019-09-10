@@ -559,7 +559,6 @@ public class 物流任务表Impl implements I物流任务表Service {
         Result<物流任务表> res = new Result<>();
         try {
             System.out.println(ERP单据明细表.get起始站点()+"--"+ERP单据明细表.get目的站点());
-
             ERP单据明细表 erp = new ERP单据明细表();
             erp.set起始站点(ERP单据明细表.get起始站点());
             erp.set目的站点(ERP单据明细表.get目的站点());
@@ -568,39 +567,18 @@ public class 物流任务表Impl implements I物流任务表Service {
                 res.setFlag(false);
                 res.setMessage("单据错误");
             }
-
-            物流任务表 wl = new 物流任务表();
             if (ERP单据明细表.get起始站点().equals(data.get(0).get起始站点()) && ERP单据明细表.get目的站点().equals(data.get(0).get目的站点())) {
-                String 任务编号 = makeTaskNo();
-                wl.set任务编号(任务编号);
-                wl.set单据编号(data.get(0).get单据编号());
-                wl.set任务类型("E");
-                wl.set任务状态("0");
-                wl.set任务优先级("0");
-                wl.set物料编号(data.get(0).get物料编号());
-                wl.set物料名称(data.get(0).get物料名称());
-                wl.set类型代码(data.get(0).get类型代码());
-                wl.set类型名称(data.get(0).get类型名称());
-                wl.set物料规格(data.get(0).get物料规格());
-                wl.set起始站点(data.get(0).get起始站点());
-                wl.set目的站点(data.get(0).get目的站点());
-                wl.set批次(data.get(0).get批次());
-                wl.set数量(data.get(0).get数量());
-                wl.set备注("调拨");
-                物流任务表Dao.insert(wl);
-
+                //发布调拨任务
+                insertAllocationTask(data);
                 //预约出库
                 updateBinStatus(data.get(0).get起始站点(), "O");
                 //预约入库
                 updateBinStatus(data.get(0).get目的站点(), "I");
-
             }else{
                 res.setFlag(false);
                 res.setMessage("站点错误");
             }
-
             res.setFlag(true);
-            res.setData(wl);
         } catch (Exception e) {
             e.printStackTrace();
             logger.error(e.getMessage());
@@ -608,6 +586,28 @@ public class 物流任务表Impl implements I物流任务表Service {
             res.setMessage(e.getMessage());
         }
         return res;
+    }
+
+    //发布调拨任务
+    public void insertAllocationTask(List<ERP单据明细表> data) {
+        物流任务表 wl = new 物流任务表();
+        String 任务编号 = makeTaskNo();
+        wl.set任务编号(任务编号);
+        wl.set单据编号(data.get(0).get单据编号());
+        wl.set任务类型("E");
+        wl.set任务状态("0");
+        wl.set任务优先级("0");
+        wl.set物料编号(data.get(0).get物料编号());
+        wl.set物料名称(data.get(0).get物料名称());
+        wl.set类型代码(data.get(0).get类型代码());
+        wl.set类型名称(data.get(0).get类型名称());
+        wl.set物料规格(data.get(0).get物料规格());
+        wl.set起始站点(data.get(0).get起始站点());
+        wl.set目的站点(data.get(0).get目的站点());
+        wl.set批次(data.get(0).get批次());
+        wl.set数量(data.get(0).get数量());
+        wl.set备注("调拨");
+        物流任务表Dao.insert(wl);
     }
 
     //入库任务
@@ -719,9 +719,9 @@ public class 物流任务表Impl implements I物流任务表Service {
                     return;
                 }
                 if (data.get(0).get单据类型().equals("DJ4")) {//判断单据类型
-                    //更改库存信息
+                    //更改目的站点库存信息
                     allocationUpdateBin(物流任务表s.get(i), barcode.get(0));
-
+                    //请空库位信息
                     kc.set库位编号(物流任务表s.get(i).get起始站点());
                     库存查询表Dao.清空库位(kc);
                     //添加到历史表和删除任务
@@ -740,7 +740,7 @@ public class 物流任务表Impl implements I物流任务表Service {
         }
     }
 
-    //更改库存信息
+    //更改目的站点库存信息
     public 库存查询表 allocationUpdateBin(物流任务表 物流任务表, 库存查询表 barcode) {
         库存查询表 kc = new 库存查询表();
         kc.set物料代码(物流任务表.get物料编号());

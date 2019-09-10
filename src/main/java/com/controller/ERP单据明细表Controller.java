@@ -106,33 +106,33 @@ public class ERP单据明细表Controller extends BaseController {
 
     @ResponseBody
     @RequestMapping("展示调拨单据")
-    public Result<List<ERP单据明细表>> 展示调拨单据(@RequestBody List<String> list, HttpServletRequest request, Model model){
-        System.out.println(list.get(0));
-        Result<List<ERP单据明细表>> res = ERP单据明细表Service.展示单据(list);
+    public Result<List<ERP单据明细表>> 展示调拨单据(@RequestBody ERP单据明细表 ERP单据明细表, HttpServletRequest request, Model model){
+        System.out.println(ERP单据明细表.hashCode());
+        Result<List<ERP单据明细表>> res = ERP单据明细表Service.展示单据(ERP单据明细表);
         return res;
     }
 
     @ResponseBody
     @RequestMapping("展示入库单据")
-    public Result<List<ERP单据明细表>> 展示入库单据(@RequestBody List<String> list, HttpServletRequest request, Model model){
-        System.out.println(list.get(0));
-        Result<List<ERP单据明细表>> res = ERP单据明细表Service.展示单据(list);
+    public Result<List<ERP单据明细表>> 展示入库单据(@RequestBody ERP单据明细表 ERP单据明细表, HttpServletRequest request, Model model){
+        System.out.println(ERP单据明细表.hashCode());
+        Result<List<ERP单据明细表>> res = ERP单据明细表Service.展示单据(ERP单据明细表);
         return res;
     }
 
     @ResponseBody
     @RequestMapping("展示出库单据")
-    public Result<List<ERP单据明细表>> 展示出库单据(@RequestBody List<String> list, HttpServletRequest request, Model model){
-        System.out.println(list.get(0));
-        Result<List<ERP单据明细表>> res = ERP单据明细表Service.展示单据(list);
+    public Result<List<ERP单据明细表>> 展示出库单据(@RequestBody ERP单据明细表 ERP单据明细表, HttpServletRequest request, Model model){
+        System.out.println(ERP单据明细表.hashCode());
+        Result<List<ERP单据明细表>> res = ERP单据明细表Service.展示单据(ERP单据明细表);
         return res;
     }
 
     @ResponseBody
     @RequestMapping("完成入库")
-    public Result<List<ERP单据明细表>> 完成入库(@RequestBody List<String> list, HttpServletRequest request, Model model){
-        System.out.println(list.size());
-        Result<List<ERP单据明细表>> res = ERP单据明细表Service.完成入库(list);
+    public Result<List<ERP单据明细表>> 完成入库(@RequestBody ERP单据明细表 ERP单据明细表, HttpServletRequest request, Model model){
+        System.out.println(ERP单据明细表.hashCode());
+        Result<List<ERP单据明细表>> res = ERP单据明细表Service.完成入库(ERP单据明细表);
         return res;
     }
 

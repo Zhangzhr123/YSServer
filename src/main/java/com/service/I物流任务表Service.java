@@ -3,6 +3,7 @@ package com.service;
  * Created by zzr on 2019/06/11
  * 物流任务表service
  */
+import com.bean.ERP单据明细表;
 import com.bean.Result;
 import com.bean.User;
 import com.bean.物流任务表;
@@ -33,9 +34,9 @@ public interface I物流任务表Service {
 
     public Result<List<物流任务表>> searchLikeString(String userLikeString);
 
-    public Result<物流任务表> 原料发布入库任务(List<String> list);
+    public Result<物流任务表> 原料发布入库任务(ERP单据明细表 ERP单据明细表);
 
-    public Result<物流任务表> 发布出库任务(List<String> list);
+    public Result<物流任务表> 发布出库任务(ERP单据明细表 ERP单据明细表);
 
     public Result<List<物流任务表>> search任务(物流任务表 物流任务表);
 
@@ -45,7 +46,7 @@ public interface I物流任务表Service {
 
     public Result<物流任务表> 强制取消(List<String> list);
 
-    public Result<物流任务表> 调拨(List<String> list);
+    public Result<物流任务表> 调拨(ERP单据明细表 ERP单据明细表);
 
     public void stockIn();
 

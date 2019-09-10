@@ -92,17 +92,17 @@ public class 物流任务表Controller extends BaseController {
 
     @ResponseBody
     @RequestMapping("/原料发布入库任务")
-    public Result<物流任务表> 原料发布入库任务(@RequestBody List<String> param, HttpServletRequest request, HttpServletResponse response){
-        System.out.println(param.size());
-        Result<物流任务表> res = 物流任务表Service.原料发布入库任务(param);
+    public Result<物流任务表> 原料发布入库任务(@RequestBody ERP单据明细表 ERP单据明细表, HttpServletRequest request, HttpServletResponse response){
+        System.out.println(ERP单据明细表.hashCode());
+        Result<物流任务表> res = 物流任务表Service.原料发布入库任务(ERP单据明细表);
         return res;
     }
 
     @ResponseBody
     @RequestMapping("/发布出库任务")
-    public Result<物流任务表> 发布出库任务(@RequestBody List<String> param, HttpServletRequest request, HttpServletResponse response){
-        System.out.println(param.size());
-        Result<物流任务表> res = 物流任务表Service.发布出库任务(param);
+    public Result<物流任务表> 发布出库任务(@RequestBody ERP单据明细表 ERP单据明细表, HttpServletRequest request, HttpServletResponse response){
+        System.out.println(ERP单据明细表.hashCode());
+        Result<物流任务表> res = 物流任务表Service.发布出库任务(ERP单据明细表);
         return res;
     }
 
@@ -138,9 +138,9 @@ public class 物流任务表Controller extends BaseController {
 
     @ResponseBody
     @RequestMapping("/调拨")
-    public Result<物流任务表> 调拨(@RequestBody List<String> list, HttpServletRequest request, Model model){
-        System.out.println(list.get(0)+"---"+list.get(1)+"---"+list.get(2)+"---"+list.get(3)+"---"+list.get(4));
-        Result<物流任务表> res = 物流任务表Service.调拨(list);
+    public Result<物流任务表> 调拨(@RequestBody ERP单据明细表 ERP单据明细表, HttpServletRequest request, Model model){
+        System.out.println(ERP单据明细表.hashCode());
+        Result<物流任务表> res = 物流任务表Service.调拨(ERP单据明细表);
         return res;
     }
 

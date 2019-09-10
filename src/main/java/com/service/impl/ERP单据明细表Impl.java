@@ -294,15 +294,15 @@ public class ERP单据明细表Impl implements IERP单据明细表Service {
 
     @Transactional
     @Override
-    public Result<List<ERP单据明细表>> 展示单据(List<String> list) {
+    public Result<List<ERP单据明细表>> 展示单据(ERP单据明细表 ERP单据明细表) {
         Result<List<ERP单据明细表>> res = new Result<>();
         try{
-            System.out.println(list.get(0)+"---"+list.get(1)+"---"+list.get(2));
+            System.out.println(ERP单据明细表.get单据编号()+"---"+ERP单据明细表.get单据类型()+"---"+ERP单据明细表.get物料名称());
             //根据条件查询单据
             ERP单据明细表 search = new ERP单据明细表();
-            search.set单据编号(list.get(0));
-            search.set单据类型(list.get(1));
-            search.set物料名称(list.get(2));
+            search.set单据编号(ERP单据明细表.get单据编号());
+            search.set单据类型(ERP单据明细表.get单据类型());
+            search.set物料名称(ERP单据明细表.get物料名称());
             List<ERP单据明细表> data = ERP单据明细表Dao.展示单据(search);
             if(data == null || data.size() == 0){
                 res.setFlag(false);
@@ -321,15 +321,15 @@ public class ERP单据明细表Impl implements IERP单据明细表Service {
 
     @Transactional
     @Override
-    public Result<List<ERP单据明细表>> 完成入库(List<String> list) {
+    public Result<List<ERP单据明细表>> 完成入库(ERP单据明细表 ERP单据明细表) {
         Result<List<ERP单据明细表>> res = new Result<>();
         try{
-            System.out.println(list.get(0)+"---"+list.get(1)+"---"+list.get(2)+"---"+list.get(3));
+            System.out.println(ERP单据明细表.get单据编号()+"---"+ERP单据明细表.get物料名称()+"---"+ERP单据明细表.get数量()+"---"+ERP单据明细表.get计划数量());
             //根据条件查询单据
             ERP单据明细表 search = new ERP单据明细表();
-            search.set单据编号(list.get(0));
-            search.set物料名称(list.get(1));
-            search.set数量(Double.valueOf(list.get(3)));//总重量
+            search.set单据编号(ERP单据明细表.get单据编号());
+            search.set物料名称(ERP单据明细表.get物料名称());
+            search.set数量(ERP单据明细表.get计划数量());//总重量
             List<ERP单据明细表> data = ERP单据明细表Dao.selectBySelective(search);
             if(data == null || data.size() == 0){
                 res.setFlag(false);
@@ -347,7 +347,7 @@ public class ERP单据明细表Impl implements IERP单据明细表Service {
             }
             //计算剩余数量，从物流任务表中拿数据，注意如果AGV执行完任务，数据会出错
             if(data1.size() > 0){
-                Double sum = Double.valueOf(list.get(3));
+                Double sum = Double.valueOf(ERP单据明细表.get计划数量());//总重量
                 for(int i = 0;i<data1.size();i++){
                     sum-=data1.get(i).get数量();//递减计算剩余重量
                 }

@@ -37,7 +37,7 @@ public interface IERP单据明细表Service {
 
     public Result<ERP单据明细表> 修改单据标识(List<String> list);
 
-    public Result<List<ERP单据明细表>> 展示单据(List<String> list);
+    public Result<List<ERP单据明细表>> 展示单据(ERP单据明细表 ERP单据明细表);
 
-    public Result<List<ERP单据明细表>> 完成入库(List<String> list);
+    public Result<List<ERP单据明细表>> 完成入库(ERP单据明细表 ERP单据明细表);
 }

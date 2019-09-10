@@ -216,28 +216,11 @@ public class 物流任务表Impl implements I物流任务表Service {
 
     @Transactional
     @Override
-    public Result<物流任务表> 原料发布入库任务(List<String> list) {
+    public Result<物流任务表> 原料发布入库任务(ERP单据明细表 ERP单据明细表) {
         Result<物流任务表> res = new Result<>();
         try {
-            String 单据类型 = list.get(0);
-            String 单据编号 = list.get(1);
-            String 物料名称 = list.get(2);
-            String 物料编号 = list.get(3);
-            String 物料规格 = list.get(4);
-            String 物料批次 = list.get(5);
-            Double 总重量 = Double.valueOf(list.get(6));
-            Double 物料重量 =  Double.valueOf(list.get(7));
-            //添加数据到Bean表中
-            物流任务表 wl = new 物流任务表();
-            wl.set单据编号(单据编号);
-            wl.set物料编号(物料编号);
-            wl.set物料名称(物料名称);
-            wl.set类型名称(物料名称);
-            wl.set批次(物料批次);
-            wl.set物料规格(物料规格);
-            wl.set数量(物料重量);
-            System.out.println(单据类型+"--"+单据编号+"--"+物料编号+"--"+物料名称
-                    +"--"+物料批次+"--"+物料规格+"--"+物料重量+"--"+总重量);
+            System.out.println(ERP单据明细表.get单据类型()+"--"+ERP单据明细表.get单据编号()+"--"+ERP单据明细表.get物料编号()+"--"+ERP单据明细表.get物料名称()
+                    +"--"+ERP单据明细表.get批次()+"--"+ERP单据明细表.get物料规格()+"--"+ERP单据明细表.get数量()+"--"+ERP单据明细表.get计划数量());
             //起始站点位置
             String[] arr= new String[]{"B010101","B010501","B010201","B010601","B010301","B010701","B010401","B010801"};
             //目的站点位置  分奇偶数查询和发布物流任务
@@ -255,11 +238,11 @@ public class 物流任务表Impl implements I物流任务表Service {
             //判断进入方法的次数是否为偶数
             if(SerialNumber%2 == 0){
                 //采购入库单
-                if(单据类型.equals("DJ1")){
-                    stockInTask(wl, arr, 偶数s, "1002");//入库发布任务
+                if(ERP单据明细表.get单据类型().equals("DJ1")){
+                    stockInTask(ERP单据明细表, arr, 偶数s, "1002");//入库发布任务
                     //销售退货单
-                }else if(单据类型.equals("DJ7")){
-                    stockInTask(wl, arr, 偶数s, "1004");//入库发布任务
+                }else if(ERP单据明细表.get单据类型().equals("DJ7")){
+                    stockInTask(ERP单据明细表, arr, 偶数s, "1004");//入库发布任务
                 }else{
                     res.setFlag(false);
                     res.setMessage("单据类型错误");
@@ -267,11 +250,11 @@ public class 物流任务表Impl implements I物流任务表Service {
                 //判断进入方法的次数是否为奇数
             }else{
                 //采购入库单
-                if(单据类型.equals("DJ1")){
-                    stockInTask(wl, arr, 奇数s, "1002");//入库发布任务
+                if(ERP单据明细表.get单据类型().equals("DJ1")){
+                    stockInTask(ERP单据明细表, arr, 奇数s, "1002");//入库发布任务
                     //销售退货单
-                }else if(单据类型.equals("DJ7")){
-                    stockInTask(wl, arr, 奇数s, "1004");//入库发布任务
+                }else if(ERP单据明细表.get单据类型().equals("DJ7")){
+                    stockInTask(ERP单据明细表, arr, 奇数s, "1004");//入库发布任务
                 }else{
                     res.setFlag(false);
                     res.setMessage("单据类型错误");
@@ -288,11 +271,11 @@ public class 物流任务表Impl implements I物流任务表Service {
     }
 
     //入库发布任务
-    public void stockInTask(物流任务表 wl, String[] arr, List<库存查询表> 库位s, String 类型代码) {
+    public void stockInTask(ERP单据明细表 ERP单据明细表, String[] arr, List<库存查询表> 库位s, String 类型代码) {
         String 任务编号 = makeTaskNo();
         String 目的站点 = 库位s.get(0).get库位编号();
         //发布入库物流任务
-        insertInTask(wl, arr[index], 任务编号, 目的站点, 类型代码);
+        insertInTask(ERP单据明细表, arr[index], 任务编号, 目的站点, 类型代码);
         //预约入库
         updateBinStatus(目的站点, "I");
         //起始站点初始下标
@@ -305,21 +288,16 @@ public class 物流任务表Impl implements I物流任务表Service {
 
     @Transactional
     @Override
-    public Result<物流任务表> 发布出库任务(List<String> list) {
+    public Result<物流任务表> 发布出库任务(ERP单据明细表 ERP单据明细表) {
         Result<物流任务表> res = new Result<>();
         try {
-            String 单据类型 = list.get(0);
-            String 单据编号 = list.get(1);
-            String 物料名称 = list.get(2);
-            String 批次 = list.get(3);
-            String 规格 = list.get(4);
-            Double 总重量 = Double.valueOf(list.get(5));
-            System.out.println(单据类型+"--"+单据编号+"--"+物料名称+"--"+批次+"--"+规格+"--"+总重量);
+            System.out.println(ERP单据明细表.get单据类型()+"--"+ERP单据明细表.get单据编号()+"--"+ERP单据明细表.get物料名称()
+                    +"--"+ERP单据明细表.get批次()+"--"+ERP单据明细表.get物料规格()+"--"+ERP单据明细表.get计划数量());
             //查询物料库存
             库存查询表 kc = new 库存查询表();
-            kc.set物料名称(物料名称);
-            kc.set生产批次(批次);
-            kc.set物料规格(规格);
+            kc.set物料名称(ERP单据明细表.get物料名称());
+            kc.set生产批次(ERP单据明细表.get批次());
+            kc.set物料规格(ERP单据明细表.get物料规格());
             List<库存查询表> 库存查询表s = 库存查询表Dao.selectBySelective(kc);
             List<库存查询表> data = 库存查询表Dao.search库位(kc);
             //判断库存是否有物料
@@ -329,35 +307,35 @@ public class 物流任务表Impl implements I物流任务表Service {
                 //目的站点起始下标
                 int index = 0;
                 //销售出库单
-                if (单据类型.equals("DJ3")) {
+                if (ERP单据明细表.get单据类型().equals("DJ3")) {
                     //判断总重量的数额类型
-                    if (总重量 / 1000 > 0 && 总重量 % 1000 > 0) {
+                    if (ERP单据明细表.get计划数量() / 1000 > 0 && ERP单据明细表.get计划数量() % 1000 > 0) {
                         //循环次数
-                        int num = (int) (总重量 / 1000) + 1;
+                        int num = (int) (ERP单据明细表.get计划数量() / 1000) + 1;
                         //出库循环发布任务
-                        outTaskLoop(res, 单据编号, kc, 库存查询表s, arr, index, num);
+                        outTaskLoop(res, ERP单据明细表.get单据编号(), kc, 库存查询表s, arr, index, num);
 
-                    } else if (总重量 / 1000 > 0 && 总重量 % 1000 == 0) {
-                        int num = (int) (总重量 / 1000);
+                    } else if (ERP单据明细表.get计划数量() / 1000 > 0 && ERP单据明细表.get计划数量() % 1000 == 0) {
+                        int num = (int) (ERP单据明细表.get计划数量() / 1000);
                         //出库循环发布任务
-                        outTaskLoop(res, 单据编号, kc, 库存查询表s, arr, index, num);
+                        outTaskLoop(res, ERP单据明细表.get单据编号(), kc, 库存查询表s, arr, index, num);
 
-                    } else if (总重量 / 1000 < 0) {
+                    } else if (ERP单据明细表.get计划数量() / 1000 < 0) {
                         String 任务编号 = makeTaskNo();
                         String 起始站点 = data.get(0).get库位编号();
                         //发布出库物流任务
-                        insertOutTask(单据编号, 库存查询表s, arr[0], 任务编号, 起始站点);
+                        insertOutTask(ERP单据明细表.get单据编号(), 库存查询表s, arr[0], 任务编号, 起始站点);
                         //预约出库
                         updateBinStatus(起始站点, "O");
                     }
                     res.setFlag(true);
                     //判断是否是其他出库单或采购退货单
-                } else if (单据类型.equals("DJ5") || 单据类型.equals("DJ6")) {
+                } else if (ERP单据明细表.get单据类型().equals("DJ5") || ERP单据明细表.get单据类型().equals("DJ6")) {
                     Double sum = 0.0;
                     Double num = 0.0;
                     //循环次数
                     int i = 0;
-                    frist: while (sum < 总重量) {
+                    frist: while (sum < ERP单据明细表.get计划数量()) {
                         List<库存查询表> 偶数s = 库存查询表Dao.search偶数库位(kc);
                         List<库存查询表> 奇数s = 库存查询表Dao.search奇数库位(kc);
                         //判断奇偶数库存是否有物料
@@ -377,7 +355,7 @@ public class 物流任务表Impl implements I物流任务表Service {
                             String 任务编号 = makeTaskNo();
                             String 起始站点 = 奇数s.get(0).get库位编号();
                             //发布出库物流任务
-                            insertOutTask(单据编号, 库存查询表s, arr[index], 任务编号, 起始站点);
+                            insertOutTask(ERP单据明细表.get单据编号(), 库存查询表s, arr[index], 任务编号, 起始站点);
                             //预约出库
                             updateBinStatus(起始站点, "O");
                             //目的站点的循环
@@ -398,7 +376,7 @@ public class 物流任务表Impl implements I物流任务表Service {
                             String 任务编号 = makeTaskNo();
                             String 起始站点 = 偶数s.get(0).get库位编号();
                             //发布出库物流任务
-                            insertOutTask(单据编号, 库存查询表s, arr[index], 任务编号, 起始站点);
+                            insertOutTask(ERP单据明细表.get单据编号(), 库存查询表s, arr[index], 任务编号, 起始站点);
                             //预约出库
                             updateBinStatus(起始站点, "O");
                             //中转站点下标
@@ -577,19 +555,14 @@ public class 物流任务表Impl implements I物流任务表Service {
 
     @Transactional
     @Override
-    public Result<物流任务表> 调拨(List<String> list) {
+    public Result<物流任务表> 调拨(ERP单据明细表 ERP单据明细表) {
         Result<物流任务表> res = new Result<>();
         try {
-            String 起始站点 = list.get(0);
-            String 目的站点 = list.get(1);
-            String 单据编号 = list.get(2);
-            String 单据类型 = list.get(3);
-            String 物料名称 = list.get(4);
-            System.out.println(起始站点+"--"+目的站点);
+            System.out.println(ERP单据明细表.get起始站点()+"--"+ERP单据明细表.get目的站点());
 
             ERP单据明细表 erp = new ERP单据明细表();
-            erp.set起始站点(起始站点);
-            erp.set目的站点(目的站点);
+            erp.set起始站点(ERP单据明细表.get起始站点());
+            erp.set目的站点(ERP单据明细表.get目的站点());
             List<ERP单据明细表> data = ERP单据明细表Dao.selectBySelective(erp);
             if(data.size() == 0 || data == null){
                 res.setFlag(false);
@@ -597,10 +570,10 @@ public class 物流任务表Impl implements I物流任务表Service {
             }
 
             物流任务表 wl = new 物流任务表();
-            if (起始站点.equals(data.get(0).get起始站点()) && 目的站点.equals(data.get(0).get目的站点())) {
+            if (ERP单据明细表.get起始站点().equals(data.get(0).get起始站点()) && ERP单据明细表.get目的站点().equals(data.get(0).get目的站点())) {
                 String 任务编号 = makeTaskNo();
                 wl.set任务编号(任务编号);
-                wl.set单据编号(单据编号);
+                wl.set单据编号(data.get(0).get单据编号());
                 wl.set任务类型("E");
                 wl.set任务状态("0");
                 wl.set任务优先级("0");
@@ -609,17 +582,17 @@ public class 物流任务表Impl implements I物流任务表Service {
                 wl.set类型代码(data.get(0).get类型代码());
                 wl.set类型名称(data.get(0).get类型名称());
                 wl.set物料规格(data.get(0).get物料规格());
-                wl.set起始站点(起始站点);
-                wl.set目的站点(目的站点);
+                wl.set起始站点(data.get(0).get起始站点());
+                wl.set目的站点(data.get(0).get目的站点());
                 wl.set批次(data.get(0).get批次());
                 wl.set数量(data.get(0).get数量());
                 wl.set备注("调拨");
                 物流任务表Dao.insert(wl);
 
                 //预约出库
-                updateBinStatus(起始站点, "O");
+                updateBinStatus(data.get(0).get起始站点(), "O");
                 //预约入库
-                updateBinStatus(目的站点, "I");
+                updateBinStatus(data.get(0).get目的站点(), "I");
 
             }else{
                 res.setFlag(false);
@@ -746,19 +719,8 @@ public class 物流任务表Impl implements I物流任务表Service {
                     return;
                 }
                 if (data.get(0).get单据类型().equals("DJ4")) {//判断单据类型
-
-                    kc.set物料代码(物流任务表s.get(i).get物料编号());
-                    kc.set物料名称(物流任务表s.get(i).get物料名称());
-                    kc.set类型代码(物流任务表s.get(i).get类型代码());
-                    kc.set类型名称(物流任务表s.get(i).get类型名称());
-                    kc.set库位编号(物流任务表s.get(i).get目的站点());
-                    kc.set条码编号(barcode.get(i).get条码编号());
-                    kc.set库位状态("$");
-                    kc.set库位禁用(null);
-                    kc.set生产批次(物流任务表s.get(i).get批次());
-                    kc.set物料规格(物流任务表s.get(i).get物料规格());
-                    kc.set物料重量(物流任务表s.get(i).get数量());
-                    库存查询表Dao.入库任务更改库位信息(kc);
+                    //更改库存信息
+                    allocationUpdateBin(物流任务表s.get(i), barcode.get(0));
 
                     kc.set库位编号(物流任务表s.get(i).get起始站点());
                     库存查询表Dao.清空库位(kc);
@@ -778,23 +740,41 @@ public class 物流任务表Impl implements I物流任务表Service {
         }
     }
 
+    //更改库存信息
+    public 库存查询表 allocationUpdateBin(物流任务表 物流任务表, 库存查询表 barcode) {
+        库存查询表 kc = new 库存查询表();
+        kc.set物料代码(物流任务表.get物料编号());
+        kc.set物料名称(物流任务表.get物料名称());
+        kc.set类型代码(物流任务表.get类型代码());
+        kc.set类型名称(物流任务表.get类型名称());
+        kc.set库位编号(物流任务表.get目的站点());
+        kc.set条码编号(barcode.get条码编号());
+        kc.set库位状态(barcode.get库位状态());
+        kc.set库位禁用(null);
+        kc.set生产批次(物流任务表.get批次());
+        kc.set物料规格(物流任务表.get物料规格());
+        kc.set物料重量(物流任务表.get数量());
+        库存查询表Dao.入库任务更改库位信息(kc);
+        return kc;
+    }
+
     //发布入库物流任务
-    public void insertInTask(物流任务表 物流任务表, String 起始站点, String 任务编号, String 目的站点, String 类型代码) {
+    public void insertInTask(ERP单据明细表 ERP单据明细表, String 起始站点, String 任务编号, String 目的站点, String 类型代码) {
         物流任务表 wl = new 物流任务表();
         wl.set任务编号(任务编号);
-        wl.set单据编号(物流任务表.get单据编号());
+        wl.set单据编号(ERP单据明细表.get单据编号());
         wl.set任务类型("T");
         wl.set任务状态("0");
         wl.set任务优先级("0");
-        wl.set物料编号(物流任务表.get物料编号());
-        wl.set物料名称(物流任务表.get物料名称());
+        wl.set物料编号(ERP单据明细表.get物料编号());
+        wl.set物料名称(ERP单据明细表.get物料名称());
         wl.set类型代码(类型代码);
-        wl.set类型名称(物流任务表.get类型名称());
-        wl.set批次(物流任务表.get批次());
-        wl.set物料规格(物流任务表.get物料规格());
+        wl.set类型名称(ERP单据明细表.get类型名称());
+        wl.set批次(ERP单据明细表.get批次());
+        wl.set物料规格(ERP单据明细表.get物料规格());
         wl.set起始站点(起始站点);
         wl.set目的站点(目的站点);
-        wl.set数量(物流任务表.get数量());
+        wl.set数量(ERP单据明细表.get数量());
         物流任务表Dao.insert(wl);
     }
 
@@ -844,7 +824,7 @@ public class 物流任务表Impl implements I物流任务表Service {
         kc.set生产批次(物流任务表.get批次());
         kc.set库位编号(物流任务表.get目的站点());
         kc.set库位状态("Q");
-        kc.set库位禁用(0);
+        kc.set库位禁用(null);
         kc.set物料规格(物流任务表.get物料规格());
         kc.set物料重量(物流任务表.get数量());
         库存查询表Dao.入库任务更改库位信息(kc);

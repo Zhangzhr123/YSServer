@@ -2,6 +2,7 @@ package com;
 
 import com.bean.库存查询表;
 import com.bean.物流任务表;
+import com.bean.终端版本表;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +15,12 @@ import java.util.List;
 public class VlandServerApplicationTests {
 
 	@Autowired
-	private com.dao.库存查询表Dao 库存查询表Dao;
+	private com.dao.终端版本表Dao 终端版本表dao;
 
 	@Test
 	public void contextLoads() {
-
-		库存查询表 wl = new 库存查询表();
-		wl.set库位编号("A010603");
-		库存查询表Dao.清空库位(wl);
-
-
+		List<终端版本表> data = 终端版本表dao.selectAll();
+		System.out.println(data.get(0).get版本id());
 	}
 
 }

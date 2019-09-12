@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>终端版本表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.1/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.1/demo/demo.css" />
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.1/themes/icon.css" />
+    <script type="text/javascript" src="jquery-easyui-1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-easyui-1.5.1/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="jquery-easyui-1.5.1/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+
+<table id="dg" class="easyui-datagrid" th:title="#{终端版本表}" style="width:100%;height:600px"
+       data-options="rownumbers:true,
+                          multipleSelect:true,
+                          toolbar: '#tb',
+                          method:'get',
+                          pagination: true,
+                          rownumbers: true,
+                          fit: true">
+    <thead>
+    <tr>
+        <th data-options="field:'checkbox',checkbox:true"></th>
+        <th data-options="field:'版本号',width:120"><label th:text="#{终端版本表.版本号}"/></th>
+        <th data-options="field:'版本显示号',width:120"><label th:text="#{终端版本表.版本显示号}"/></th>
+        <th data-options="field:'版本描述',width:120"><label th:text="#{终端版本表.版本描述}"/></th>
+        <th data-options="field:'下载地址',width:120"><label th:text="#{终端版本表.下载地址}"/></th>
+        <th data-options="field:'创建时间',width:150"><label th:text="#{终端版本表.创建时间}"/></th>
+    </tr>
+    </thead>
+</table>
+
+<div id="tb" style="height:auto">
+    <form id="searchForm">
+        <div style="margin-top: 20px">
+
+            <label th:text="#{终端版本表.版本号}"/>:
+            <input name="版本号" class="easyui-textbox" />
+            <label th:text="#{终端版本表.版本显示号}"/>:
+            <input name="版本显示号" class="easyui-textbox" />
+            <label th:text="#{终端版本表.版本描述}"/>:
+            <input name="版本描述" class="easyui-textbox" />
+        </div>
+        <div style="margin-top: 20px">
+            <label th:text="#{终端版本表.下载地址}"/>:
+            <input name="下载地址" class="easyui-textbox" />
+            <label th:text="#{终端版本表.创建时间}"/>:
+            <input name="创建时间Begin" class="easyui-datebox" />-
+            <input name="创建时间End" class="easyui-datebox" />
+        </div>
+    </form>
+    <br/>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add', plain:true" onclick="openAddWin()"><label th:text="#{add}"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit', plain:true" onclick="openEditWin()"><label th:text="#{edit}"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit', plain:true" onclick="openDetailWin()"><label th:text="#{detail}"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove', plain:true" onclick="del()"><label th:text="#{del}"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true" onclick="searchWork()"><label th:text="#{query}"/></a>
+</div>
+
+<!-- 添加窗口 -->
+<div id="addWin" class="easyui-window" th:title="#{add}" style="width:80%;height:300px" data-options="modal:true,closed:true,iconCls:'icon-add',collapsible:false,minimizable:false,maximizable:false,resizable:false">
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'center'" >
+            <form id="addForm" method="post">
+                <table>
+                    <tr height="35px">
+                        <td>
+                            <label th:text="#{终端版本表.版本号}"/>
+                        </td>
+                        <td>
+                            <input name="版本号" class="easyui-numberbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{终端版本表.版本显示号}"/>
+                        </td>
+                        <td>
+                            <input name="版本显示号" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{终端版本表.版本描述}"/>
+                        </td>
+                        <td>
+                            <input name="版本描述" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr height="35px">
+                        <td>
+                            <label th:text="#{终端版本表.下载地址}"/>
+                        </td>
+                        <td>
+                            <input name="下载地址" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{终端版本表.创建时间}"/>
+                        </td>
+                        <td>
+                            <input name="创建时间" class="easyui-datebox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr><td id="errorAddMsg" colspan="3"></td></tr>
+                </table>
+            </form>
+        </div>
+        <div id="addWinBtns" data-options="region:'south',border:false" style="text-align:right;padding:1px;height:30px">
+            <a href="javascript:void(0)" data-options="plain:true,iconCls:'icon-ok'" class="easyui-linkbutton" onclick="javascript:addFormsubmit();"><label th:text="#{submit}"/></a>
+            <a href="javascript:void(0)" data-options="plain:true,iconCls:'icon-cancel'" class="easyui-linkbutton" onclick="$('#addWin').window('close')"><label th:text="#{cancel}"/></a>
+        </div>
+    </div>
+</div>
+<!-- 编辑窗口 -->
+<div id="editWin" class="easyui-window" th:title="#{edit}" style="width:80%;height:300px" data-options="modal:true,closed:true,iconCls:'icon-add',collapsible:false,minimizable:false,maximizable:false,resizable:false">
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'center'" >
+            <form id="editForm" method="post">
+                <table>
+                    <tr height="35px">
+                        <div style="display: none;">
+                            <input name="版本id" class="easyui-textbox" data-options="required:true"/>
+                        </div>
+                        <td>
+                            <label th:text="#{终端版本表.版本号}"/>
+                        </td>
+                        <td>
+                            <input name="版本号" class="easyui-numberbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{终端版本表.版本显示号}"/>
+                        </td>
+                        <td>
+                            <input name="版本显示号" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{终端版本表.版本描述}"/>
+                        </td>
+                        <td>
+                            <input name="版本描述" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr height="35px">
+                        <td>
+                            <label th:text="#{终端版本表.下载地址}"/>
+                        </td>
+                        <td>
+                            <input name="下载地址" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{终端版本表.创建时间}"/>
+                        </td>
+                        <td>
+                            <input name="创建时间" class="easyui-datebox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr><td id="errorEditMsg" colspan="3"></td></tr>
+                </table>
+            </form>
+        </div>
+        <div id="editWinBtns" data-options="region:'south',border:false" style="text-align:right;padding:1px;height:30px">
+            <a href="javascript:void(0)" data-options="plain:true,iconCls:'icon-ok'" class="easyui-linkbutton" onclick="editFormsubmit()"><label th:text="#{submit}"/></a>
+            <a href="javascript:void(0)" data-options="plain:true,iconCls:'icon-cancel'" class="easyui-linkbutton" onclick="$('#editWin').window('close')"><label th:text="#{cancel}"/></a>
+        </div>
+    </div>
+</div>
+<!-- 显示窗口 -->
+<div id="detailWin" class="easyui-window" th:title="#{edit}" style="width:80%;height:300px" data-options="modal:true,closed:true,iconCls:'icon-add',collapsible:false,minimizable:false,maximizable:false,resizable:false">
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'center'" >
+            <form id="detailForm" method="post">
+                <table>
+                    <tr height="35px">
+                        <div style="display: none;">
+                            <input name="版本id" class="easyui-textbox" disabled="disabled"/>
+                        </div>
+                        <td>
+                            <label th:text="#{终端版本表.版本号}"/>
+                        </td>
+                        <td>
+                            <input name="版本号" class="easyui-numberbox" disabled="disabled" />
+                        </td>
+                        <td>
+                            <label th:text="#{终端版本表.版本显示号}"/>
+                        </td>
+                        <td>
+                            <input name="版本显示号" class="easyui-textbox" disabled="disabled" />
+                        </td>
+                        <td>
+                            <label th:text="#{终端版本表.版本描述}"/>
+                        </td>
+                        <td>
+                            <input name="版本描述" class="easyui-textbox" disabled="disabled" />
+                        </td>
+                    </tr>
+                    <tr height="35px">
+                        <td>
+                            <label th:text="#{终端版本表.下载地址}"/>
+                        </td>
+                        <td>
+                            <input name="下载地址" class="easyui-textbox" disabled="disabled" />
+                        </td>
+                        <td>
+                            <label th:text="#{终端版本表.创建时间}"/>
+                        </td>
+                        <td>
+                            <input name="创建时间" class="easyui-datebox" disabled="disabled" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript">
+    $.fn.serializeJson = function () {
+        var obj = {};
+        var count = 0;
+        $.each(this.serializeArray(), function (i, o) {
+            var n = o.name, v = o.value;
+            count++;
+            obj[n] = obj[n] === undefined ? v
+                : $.isArray(obj[n]) ? obj[n].concat(v)
+                    : [obj[n], v];
+        });
+        return JSON.stringify(obj);
+    };
+    $(function(){
+        searchWork();
+    });
+    function searchWork(){
+        $('#dg').datagrid({
+            url : '/终端版本表/getListDataPage?' + $("#searchForm").serialize()
+        });
+    }
+    function openAddWin(){
+        $('#addWin').form('clear');
+        $('#addWin').window('open');
+    }
+    function addFormsubmit(){
+        $('#addForm').form('submit',{
+            url : '/终端版本表/create',
+            onSubmit : function(param){
+                // do some check
+                // return false to prevent submit;
+            },
+            success : function(data){
+                var res = JSON.parse(data);
+                if(res.flag){
+                    $('#dg').datagrid('reload');    // reload the current page data
+                    $.messager.alert("提醒", "添加成功！");
+                    $('#addWin').window("close");
+                }else{
+                    $.messager.alert("提醒", res.message);
+                }
+
+            }
+        });
+    }
+    function openEditWin(){
+        var rows = $('#dg').datagrid('getSelections');
+        if(rows == null || rows.length == 0){
+            $.messager.alert("提示", "请选中一行数据！");
+            return false;
+        }
+        var row = rows[0];
+        //加载编辑页面数据
+        $('#editForm').form('load',{
+            版本id : row['版本id'],
+            版本号 : row['版本号'],
+            版本显示号 : row['版本显示号'],
+            版本描述 : row['版本描述'],
+            下载地址 : row['下载地址'],
+            创建时间 : row['创建时间'],
+        });
+        $('#editWin').window('open');
+    }
+    function editFormsubmit(){
+        $('#editForm').form('submit',{
+            url : '/终端版本表/update',
+            onSubmit : function(param){
+                // do some check
+                // return false to prevent submit;
+            },
+            success : function(data){
+                var res = JSON.parse(data);
+                if(res.flag){
+                    $('#dg').datagrid('reload');    // reload the current page data
+                    $.messager.alert("提醒", "修改成功！");
+                    $('#editWin').window("close");
+                }else{
+                    $.messager.alert("提醒", res.message);
+                }
+
+            }
+        });
+    }
+    function openDetailWin(){
+        var rows = $('#dg').datagrid('getSelections');
+        if(rows == null || rows.length == 0){
+            $.messager.alert("提示", "请选中一行数据！");
+            return false;
+        }
+        var row = rows[0];
+        //加载编辑页面数据
+        $('#detailForm').form('load',{
+            版本id : row['版本id'],
+            版本号 : row['版本号'],
+            版本显示号 : row['版本显示号'],
+            版本描述 : row['版本描述'],
+            下载地址 : row['下载地址'],
+            创建时间 : row['创建时间'],
+        });
+        $('#detailWin').window('open');
+    }
+    function del(){
+        var rows = $('#dg').datagrid('getSelections');
+        var idList = new Array();
+        if(rows == null || rows.length == 0){
+            $.messager.alert("提示", "请至少选中一行！");
+            return false;
+        }
+        /*<![CDATA[*/
+        for(var i = 0; i < rows.length; i++){
+            idList[i] = rows[i]['objectId'];
+        }
+        /*]]>*/
+
+        var params = { field : idList};
+        $.ajax({
+            url : '/终端版本表/deleteAll',
+            data : JSON.stringify(params),
+            type : 'POST',
+            contentType : 'application/json',
+            dataType : 'json',
+            success : function(res){
+                if(res.flag){
+                    $('#dg').datagrid('reload');    // reload the current page data
+                    $.messager.alert("提醒", "删除成功！");
+                }else{
+                    $.messager.alert("提醒", res.message);
+                }
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

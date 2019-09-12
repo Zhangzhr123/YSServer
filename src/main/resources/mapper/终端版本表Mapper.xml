@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.终端版本表Dao">
+	<!-- =========================================================== -->
+	<!-- 定义resultMap                                                                                                                                                                             -->
+	<!-- =========================================================== -->
+	<resultMap id="终端版本表Map" type="com.bean.终端版本表">
+		<id property="版本id" column="VersionID" jdbcType="INTEGER"/>
+		<result property="版本号" column="Version_Code" jdbcType="INTEGER"/>
+		<result property="版本显示号" column="Version_Display_Code" jdbcType="VARCHAR"/>
+		<result property="版本描述" column="Version_Description" jdbcType="VARCHAR"/>
+		<result property="下载地址" column="Download_Address" jdbcType="VARCHAR"/>
+		<result property="创建时间" column="Creat_Time" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	<!-- =========================================================== -->
+	<!-- 一些公共变量设置                                                                                                                                                                             -->
+	<!-- =========================================================== -->
+	<!-- 字段 -->
+	<sql id="Base_Column_List" >
+		VersionID
+		,Version_Code
+		,Version_Display_Code
+		,Version_Description
+		,Download_Address
+		,Creat_Time
+	</sql>
+	<!-- =========================================================== -->
+	<!-- 基本增删改查方法                                                                                                             -->
+	<!-- =========================================================== -->
+	<insert id="insert" parameterType="com.bean.终端版本表"  useGeneratedKeys="true" keyProperty="            版本id
+">
+		insert into IMOS_VS_TerminalVersion
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			Version_Code,
+			Version_Display_Code,
+			Version_Description,
+			Download_Address,
+			Creat_Time,
+		</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			#{版本号, jdbcType=INTEGER},
+			#{版本显示号, jdbcType=VARCHAR},
+			#{版本描述, jdbcType=VARCHAR},
+			#{下载地址, jdbcType=VARCHAR},
+			#{创建时间, jdbcType=TIMESTAMP},
+		</trim>
+	</insert>
+	<insert id="insertSelective" parameterType="com.bean.终端版本表" useGeneratedKeys="true" keyProperty="            版本id
+" >
+		insert into IMOS_VS_TerminalVersion
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="版本号 != null">
+				Version_Code,
+			</if>
+			<if test="版本显示号 != null">
+				Version_Display_Code,
+			</if>
+			<if test="版本描述 != null">
+				Version_Description,
+			</if>
+			<if test="下载地址 != null">
+				Download_Address,
+			</if>
+			<if test="创建时间 != null">
+				Creat_Time,
+			</if>
+		</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="版本号 != null">
+				#{版本号, jdbcType=INTEGER},
+			</if>
+			<if test="版本显示号 != null">
+				#{版本显示号, jdbcType=VARCHAR},
+			</if>
+			<if test="版本描述 != null">
+				#{版本描述, jdbcType=VARCHAR},
+			</if>
+			<if test="下载地址 != null">
+				#{下载地址, jdbcType=VARCHAR},
+			</if>
+			<if test="创建时间 != null">
+				#{创建时间, jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<delete id="delete" parameterType="java.lang.String">
+		delete IMOS_VS_TerminalVersion
+		where VersionID = #{版本id}
+	</delete>
+	<delete id="deleteAll">
+		delete IMOS_VS_TerminalVersion
+		where VersionID  in
+		<foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	<update id="update" parameterType="com.bean.终端版本表">
+		update IMOS_VS_TerminalVersion
+		set
+		Version_Code = #{版本号, jdbcType=INTEGER}
+		,Version_Display_Code = #{版本显示号, jdbcType=VARCHAR}
+		,Version_Description = #{版本描述, jdbcType=VARCHAR}
+		,Download_Address = #{下载地址, jdbcType=VARCHAR}
+		,Creat_Time = #{创建时间, jdbcType=TIMESTAMP}
+		where VersionID = #{版本id}
+	</update>
+	<update id="updateSelective" parameterType="com.bean.终端版本表">
+		update IMOS_VS_TerminalVersion
+		<set>
+			<if test="版本号!= null">
+				Version_Code = #{版本号, jdbcType=INTEGER},
+			</if>
+			<if test="版本显示号!= null">
+				Version_Display_Code = #{版本显示号, jdbcType=VARCHAR},
+			</if>
+			<if test="版本描述!= null">
+				Version_Description = #{版本描述, jdbcType=VARCHAR},
+			</if>
+			<if test="下载地址!= null">
+				Download_Address = #{下载地址, jdbcType=VARCHAR},
+			</if>
+			<if test="创建时间!= null">
+				Creat_Time = #{创建时间, jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where VersionID = #{版本id}
+	</update>
+	<select id="selectByPrimaryKey" resultMap="终端版本表Map" parameterType="java.lang.String" >
+		select
+		<include refid="Base_Column_List" />
+		from IMOS_VS_TerminalVersion
+		where VersionID = #{版本id}
+	</select>
+	<select id="selectAll" resultMap="终端版本表Map" >
+		select
+		<include refid="Base_Column_List" />
+		from  IMOS_VS_TerminalVersion
+	</select>
+	<select id="selectBySelectiveCount" resultType="java.lang.Long" parameterType="com.bean.终端版本表">
+		select
+		count(VersionID) c
+		from IMOS_VS_TerminalVersion
+		<where>
+			<if test="版本号 != null">
+				and Version_Code = #{版本号, jdbcType=INTEGER}
+			</if>
+
+			<if test="版本显示号 != null and 版本显示号 != '' ">
+				and Version_Display_Code = #{版本显示号, jdbcType=VARCHAR}
+			</if>
+
+			<if test="版本描述 != null and 版本描述 != '' ">
+				and Version_Description = #{版本描述, jdbcType=VARCHAR}
+			</if>
+
+			<if test="下载地址 != null and 下载地址 != '' ">
+				and Download_Address = #{下载地址, jdbcType=VARCHAR}
+			</if>
+
+			<if test="创建时间 != null">
+				and Creat_Time = #{创建时间, jdbcType=TIMESTAMP}
+			</if>
+			<if test="创建时间Begin != null">
+				and Creat_Time >= #{创建时间Begin, jdbcType=TIMESTAMP}
+			</if>
+			<if test="创建时间End != null">
+				and Creat_Time &lt;= #{创建时间End, jdbcType=TIMESTAMP}
+			</if>
+
+		</where>
+	</select>
+	<select id="selectBySelectivePage" resultMap="终端版本表Map" parameterType="com.bean.终端版本表">
+		select *
+		from
+		(select
+		row_number() over (order by VersionID) as rowindex,
+		<include refid="Base_Column_List" />
+		from IMOS_VS_TerminalVersion
+		<where>
+			<if test="版本号 != null">
+				and Version_Code = #{版本号, jdbcType=INTEGER}
+			</if>
+			<if test="版本显示号 != null and 版本显示号 != '' ">
+				and Version_Display_Code = #{版本显示号, jdbcType=VARCHAR}
+			</if>
+			<if test="版本描述 != null and 版本描述 != '' ">
+				and Version_Description = #{版本描述, jdbcType=VARCHAR}
+			</if>
+			<if test="下载地址 != null and 下载地址 != '' ">
+				and Download_Address = #{下载地址, jdbcType=VARCHAR}
+			</if>
+			<if test="创建时间 != null">
+				and Creat_Time = #{创建时间, jdbcType=TIMESTAMP}
+			</if>
+			<if test="创建时间Begin != null">
+				and Creat_Time >= #{创建时间Begin, jdbcType=TIMESTAMP}
+			</if>
+			<if test="创建时间End != null">
+				and Creat_Time &lt;= #{创建时间End, jdbcType=TIMESTAMP}
+			</if>
+		</where>) as t
+		where rowindex  >= #{startIndex} and rowindex &lt; #{endIndex}
+	</select>
+	<select id="selectBySelective" resultMap="终端版本表Map" parameterType="com.bean.终端版本表">
+		select
+		<include refid="Base_Column_List" />
+		from IMOS_VS_TerminalVersion
+		<where>
+			<if test="版本号 != null">
+				and Version_Code = #{版本号, jdbcType=INTEGER}
+			</if>
+			<if test="版本显示号 != null and 版本显示号 != '' ">
+				and Version_Display_Code = #{版本显示号, jdbcType=VARCHAR}
+			</if>
+			<if test="版本描述 != null and 版本描述 != '' ">
+				and Version_Description = #{版本描述, jdbcType=VARCHAR}
+			</if>
+			<if test="下载地址 != null and 下载地址 != '' ">
+				and Download_Address = #{下载地址, jdbcType=VARCHAR}
+			</if>
+			<if test="创建时间 != null">
+				and Creat_Time = #{创建时间, jdbcType=TIMESTAMP}
+			</if>
+			<if test="创建时间Begin != null">
+				and Creat_Time >= #{创建时间Begin, jdbcType=TIMESTAMP}
+			</if>
+			<if test="创建时间End != null">
+				and Creat_Time &lt;= #{创建时间End, jdbcType=TIMESTAMP}
+			</if>
+		</where>
+	</select>
+
+	<select id="获取最新版本" resultMap="终端版本表Map">
+		select top 1
+		<include refid="Base_Column_List"/>
+		from IMOS_VS_TerminalVersion
+		order by Version_Code DESC
+	</select>
+</mapper>

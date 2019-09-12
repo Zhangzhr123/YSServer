@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>条码物料表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.1/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.1/demo/demo.css" />
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.1/themes/icon.css" />
+    <script type="text/javascript" src="jquery-easyui-1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-easyui-1.5.1/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="jquery-easyui-1.5.1/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+<!--  Created by zzr on 2019/06/11  -->
+<table id="dg" class="easyui-datagrid" th:title="#{条码物料表}"
+       data-options="rownumbers:true,
+            			  multipleSelect:true,
+            			  toolbar: '#tb',
+            			  method:'get',
+            			  pagination: true,
+	            		  rownumbers: true,
+                            fit: true">
+    <thead>
+    <tr>
+        <th data-options="field:'checkbox',checkbox:true"></th>
+        <th data-options="field:'条码编号',width:120"><label th:text="#{条码物料表.条码编号}"/></th>
+        <th data-options="field:'条码类型',width:120"><label th:text="#{条码物料表.条码类型}"/></th>
+        <th data-options="field:'物料编码',width:120"><label th:text="#{条码物料表.物料编码}"/></th>
+        <th data-options="field:'物料名称',width:120"><label th:text="#{条码物料表.物料名称}"/></th>
+        <th data-options="field:'类型代码',width:120"><label th:text="#{条码物料表.类型代码}"/></th>
+        <th data-options="field:'类型名称',width:120"><label th:text="#{条码物料表.类型名称}"/></th>
+        <th data-options="field:'物料规格',width:120"><label th:text="#{条码物料表.物料规格}"/></th>
+        <th data-options="field:'物料单位',width:120"><label th:text="#{条码物料表.物料单位}"/></th>
+        <th data-options="field:'数量',width:120"><label th:text="#{条码物料表.数量}"/></th>
+    </tr>
+    </thead>
+</table>
+
+<div id="tb" style="height:auto">
+    <form id="searchForm">
+        <div style="margin-top: 20px">
+
+            <label th:text="#{条码物料表.条码编号}"/>:
+            <input name="条码编号" class="easyui-textbox" />
+            <label th:text="#{条码物料表.条码类型}"/>:
+            <input name="条码类型" class="easyui-textbox" />
+            <label th:text="#{条码物料表.物料编码}"/>:
+            <input name="物料编码" class="easyui-textbox" />
+        </div>
+        <div style="margin-top: 20px">
+            <label th:text="#{条码物料表.物料名称}"/>:
+            <input name="物料名称" class="easyui-textbox" />
+            <label th:text="#{条码物料表.类型代码}"/>:
+            <input name="类型代码" class="easyui-textbox" />
+            <label th:text="#{条码物料表.类型名称}"/>:
+            <input name="类型名称" class="easyui-textbox" />
+            <label th:text="#{条码物料表.物料规格}"/>:
+            <input name="物料规格" class="easyui-textbox" />
+            <label th:text="#{条码物料表.物料单位}"/>:
+            <input name="物料单位" class="easyui-textbox" />
+            <label th:text="#{条码物料表.数量}"/>:
+            <input name="数量" class="easyui-textbox" />
+        </div>
+        <div style="margin-top: 20px">
+        </div>
+    </form>
+    <br/>
+    <!--<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add', plain:true" onclick="openAddWin()"><label th:text="#{add}"/></a>-->
+    <!--<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit', plain:true" onclick="openEditWin()"><label th:text="#{edit}"/></a>-->
+    <!--<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit', plain:true" onclick="openDetailWin()"><label th:text="#{detail}"/></a>-->
+    <!--<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove', plain:true" onclick="del()"><label th:text="#{del}"/></a>-->
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true" onclick="searchWork()"><label th:text="#{query}"/></a>
+</div>
+
+<!-- 添加窗口 -->
+<div id="addWin" class="easyui-window" th:title="#{add}" style="width:80%;height:300px" data-options="modal:true,closed:true,iconCls:'icon-add',collapsible:false,minimizable:false,maximizable:false,resizable:false">
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'center'" >
+            <form id="addForm" method="post">
+                <table>
+                    <tr height="35px">
+                        <td>
+                            <label th:text="#{条码物料表.条码编号}"/>
+                        </td>
+                        <td>
+                            <input name="条码编号" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.条码类型}"/>
+                        </td>
+                        <td>
+                            <input name="条码类型" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.物料编码}"/>
+                        </td>
+                        <td>
+                            <input name="物料编码" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr height="35px">
+                        <td>
+                            <label th:text="#{条码物料表.物料名称}"/>
+                        </td>
+                        <td>
+                            <input name="物料名称" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.类型代码}"/>
+                        </td>
+                        <td>
+                            <input name="类型代码" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.类型名称}"/>
+                        </td>
+                        <td>
+                            <input name="类型名称" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.物料规格}"/>
+                        </td>
+                        <td>
+                            <input name="物料规格" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.物料单位}"/>
+                        </td>
+                        <td>
+                            <input name="物料单位" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.数量}"/>
+                        </td>
+                        <td>
+                            <input name="数量" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr height="35px">
+                    </tr>
+                    <tr><td id="errorAddMsg" colspan="3"></td></tr>
+                </table>
+            </form>
+        </div>
+        <div id="addWinBtns" data-options="region:'south',border:false" style="text-align:right;padding:1px;height:30px">
+            <a href="javascript:void(0)" data-options="plain:true,iconCls:'icon-ok'" class="easyui-linkbutton" onclick="javascript:addFormsubmit();"><label th:text="#{submit}"/></a>
+            <a href="javascript:void(0)" data-options="plain:true,iconCls:'icon-cancel'" class="easyui-linkbutton" onclick="$('#addWin').window('close')"><label th:text="#{cancel}"/></a>
+        </div>
+    </div>
+</div>
+<!-- 编辑窗口 -->
+<div id="editWin" class="easyui-window" th:title="#{edit}" style="width:80%;height:300px" data-options="modal:true,closed:true,iconCls:'icon-add',collapsible:false,minimizable:false,maximizable:false,resizable:false">
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'center'" >
+            <form id="editForm" method="post">
+                <table>
+                    <tr height="35px">
+                        <div style="display: none;">
+                            <input name="条码编号" class="easyui-textbox" data-options="required:true"/>
+                        </div>
+                        <td>
+                            <label th:text="#{条码物料表.条码类型}"/>
+                        </td>
+                        <td>
+                            <input name="条码类型" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.物料编码}"/>
+                        </td>
+                        <td>
+                            <input name="物料编码" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr height="35px">
+                        <td>
+                            <label th:text="#{条码物料表.物料名称}"/>
+                        </td>
+                        <td>
+                            <input name="物料名称" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.类型代码}"/>
+                        </td>
+                        <td>
+                            <input name="类型代码" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.类型名称}"/>
+                        </td>
+                        <td>
+                            <input name="类型名称" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.物料规格}"/>
+                        </td>
+                        <td>
+                            <input name="物料规格" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.物料单位}"/>
+                        </td>
+                        <td>
+                            <input name="物料单位" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.数量}"/>
+                        </td>
+                        <td>
+                            <input name="数量" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr height="35px">
+                    </tr>
+                    <tr><td id="errorEditMsg" colspan="3"></td></tr>
+                </table>
+            </form>
+        </div>
+        <div id="editWinBtns" data-options="region:'south',border:false" style="text-align:right;padding:1px;height:30px">
+            <a href="javascript:void(0)" data-options="plain:true,iconCls:'icon-ok'" class="easyui-linkbutton" onclick="editFormsubmit()"><label th:text="#{submit}"/></a>
+            <a href="javascript:void(0)" data-options="plain:true,iconCls:'icon-cancel'" class="easyui-linkbutton" onclick="$('#editWin').window('close')"><label th:text="#{cancel}"/></a>
+        </div>
+    </div>
+</div>
+<!-- 显示窗口 -->
+<div id="detailWin" class="easyui-window" th:title="#{edit}" style="width:80%;height:300px" data-options="modal:true,closed:true,iconCls:'icon-add',collapsible:false,minimizable:false,maximizable:false,resizable:false">
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'center'" >
+            <form id="detailForm" method="post">
+                <table>
+                    <tr height="35px">
+                        <div style="display: none;">
+                            <input name="条码编号" class="easyui-textbox" disabled="disabled"/>
+                        </div>
+                        <td>
+                            <label th:text="#{条码物料表.条码类型}"/>
+                        </td>
+                        <td>
+                            <input name="条码类型" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.物料编码}"/>
+                        </td>
+                        <td>
+                            <input name="物料编码" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr height="35px">
+                        <td>
+                            <label th:text="#{条码物料表.物料名称}"/>
+                        </td>
+                        <td>
+                            <input name="物料名称" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.类型代码}"/>
+                        </td>
+                        <td>
+                            <input name="类型代码" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.类型名称}"/>
+                        </td>
+                        <td>
+                            <input name="类型名称" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.物料规格}"/>
+                        </td>
+                        <td>
+                            <input name="物料规格" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.物料单位}"/>
+                        </td>
+                        <td>
+                            <input name="物料单位" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                        <td>
+                            <label th:text="#{条码物料表.数量}"/>
+                        </td>
+                        <td>
+                            <input name="数量" class="easyui-textbox" data-options="required:true" />
+                        </td>
+                    </tr>
+                    <tr height="35px">
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript">
+    $.fn.serializeJson = function () {
+        var obj = {};
+        var count = 0;
+        $.each(this.serializeArray(), function (i, o) {
+            var n = o.name, v = o.value;
+            count++;
+            obj[n] = obj[n] === undefined ? v
+                : $.isArray(obj[n]) ? obj[n].concat(v)
+                    : [obj[n], v];
+        });
+        return JSON.stringify(obj);
+    };
+    $(function(){
+        searchWork();
+    });
+    function searchWork(){
+        $('#dg').datagrid({
+            url : '/条码物料表/getListDataPage?' + $("#searchForm").serialize()
+        });
+    }
+    function openAddWin(){
+        $('#addWin').form('clear');
+        $('#addWin').window('open');
+    }
+    function addFormsubmit(){
+        $('#addForm').form('submit',{
+            url : '/条码物料表/create',
+            onSubmit : function(param){
+                // do some check
+                // return false to prevent submit;
+            },
+            success : function(data){
+                var res = JSON.parse(data);
+                if(res.flag){
+                    $('#dg').datagrid('reload');    // reload the current page data
+                    $.messager.alert("提醒", "添加成功！");
+                    $('#addWin').window("close");
+                }else{
+                    $.messager.alert("提醒", res.message);
+                }
+
+            }
+        });
+    }
+    function openEditWin(){
+        var rows = $('#dg').datagrid('getSelections');
+        if(rows == null || rows.length == 0){
+            $.messager.alert("提示", "请选中一行数据！");
+            return false;
+        }
+        var row = rows[0];
+        //加载编辑页面数据
+        $('#editForm').form('load',{
+            条码编号 : row['条码编号'],
+            条码类型 : row['条码类型'],
+            物料编码 : row['物料编码'],
+            物料名称 : row['物料名称'],
+            类型代码 : row['类型代码'],
+            类型名称 : row['类型名称'],
+            物料规格 : row['物料规格'],
+            物料单位 : row['物料单位'],
+            数量 : row['数量'],
+        });
+        $('#editWin').window('open');
+    }
+    function editFormsubmit(){
+        $('#editForm').form('submit',{
+            url : '/条码物料表/update',
+            onSubmit : function(param){
+                // do some check
+                // return false to prevent submit;
+            },
+            success : function(data){
+                var res = JSON.parse(data);
+                if(res.flag){
+                    $('#dg').datagrid('reload');    // reload the current page data
+                    $.messager.alert("提醒", "修改成功！");
+                    $('#editWin').window("close");
+                }else{
+                    $.messager.alert("提醒", res.message);
+                }
+
+            }
+        });
+    }
+    function openDetailWin(){
+        var rows = $('#dg').datagrid('getSelections');
+        if(rows == null || rows.length == 0){
+            $.messager.alert("提示", "请选中一行数据！");
+            return false;
+        }
+        var row = rows[0];
+        //加载编辑页面数据
+        $('#detailForm').form('load',{
+            条码编号 : row['条码编号'],
+            条码类型 : row['条码类型'],
+            物料编码 : row['物料编码'],
+            物料名称 : row['物料名称'],
+            类型代码 : row['类型代码'],
+            类型名称 : row['类型名称'],
+            物料规格 : row['物料规格'],
+            物料单位 : row['物料单位'],
+            数量 : row['数量'],
+        });
+        $('#detailWin').window('open');
+    }
+    function del(){
+        var rows = $('#dg').datagrid('getSelections');
+        var idList = new Array();
+        if(rows == null || rows.length == 0){
+            $.messager.alert("提示", "请至少选中一行！");
+            return false;
+        }
+        /*<![CDATA[*/
+        for(var i = 0; i < rows.length; i++){
+            idList[i] = rows[i]['条码编号'];
+        }
+        /*]]>*/
+
+        var params = { field : idList};
+        $.ajax({
+            url : '/条码物料表/deleteAll',
+            data : JSON.stringify(params),
+            type : 'POST',
+            contentType : 'application/json',
+            dataType : 'json',
+            success : function(res){
+                if(res.flag){
+                    $('#dg').datagrid('reload');    // reload the current page data
+                    $.messager.alert("提醒", "删除成功！");
+                }else{
+                    $.messager.alert("提醒", res.message);
+                }
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

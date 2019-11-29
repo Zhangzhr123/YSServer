@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.RecordsDao">
+    <!-- =========================================================== -->
+    <!-- 定义resultMap                  Created by zzr on 2019/06/10                                                                                                                                                           -->
+    <!-- =========================================================== -->
+    <resultMap id="RecordsMap" type="com.bean.Records">
+        <id property="recordID" column="Record_ID" jdbcType="VARCHAR"/>
+        <result property="materialName" column="Material_Name" jdbcType="VARCHAR"/>
+        <result property="materialType" column="Material_Type" jdbcType="VARCHAR"/>
+        <result property="qty" column="Qty" jdbcType="VARCHAR"/>
+        <result property="creationDate" column="Creation_Date" jdbcType="VARCHAR"/>
+        <result property="createdBy" column="Created_By" jdbcType="VARCHAR"/>
+        <result property="recordType" column="Record_Type" jdbcType="VARCHAR"/>
+        <result property="storageType" column="Storage_Type" jdbcType="VARCHAR"/>
+        <result property="binNo" column="Bin_No" jdbcType="VARCHAR"/>
+        <result property="barCode" column="Bar_Code" jdbcType="VARCHAR"/>
+        <result property="taskNo" column="Task_No" jdbcType="VARCHAR"/>
+        <result property="rshow" column="RShow" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!-- =========================================================== -->
+    <!-- 一些公共变量设置                                                                                                                                                                             -->
+    <!-- =========================================================== -->
+    <!-- 字段 -->
+    <sql id="Base_Column_List" >
+        Record_ID
+        ,Material_Name
+        ,Material_Type
+        ,Qty
+        ,Creation_Date
+        ,Created_By
+        ,Record_Type
+        ,Storage_Type
+        ,Bin_No
+        ,Bar_Code
+        ,Task_No
+        ,RShow
+    </sql>
+    <!-- =========================================================== -->
+    <!-- 基本增删改查方法                                                                                                    		 -->
+    <!-- =========================================================== -->
+    <select id="getList" resultMap="RecordsMap" parameterType="com.bean.Records">
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Storage_Record
+        WHERE Bar_Code = #{barCode}
+    </select>
+    <update id="updateType" parameterType="java.lang.String">
+        update IMOS_LO_Storage_Record
+        set
+         RShow = '1'
+        where  Bar_Code = #{barCode}
+    </update>
+</mapper>

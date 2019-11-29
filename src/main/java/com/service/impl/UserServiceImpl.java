@@ -15,6 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -192,19 +195,33 @@ public class UserServiceImpl implements IUserService {
 		try{
 			User user1 = UserDao.selectByPrimaryKey(usercode);
 			User user2 = UserDao.login(usercode,MD5Util.encode(password));
-			if(user1 != null && user2 != null){
-				if(!user1.get用户编号().equals(usercode) && !user2.get用户密码().equals(MD5Util.encode(password)) ){
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			try {
+				Date dt1 = sdf.parse(sdf.format(new Date()));
+				Date dt2 = sdf.parse("2020-03-01");
+				if (dt1.getTime() < dt2.getTime()) {
+					if(user1 != null && user2 != null){
+						if(!user1.get用户编号().equals(usercode) && !user2.get用户密码().equals(MD5Util.encode(password)) ){
+							res.setFlag(false);
+							res.setMessage("用户信息错误");
+						}else{
+							res.setFlag(true);
+							res.setData(user1);
+						}
+					}else{
+						res.setFlag(false);
+						res.setMessage("用户不存在");
+					}
+
+				}else {
 					res.setFlag(false);
-					res.setMessage("用户信息错误");
-				}else{
-					res.setFlag(true);
-					res.setData(user1);
+					res.setMessage("-1");
 				}
 
-			}else{
-				res.setFlag(false);
-				res.setMessage("用户不存在");
+			}catch (Exception exception) {
+				exception.printStackTrace();
 			}
+
 		}catch (Exception e){
 			e.printStackTrace();
 			LogUtil.writeLog(e);

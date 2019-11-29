@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.AGVTaskDao">
+    <!-- =========================================================== -->
+    <!-- 定义resultMap                 Created by zzr on 2019/06/10                                                                                                                                                            -->
+    <!-- =========================================================== -->
+    <resultMap id="AGVTaskMap" type="com.bean.AGVTask">
+        <id property="taskID" column="Task_ID" jdbcType="INTEGER"/>
+        <result property="taskNo" column="Task_No" jdbcType="VARCHAR"/>
+        <result property="agvcode" column="AGV_Code" jdbcType="VARCHAR"/>
+        <result property="taskType" column="Task_Type" jdbcType="VARCHAR"/>
+        <result property="taskStatus" column="Task_Status" jdbcType="VARCHAR"/>
+        <result property="taskPriority" column="Task_Priority" jdbcType="VARCHAR"/>
+        <result property="listNo" column="List_No" jdbcType="VARCHAR"/>
+        <result property="listDetailNo" column="List_DetailNo" jdbcType="VARCHAR"/>
+        <result property="materialCode" column="Material_Code" jdbcType="VARCHAR"/>
+        <result property="materialName" column="Material_Name" jdbcType="VARCHAR"/>
+        <result property="materialTypeCode" column="Material_Type_Code" jdbcType="VARCHAR"/>
+        <result property="materialTypeName" column="Material_Type_Name" jdbcType="VARCHAR"/>
+        <result property="materialSpec" column="Material_Spec" jdbcType="VARCHAR"/>
+        <result property="palletNo" column="Pallet_No" jdbcType="VARCHAR"/>
+        <result property="batchNo" column="Batch_No" jdbcType="VARCHAR"/>
+        <result property="startStation" column="Start_Station" jdbcType="VARCHAR"/>
+        <result property="endStation" column="End_Station" jdbcType="VARCHAR"/>
+        <result property="creationTime" column="Creation_Time" jdbcType="TIMESTAMP"/>
+        <result property="startTime" column="Start_Time" jdbcType="TIMESTAMP"/>
+        <result property="endTime" column="End_Time" jdbcType="TIMESTAMP"/>
+        <result property="qty" column="Qty" jdbcType="VARCHAR"/>
+        <result property="remark" column="Remark" jdbcType="VARCHAR"/>
+        <result property="creationDate" column="Creation_Date" jdbcType="TIMESTAMP"/>
+        <result property="createdBy" column="Created_By" jdbcType="INTEGER"/>
+        <result property="lastUpdateDate" column="Last_Update_Date" jdbcType="TIMESTAMP"/>
+        <result property="lastUpdatedBy" column="Last_Updated_By" jdbcType="INTEGER"/>
+        <result property="barCode" column="Bar_Code" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!-- =========================================================== -->
+    <!-- 一些公共变量设置                                                                                                                                                                             -->
+    <!-- =========================================================== -->
+    <!-- 字段 -->
+    <sql id="Base_Column_List" >
+       Task_ID
+      ,Task_No
+      ,AGV_Code
+      ,Task_Type
+      ,Task_Status
+      ,Task_Priority
+      ,List_No
+      ,List_DetailNo
+      ,Material_Code
+      ,Material_Name
+      ,Material_Type_Code
+      ,Material_Type_Name
+      ,Material_Spec
+      ,Pallet_No
+      ,Batch_No
+      ,Start_Station
+      ,End_Station
+      ,Creation_Time
+      ,Start_Time
+      ,End_Time
+      ,Qty
+      ,Remark
+      ,Creation_Date
+      ,Created_By
+      ,Last_Update_Date
+      ,Last_Updated_By
+      ,Bar_Code
+    </sql>
+    <!-- =========================================================== -->
+    <!-- 基本增删改查方法                                                                                                    		 -->
+    <!-- =========================================================== -->
+    <select id="selectAll" resultMap="AGVTaskMap">
+        select
+        <include refid="Base_Column_List"/>
+        from IMOS_LO_Task
+    </select>
+    <select id="selectByCode" resultMap="AGVTaskMap" parameterType="com.bean.AGVTask" >
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Task
+        where Bar_Code = #{barCode}
+    </select>
+    <update id="updateType" parameterType="com.bean.AGVTask">
+        update IMOS_LO_Task
+        set
+        Task_Status = 0
+        where Bar_Code = #{barCode}
+    </update>
+    <select id="selectTask" resultMap="AGVTaskMap" parameterType="com.bean.AGVTask" >
+        select
+        <include refid="Base_Column_List" />
+        from  IMOS_LO_Task
+        where Task_Status != '2'
+    </select>
+</mapper>

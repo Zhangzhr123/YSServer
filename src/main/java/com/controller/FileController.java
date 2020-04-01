@@ -17,7 +17,11 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
-
+/*
+* 文件下载url
+* 192.168.0.123:26590/file/download
+*filename  下载的文件名
+* */
 @Controller
 @RequestMapping("file")
 public class FileController {
@@ -52,10 +56,10 @@ public class FileController {
     }
 
     @RequestMapping("download")
-    public String downLoad(HttpServletResponse response, String filepath){
+    public String downLoad(HttpServletResponse response){
 
-        File file = new File(Common.UP_LOAD_PATH + filepath);
-        String filename = filepath.substring(filepath.lastIndexOf("/") + 1);
+        File file = new File("G:/SourceDocument/GPTracingServer/gptraing.apk");
+        String filename = "gptraing.apk";
         if(file.exists()){ //判断文件父目录是否存在
             response.setContentType("application/force-download");
             response.setHeader("Content-Disposition", "attachment;fileName=" + filename);

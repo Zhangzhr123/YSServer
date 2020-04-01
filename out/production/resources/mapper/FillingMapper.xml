@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.FillingDao">
+    <!-- =========================================================== -->
+    <!-- 定义resultMap        Created by zzr on 2019/06/10                                                                                                                                              -->
+    <!-- =========================================================== -->
+    <resultMap id="FillingMap" type="com.bean.Filling">
+        <id property="cylinderIDNum" column="Cylinder_IDNum" jdbcType="VARCHAR"/>
+        <result property="fillingDate" column="Filling_Date" jdbcType="VARCHAR"/>
+		<result property="fillingTemperature" column="Filling_Temperature" jdbcType="VARCHAR"/>
+		<result property="fillingInspectors" column="Filling_Inspectors" jdbcType="VARCHAR"/>
+		<result property="fillingSignWeight" column="Filling_SignWeight" jdbcType="VARCHAR"/>
+		<result property="fillingActualWeight" column="Filling_ActualWeight" jdbcType="VARCHAR"/>
+		<result property="fillingSumWeight" column="Filling_SumWeight" jdbcType="VARCHAR"/>
+		<result property="fillingFillWeight" column="Filling_FillWeight" jdbcType="VARCHAR"/>
+		<result property="fillingFillman" column="Filling_Fillman" jdbcType="VARCHAR"/>
+		<result property="fillingAgainWeight" column="Filling_AgainWeight" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!-- =========================================================== -->
+    <!-- 一些公共变量设置                                                                                                                                                                             -->
+    <!-- =========================================================== -->
+    <!-- 字段 -->
+    <sql id="Base_Column_List">
+	  Filling_Date
+      ,Filling_Temperature
+      ,Cylinder_IDNum
+      ,Filling_Inspectors
+      ,Filling_SignWeight
+      ,Filling_ActualWeight
+      ,Filling_SumWeight
+      ,Filling_FillWeight
+      ,Filling_Fillman
+      ,Filling_AgainWeight
+	</sql>
+    <!-- =========================================================== -->
+    <!-- 基本增删改查方法                                                                                                    		 -->
+    <!-- =========================================================== -->
+    <insert id="insert" parameterType="com.bean.Filling">
+        insert into IMOS_TA_Filling
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            Filling_Date
+            ,Filling_Temperature
+            ,Cylinder_IDNum
+            ,Filling_Inspectors
+            ,Filling_SignWeight
+            ,Filling_ActualWeight
+            ,Filling_SumWeight
+            ,Filling_FillWeight
+            ,Filling_Fillman
+            ,Filling_AgainWeight
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{Cylinder_IDNum, jdbcType=VARCHAR},
+        </trim>
+    </insert>
+    <delete id="delete" parameterType="java.lang.String">
+		update IMOS_TA_Filling
+		set deleteFlag = 1, updateTime = GETDATE()
+		where Cylinder_IDNum = #{cylinderIDNum}
+	</delete>
+    <delete id="deleteAll">
+        update IMOS_TA_Filling
+        set deleteFlag = 1, updateTime = GETDATE()
+        where Cylinder_IDNum in
+        <foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+    <update id="update" parameterType="com.bean.Filling">
+		update IMOS_TA_Filling
+		set
+		Filling_Date = #{fillingDate, jdbcType=VARCHAR}
+        ,Filling_Temperature = #{fillingTemperature, jdbcType=VARCHAR}
+        ,Cylinder_IDNum = #{cylinderIDNum, jdbcType=VARCHAR}
+        ,Filling_Inspectors = #{fillingInspectors, jdbcType=VARCHAR}
+        ,Filling_SignWeight = #{fillingSignWeight, jdbcType=VARCHAR}
+        ,Filling_ActualWeight = #{fillingActualWeight, jdbcType=VARCHAR}
+        ,Filling_SumWeight = #{fillingSumWeight, jdbcType=VARCHAR}
+        ,Filling_FillWeight = #{fillingFillWeight, jdbcType=VARCHAR}
+        ,Filling_Fillman = #{fillingFillman, jdbcType=VARCHAR}
+        ,Filling_AgainWeight = #{fillingAgainWeight, jdbcType=VARCHAR}
+		where Cylinder_IDNum = #{cylinderIDNum}
+	</update>
+    <select id="selectByPrimaryKey" resultMap="FillingMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from IMOS_TA_Filling
+        where Cylinder_IDNum = #{cylinderIDNum}
+    </select>
+    <select id="selectAll" resultMap="FillingMap">
+        select
+        <include refid="Base_Column_List"/>
+        from IMOS_TA_Filling
+    </select>
+    <select id="selectBySelectiveCount" resultType="java.lang.Long" parameterType="com.bean.Filling">
+        select
+        count(Cylinder_IDNum) c
+        from IMOS_TA_Filling
+        <where>
+            <if test="fillingDate!= null and fillingDate != '' ">
+                and Filling_Date = #{fillingDate, jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+    <select id="selectBySelective" resultMap="FillingMap" parameterType="com.bean.Filling">
+        select
+        <include refid="Base_Column_List"/>
+        from IMOS_TA_Filling
+        <where>
+            <if test="cylinderIDNum != null and cylinderIDNum != '' ">
+                and Cylinder_IDNum = #{cylinderIDNum, jdbcType=VARCHAR}
+            </if>
+            <if test="fillingDate!= null and fillingDate != '' ">
+                and Filling_Date = #{fillingDate, jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+    <insert id="setListData" parameterType="com.bean.Filling">
+        insert into IMOS_TA_Filling
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            Filling_Date,
+            Filling_Temperature,
+            Cylinder_IDNum,
+            Filling_Inspectors,
+            Filling_SignWeight,
+            Filling_ActualWeight,
+            Filling_SumWeight,
+            Filling_FillWeight,
+            Filling_Fillman,
+            Filling_AgainWeight,
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{fillingDate, jdbcType=VARCHAR},
+            #{fillingTemperature, jdbcType=VARCHAR},
+            #{cylinderIDNum, jdbcType=VARCHAR},
+            #{fillingInspectors, jdbcType=VARCHAR},
+            #{fillingSignWeight, jdbcType=VARCHAR},
+            #{fillingActualWeight, jdbcType=VARCHAR},
+            #{fillingSumWeight, jdbcType=VARCHAR},
+            #{fillingFillWeight, jdbcType=VARCHAR},
+            #{fillingFillman, jdbcType=VARCHAR},
+            #{fillingAgainWeight, jdbcType=VARCHAR},
+        </trim>
+    </insert>
+</mapper>

@@ -38,5 +38,5 @@ public interface UserDao {
 
 	public List<User> selectByList(User user);
 
-	public User login(@Param("用户编号")String usercode,@Param("用户密码")String password);
+	public User login(@Param("userCode")String usercode,@Param("passWord")String password);
 }

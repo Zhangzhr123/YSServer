@@ -127,13 +127,20 @@ public class UserServiceImpl implements IUserService {
 		Result<List<User>> res = new Result<>();
 		try{
 			List<User> data = UserDao.selectAll();
-			res.setFlag(true);
-			res.setData(data);
+			if (data == null) {
+				res.setFlag(false);
+				res.setMessage("用户信息表没有数据");
+			}
+			if (data != null && data.size() > 0) {
+				res.setFlag(true);
+				res.setData(data);
+				res.setMessage("用户数据同步成功");
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 			logger.error(e.getMessage());
 			res.setFlag(false);
-			res.setMessage(e.getMessage());
+			res.setMessage("用户数据同步失败，下载失败");
 		}
 		return res;
 	}
@@ -201,7 +208,7 @@ public class UserServiceImpl implements IUserService {
 				Date dt2 = sdf.parse("2020-03-01");
 				if (dt1.getTime() < dt2.getTime()) {
 					if(user1 != null && user2 != null){
-						if(!user1.get用户编号().equals(usercode) && !user2.get用户密码().equals(MD5Util.encode(password)) ){
+						if(!user1.getUserName().equals(usercode) && !user2.getPassWord().equals(MD5Util.encode(password)) ){
 							res.setFlag(false);
 							res.setMessage("用户信息错误");
 						}else{
@@ -234,20 +241,21 @@ public class UserServiceImpl implements IUserService {
 	@Transactional
 	@Override
 	public Result<User> login(User user) {
+		System.out.println(user.getUserCode()+"---"+user.getPassWord());
 		Result<User> res = new Result<>();
 		try{
-			if(StringUtil.isNullOrEmpty(user.get用户编号())){
+			if(StringUtil.isNullOrEmpty(user.getUserCode())){
 				res.setFlag(false);
 				res.setMessage("用户名不能为空！");
 				return res;
 			}
-			if(StringUtil.isNullOrEmpty(user.get用户密码())){
+			if(StringUtil.isNullOrEmpty(user.getPassWord())){
 				res.setFlag(false);
 				res.setMessage("密码不能为空！");
 				return res;
 			}
 			User uname = new User();
-			uname.set用户编号(user.get用户编号());
+			uname.setUserCode(user.getUserCode());
 			List<User> users = UserDao.selectBySelective(uname);
 			if(users == null || users.isEmpty()){
 				res.setFlag(false);
@@ -255,7 +263,7 @@ public class UserServiceImpl implements IUserService {
 				return res;
 			}
 			users = null;
-			uname.set用户密码(user.get用户密码());
+			uname.setPassWord(MD5Util.encode(user.getPassWord()));
 			users = UserDao.selectBySelective(uname);
 			if(users == null || users.isEmpty()){
 				res.setFlag(false);

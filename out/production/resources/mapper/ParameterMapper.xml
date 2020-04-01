@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ParameterDao">
+    <!-- =========================================================== -->
+    <!-- 定义resultMap        Created by zzr on 2019/06/10                                                                                                                                              -->
+    <!-- =========================================================== -->
+    <resultMap id="ParameterMap" type="com.bean.Parameter">
+        <id property="parameterMasterCode" column="Parameter_Master_Code" jdbcType="VARCHAR"/>
+        <result property="parameterMasterName" column="Parameter_Master_Name" jdbcType="VARCHAR"/>
+		<result property="companyCode" column="Company_Code" jdbcType="VARCHAR"/>
+		<result property="companyName" column="Company_Name" jdbcType="VARCHAR"/>
+		<result property="factoryCode" column="Factory_Code" jdbcType="VARCHAR"/>
+		<result property="factoryName" column="Factory_Name" jdbcType="VARCHAR"/>
+		<result property="productLineCode" column="Product_Line_Code" jdbcType="VARCHAR"/>
+		<result property="productLineName" column="Product_Line_Name" jdbcType="VARCHAR"/>
+		<result property="remark" column="Remark" jdbcType="VARCHAR"/>
+		<result property="creationDate" column="Creation_Date" jdbcType="TIMESTAMP"/>
+		<result property="createdBy" column="Created_By" jdbcType="INTEGER"/>
+		<result property="lastUpdateDate" column="Last_Update_Date" jdbcType="TIMESTAMP"/>
+		<result property="lastUpdatedBy" column="Last_Updated_By" jdbcType="INTEGER"/>
+    </resultMap>
+    <!-- =========================================================== -->
+    <!-- 一些公共变量设置                                                                                                                                                                             -->
+    <!-- =========================================================== -->
+    <!-- 字段 -->
+    <sql id="Base_Column_List">
+	  Company_Code
+      ,Company_Name
+      ,Factory_Code
+      ,Factory_Name
+      ,Product_Line_Code
+      ,Product_Line_Name
+      ,Parameter_Master_Code
+      ,Parameter_Master_Name
+      ,Remark
+      ,Creation_Date
+      ,Created_By
+      ,Last_Update_Date
+      ,Last_Updated_By
+	</sql>
+    <!-- =========================================================== -->
+    <!-- 基本增删改查方法                                                                                                    		 -->
+    <!-- =========================================================== -->
+    <insert id="insert" parameterType="com.bean.Parameter">
+        insert into Sys_Parameters_Master
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            Parameter_Master_Code
+			,Parameter_Master_Name
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{parameterMasterCode, jdbcType=VARCHAR},
+            #{parameterMasterName, jdbcType=VARCHAR}
+        </trim>
+    </insert>
+    <delete id="delete" parameterType="java.lang.String">
+		update Sys_Parameters_Master
+		set deleteFlag = 1, updateTime = GETDATE()
+		where Parameter_Master_Code = #{parameterMasterCode}
+	</delete>
+    <delete id="deleteAll">
+        update Sys_Parameters_Master
+        set deleteFlag = 1, updateTime = GETDATE()
+        where Parameter_Master_Code in
+        <foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+    <update id="update" parameterType="com.bean.Parameter">
+		update Sys_Parameters_Master
+		set
+		Parameter_Master_Code = #{parameterMasterCode, jdbcType=VARCHAR}
+		,Parameter_Master_Name = #{parameterMasterName, jdbcType=VARCHAR}
+		,Remark = #{remark, jdbcType=VARCHAR}
+		,Creation_Date = #{creationDate, jdbcType=TIMESTAMP}
+		,Created_By = #{createdBy, jdbcType=INTEGER}
+		,Last_Update_Date = #{lastUpdateDate, jdbcType=TIMESTAMP}
+		,Last_Updated_By = #{lastUpdatedBy, jdbcType=INTEGER}
+		where Parameter_Code = #{ParameterCode}
+	</update>
+    <select id="selectByPrimaryKey" resultMap="ParameterMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from Sys_Parameters_Master
+        where Parameter_Master_Code = #{parameterMasterCode}
+    </select>
+    <select id="selectAll" resultMap="ParameterMap">
+        select
+        <include refid="Base_Column_List"/>
+        from Sys_Parameters_Master
+    </select>
+    <select id="selectBySelectiveCount" resultType="java.lang.Long" parameterType="com.bean.Parameter">
+        select
+        count(Parameter_Master_Code) c
+        from Sys_Parameters_Master
+        <where>
+            <if test="parameterMasterName!= null and parameterMasterName != '' ">
+                and Parameter_Master_Name = #{parameterMasterName, jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+    <select id="selectBySelective" resultMap="ParameterMap" parameterType="com.bean.Parameter">
+        select
+        <include refid="Base_Column_List"/>
+        from Sys_Parameters_Master
+        <where>
+            <if test="ParameterCode != null and ParameterCode != '' ">
+                and Parameter_Master_Code = #{parameterMasterCode, jdbcType=VARCHAR}
+            </if>
+
+            <if test="parameterMasterName!= null and parameterMasterName != '' ">
+                and Parameter_Master_Name = #{parameterMasterName, jdbcType=VARCHAR}
+            </if>
+
+        </where>
+    </select>
+</mapper>

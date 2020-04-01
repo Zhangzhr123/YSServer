@@ -1,117 +1,177 @@
 package com.bean;
-/**
- * Created by zzr on 2019/05/20
- * 用户类
- */
+
+import java.util.Date;
 
 public class User {
-    private String 用户编号;
-    private String 用户名称;
-    private String 用户密码;
-    private String 部门编号;
-    private String 部门名称;
-    private String 用户手机;
-    private String 用户邮箱;
-    private String 备注;
-    private Long startIndex;
-    private Long endIndex;
+    private String companyCode;
+    private String companyName;
+    private String factoryCode;
+    private String factoryName;
+    private String productLineCode;
+    private String productLineName;
+    private String userCode;
+    private String userName;
+    private String passWord;
+    private String deptCode;
+    private String deptName;
+    private String userTelNo;
+    private String userEMail;
+    private String userImage;
+    private String remark;
+    private Date creationDate;
+    private int createdBy;
+    private Date lastUpdateDate;
+    private int lastUpdatedBy;
 
-    public Long getStartIndex() {
-        return startIndex;
+    public String getCompanyCode() {
+        return companyCode;
     }
 
-    public void setStartIndex(Long startIndex) {
-        this.startIndex = startIndex;
+    public void setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
     }
 
-    public Long getEndIndex() {
-        return endIndex;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setEndIndex(Long endIndex) {
-        this.endIndex = endIndex;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public String get用户编号() {
-        return 用户编号;
+    public String getFactoryCode() {
+        return factoryCode;
     }
 
-    public void set用户编号(String 用户编号) {
-        this.用户编号 = 用户编号;
+    public void setFactoryCode(String factoryCode) {
+        this.factoryCode = factoryCode;
     }
 
-    public String get用户名称() {
-        return 用户名称;
+    public String getFactoryName() {
+        return factoryName;
     }
 
-    public void set用户名称(String 用户名称) {
-        this.用户名称 = 用户名称;
+    public void setFactoryName(String factoryName) {
+        this.factoryName = factoryName;
     }
 
-    public String get用户密码() {
-        return 用户密码;
+    public String getProductLineCode() {
+        return productLineCode;
     }
 
-    public void set用户密码(String 用户密码) {
-        this.用户密码 = 用户密码;
+    public void setProductLineCode(String productLineCode) {
+        this.productLineCode = productLineCode;
     }
 
-    public String get部门编号() {
-        return 部门编号;
+    public String getProductLineName() {
+        return productLineName;
     }
 
-    public void set部门编号(String 部门编号) {
-        this.部门编号 = 部门编号;
+    public void setProductLineName(String productLineName) {
+        this.productLineName = productLineName;
     }
 
-    public String get部门名称() {
-        return 部门名称;
+    public String getUserCode() {
+        return userCode;
     }
 
-    public void set部门名称(String 部门名称) {
-        this.部门名称 = 部门名称;
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
     }
 
-    public String get用户手机() {
-        return 用户手机;
+    public String getUserName() {
+        return userName;
     }
 
-    public void set用户手机(String 用户手机) {
-        this.用户手机 = 用户手机;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String get用户邮箱() {
-        return 用户邮箱;
+    public String getPassWord() {
+        return passWord;
     }
 
-    public void set用户邮箱(String 用户邮箱) {
-        this.用户邮箱 = 用户邮箱;
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 
-    public String get备注() {
-        return 备注;
+    public String getDeptCode() {
+        return deptCode;
     }
 
-    public void set备注(String 备注) {
-        this.备注 = 备注;
+    public void setDeptCode(String deptCode) {
+        this.deptCode = deptCode;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-
-        User user = (User) o;
-
-        if (用户编号 != null ? !用户编号.equals(user.用户编号) : user.用户编号 != null) return false;
-        if (用户名称 != null ? !用户名称.equals(user.用户名称) : user.用户名称 != null) return false;
-        if (用户密码 != null ? !用户密码.equals(user.用户密码) : user.用户密码 != null) return false;
-        if (部门编号 != null ? !部门编号.equals(user.部门编号) : user.部门编号 != null) return false;
-        if (部门名称 != null ? !部门名称.equals(user.部门名称) : user.部门名称 != null) return false;
-        if (用户手机 != null ? !用户手机.equals(user.用户手机) : user.用户手机 != null) return false;
-        if (用户邮箱 != null ? !用户邮箱.equals(user.用户邮箱) : user.用户邮箱 != null) return false;
-        return 备注 != null ? 备注.equals(user.备注) : user.备注 == null;
+    public String getDeptName() {
+        return deptName;
     }
 
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getUserTelNo() {
+        return userTelNo;
+    }
+
+    public void setUserTelNo(String userTelNo) {
+        this.userTelNo = userTelNo;
+    }
+
+    public String getUserEMail() {
+        return userEMail;
+    }
+
+    public void setUserEMail(String userEMail) {
+        this.userEMail = userEMail;
+    }
+
+    public String getUserImage() {
+        return userImage;
+    }
+
+    public void setUserImage(String userImage) {
+        this.userImage = userImage;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public int getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(int createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Date getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(Date lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
+    public int getLastUpdatedBy() {
+        return lastUpdatedBy;
+    }
+
+    public void setLastUpdatedBy(int lastUpdatedBy) {
+        this.lastUpdatedBy = lastUpdatedBy;
+    }
 }
-

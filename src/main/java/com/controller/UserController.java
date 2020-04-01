@@ -5,6 +5,8 @@ package com.controller;
  */
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.bean.*;
 import com.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("user")
+@RequestMapping("User")
 public class UserController extends BaseController{
 
 	@Autowired
@@ -40,8 +42,6 @@ public class UserController extends BaseController{
 		}
 		long startIndex = (page-1)*rows + 1;
 		long endIndex = page*rows + 1;
-		user.setStartIndex(startIndex);
-		user.setEndIndex(endIndex);
 		JqueryResult<User> jres = new JqueryResult<>();
 		Result<List<User>> res = userService.searchWithPage(user);
 		jres.setRows(res.getData());
@@ -50,8 +50,8 @@ public class UserController extends BaseController{
     }
     @ResponseBody
     @RequestMapping("getListData")
-    public Result<List<User>> getListData(User user, HttpServletRequest request, Model model){
-    	Result<List<User>> res = userService.search(user);
+    public Result<List<User>> getListData(@RequestBody User user, HttpServletRequest request, HttpServletResponse response, Model model){
+    	Result<List<User>> res = userService.getAll();
     	return res;
     }
     @ResponseBody

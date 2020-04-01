@@ -38,16 +38,17 @@ public class LoginController {
 	}
 	@ResponseBody
 	@RequestMapping("validate")
-	public Result<User> validate(String usercode, String password, HttpServletRequest request, HttpServletResponse response){
-		Result<User> result = userService.login(usercode,password);
+	public Result<User> validate(@RequestBody User user, HttpServletRequest request, HttpServletResponse response, Model model){
+		System.out.println(user.getUserCode()+"---"+user.getPassWord());
+		Result<User> result = userService.login(user);
 		if(result.isFlag()){
 			User us = result.getData();
 			request.getSession().setAttribute("operator", us);
 			//将登录信息保存至cookies
-			User user = new User();
-			user.set用户编号(result.getData().get用户编号());
+			User user2 = new User();
+			user2.setUserCode(result.getData().getUserCode());
 			User u = new User();
-			u.set用户编号(usercode);
+			u.setUserCode(user.getUserCode());
 			Cookie usercookie = getCookie(u);
 			response.addCookie(usercookie);
 		}

@@ -13,6 +13,7 @@
 		<result property="factoryName" column="Factory_Name" jdbcType="VARCHAR"/>
 		<result property="productLineCode" column="Product_Line_Code" jdbcType="VARCHAR"/>
 		<result property="productLineName" column="Product_Line_Name" jdbcType="VARCHAR"/>
+        <result property="userName" column="User_Name" jdbcType="VARCHAR"/>
 		<result property="deptName" column="Dept_Name" jdbcType="VARCHAR"/>
 		<result property="deptCode" column="Dept_Code" jdbcType="VARCHAR"/>
 		<result property="userTelNo" column="User_TelNo" jdbcType="VARCHAR"/>

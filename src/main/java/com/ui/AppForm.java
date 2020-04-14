@@ -25,7 +25,7 @@ public class AppForm extends JFrame {
     }
 
     public AppForm() throws HeadlessException {
-        super("VLand终端服务(不要动)");
+        super("终端服务(不要动)");
         setContentPane(jpanel);
         setSize(440, 280);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

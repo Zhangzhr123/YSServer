@@ -96,8 +96,31 @@
         </trim>
         values
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            #{CylinderIDNum, jdbcType=VARCHAR},
-            #{cylinderNumber, jdbcType=VARCHAR}
+            #{cylinderIDNum, jdbcType=VARCHAR},
+            #{cylinderNumber, jdbcType=VARCHAR},
+            #{cylinderCode, jdbcType=VARCHAR},
+            #{cylinderQRCode, jdbcType=VARCHAR},
+            #{companyName, jdbcType=VARCHAR},
+            #{cylinderSpec, jdbcType=VARCHAR},
+            #{cylinderPressure, jdbcType=VARCHAR},
+            #{cylinderVolume, jdbcType=VARCHAR},
+            #{cylinderMakeDate, jdbcType=VARCHAR},
+            #{cylinderType, jdbcType=VARCHAR},
+            #{cylinderMedia, jdbcType=VARCHAR},
+            #{cylinderStatus, jdbcType=VARCHAR},
+            #{cylinderScrapDate, jdbcType=VARCHAR},
+            #{cylinderLastInspectDate, jdbcType=VARCHAR},
+            #{cylinderNextInspectDate, jdbcType=VARCHAR},
+            #{cylinderClinet, jdbcType=VARCHAR},
+            #{property1, jdbcType=VARCHAR},
+            #{property2, jdbcType=VARCHAR},
+            #{remark, jdbcType=VARCHAR},
+            #{useFlag, jdbcType=VARCHAR},
+            #{deleteFlag, jdbcType=VARCHAR},
+            #{creationDate, jdbcType=TIMESTAMP},
+            #{createdBy, jdbcType=VARCHAR},
+            #{lastUpdateDate, jdbcType=TIMESTAMP},
+            #{lastUpdatedBy, jdbcType=VARCHAR}
         </trim>
     </insert>
     <delete id="delete" parameterType="java.lang.String">
@@ -188,4 +211,65 @@
             </if>
         </where>
     </select>
+    <insert id="insertGPInformation" parameterType="com.bean.Cylinder">
+        insert into IMOS_TA_Cylinder
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            Cylinder_IDNum,
+            Cylinder_Number,
+            Cylinder_Code,
+            Cylinder_QRCode,
+            Company_Name,
+            Cylinder_Spec,
+            Cylinder_Pressure,
+            Cylinder_Volume,
+            Cylinder_MakeDate,
+            Cylinder_Type,
+            Cylinder_Media,
+            Cylinder_Status,
+            Cylinder_ScrapDate,
+            Cylinder_Last_InspectDate,
+            Cylinder_Next_InspectDate,
+            Cylinder_Clinet,
+            Remark,
+            Creation_Date,
+            Created_By,
+            Last_Update_Date,
+            Last_Updated_By
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{cylinderIDNum, jdbcType=VARCHAR},
+            #{cylinderNumber, jdbcType=VARCHAR},
+            #{cylinderCode, jdbcType=VARCHAR},
+            #{cylinderQRCode, jdbcType=VARCHAR},
+            #{companyName, jdbcType=VARCHAR},
+            #{cylinderSpec, jdbcType=VARCHAR},
+            #{cylinderPressure, jdbcType=VARCHAR},
+            #{cylinderVolume, jdbcType=VARCHAR},
+            #{cylinderMakeDate, jdbcType=VARCHAR},
+            #{cylinderType, jdbcType=VARCHAR},
+            #{cylinderMedia, jdbcType=VARCHAR},
+            #{cylinderStatus, jdbcType=VARCHAR},
+            #{cylinderScrapDate, jdbcType=VARCHAR},
+            #{cylinderLastInspectDate, jdbcType=VARCHAR},
+            #{cylinderNextInspectDate, jdbcType=VARCHAR},
+            #{cylinderClinet, jdbcType=VARCHAR},
+            #{remark, jdbcType=VARCHAR},
+            #{creationDate, jdbcType=TIMESTAMP},
+            #{createdBy, jdbcType=VARCHAR},
+            #{lastUpdateDate, jdbcType=TIMESTAMP},
+            #{lastUpdatedBy, jdbcType=VARCHAR}
+        </trim>
+    </insert>
+    <select id="selectNumber" resultType="java.lang.Integer" parameterType="java.lang.String">
+        select
+        Seq_No
+        from Sys_Serial_Number
+        where Seq_Type = 2
+    </select>
+    <update id="updateNumber" parameterType="java.lang.Integer">
+    update Sys_Serial_Number
+    set Seq_No = #{num}
+    where Seq_Type = 2
+    </update>
 </mapper>

@@ -31,4 +31,10 @@ public interface CylinderDao {
 	public List<Cylinder> selectBySelective(Cylinder cylinder);
 
     public Cylinder selectByKey(Cylinder cylinder);
+
+	public int insertGPInformation(Cylinder cylinder);
+
+	public int selectNumber();
+
+	public int updateNumber(@Param("num")int num);
 }

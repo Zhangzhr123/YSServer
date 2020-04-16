@@ -57,8 +57,8 @@ public class FileController {
 
     @RequestMapping("download")
     public String downLoad(HttpServletResponse response){
-
-        File file = new File("E:/gptraing.apk");
+        //C:/Program Files/Java/jre1.8.0_201/bin/gptraing.apk
+        File file = new File("C:/Program Files/Java/jre1.8.0_201/bin/gptraing.apk");//下载文件地址
         String filename = "gptraing.apk";
         if(file.exists()){ //判断文件父目录是否存在
             response.setContentType("application/force-download");

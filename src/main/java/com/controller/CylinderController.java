@@ -76,4 +76,11 @@ public class CylinderController extends BaseController{
 		Result<Cylinder> res = CylinderService.selsectByKey(cylinder);
 		return res;
 	}
+
+	@ResponseBody
+	@RequestMapping("insertGPInformation")
+	public Result<List<Cylinder>> insertGPInformation(@RequestBody List<Cylinder> cylinder, HttpServletRequest request, HttpServletResponse response, Model model){
+		Result<List<Cylinder>> res = CylinderService.insertGPInformation(cylinder);
+		return res;
+	}
 }

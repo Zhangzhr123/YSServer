@@ -29,4 +29,6 @@ public interface ICylinderService {
 	public Result<Long> searchResultsCount(Cylinder cylinder);
 
 	public Result<Cylinder> selsectByKey(Cylinder cylinder);
+
+	public Result<List<Cylinder>> insertGPInformation(List<Cylinder> cylinder);
 }

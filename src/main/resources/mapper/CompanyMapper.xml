@@ -5,16 +5,16 @@
     <!-- 定义resultMap        Created by zzr on 2019/06/10                                                                                                                                              -->
     <!-- =========================================================== -->
     <resultMap id="CompanyMap" type="com.bean.Company">
-        <id property="companyCode" column="User_Code" jdbcType="VARCHAR"/>
-        <result property="companyName" column="User_PassWord" jdbcType="VARCHAR"/>
-		<result property="companyAddress" column="Company_Code" jdbcType="VARCHAR"/>
-		<result property="companyLinkMan" column="Company_Name" jdbcType="VARCHAR"/>
-		<result property="companyPhone" column="Factory_Code" jdbcType="VARCHAR"/>
-		<result property="property1" column="Factory_Name" jdbcType="VARCHAR"/>
-		<result property="property2" column="Product_Line_Code" jdbcType="VARCHAR"/>
-		<result property="remark" column="Product_Line_Name" jdbcType="VARCHAR"/>
-		<result property="useFlag" column="Dept_Name" jdbcType="VARCHAR"/>
-		<result property="deleteFlag" column="Dept_Code" jdbcType="VARCHAR"/>
+        <id property="companyCode" column="Company_Code" jdbcType="VARCHAR"/>
+        <result property="companyName" column="Company_Name" jdbcType="VARCHAR"/>
+		<result property="companyAddress" column="Company_Address" jdbcType="VARCHAR"/>
+		<result property="companyLinkMan" column="Company_LinkMan" jdbcType="VARCHAR"/>
+		<result property="companyPhone" column="Company_Phone" jdbcType="VARCHAR"/>
+		<result property="property1" column="Property1" jdbcType="VARCHAR"/>
+		<result property="property2" column="Property2" jdbcType="VARCHAR"/>
+		<result property="remark" column="Remark" jdbcType="VARCHAR"/>
+		<result property="useFlag" column="Use_Flag" jdbcType="VARCHAR"/>
+		<result property="deleteFlag" column="Delete_Flag" jdbcType="VARCHAR"/>
 		<result property="creationDate" column="Creation_Date" jdbcType="TIMESTAMP"/>
 		<result property="createdBy" column="Created_By" jdbcType="VARCHAR"/>
 		<result property="lastUpdateDate" column="Last_Update_Date" jdbcType="TIMESTAMP"/>

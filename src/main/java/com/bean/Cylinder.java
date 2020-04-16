@@ -146,8 +146,8 @@ public class Cylinder {
         return cylinderNextInspectDate;
     }
 
-    public void setCylinderNextInspectDat(String cylinderNextInspectDat) {
-        this.cylinderNextInspectDate = cylinderNextInspectDat;
+    public void setCylinderNextInspectDate(String cylinderNextInspectDate) {
+        this.cylinderNextInspectDate = cylinderNextInspectDate;
     }
 
     public String getCylinderClinet() {

@@ -1,29 +1,66 @@
 package com.utils;
 
-/**
- * Created by SUNMC on 2017/8/31.
- */
-public class Common {
+import com.bean.User;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-    public static int 拖期天数 = 6;//天
-    public static int width = 640;
-    public static final String UP_LOAD_PATH = "C:/MES终端服务/upload/";//"/Users/mcsun/工作/uploadFile/";//
-    public static final String FMTP_PATH = "C:/MES终端服务/upload/";
-    public static final String FMTP_SERVER = "http://www.lk-mes.com:14235/";
-    //服务器域名
-//    public static final String SERVER = "http://bpm.mesnac.com:8091";
+public class Common {
+    public static String UP_LOAD_PATH = "";
+    public static String PROJECT_PATH = "";
+    public static String BASE_URL = "";
     //正式微信id
-    //public final static String corpId = "wx46be78f8feff44a2";
-    //public final static String sercret = "mVjzGgQw8pp67XLZwOAkBq3D-CPnupKfPA_noyppQns";
-    //public final static int agentid = 1000007;
-    //public final static String groupid = "46"; //具备权限的顶级部门id
-    //public final static String grouprootid = "5";//顶级部门根id
+    public static String corpId = "";
+    public static String secret = "";
+    public static int agentid = 0;
+    //公众号
+    public static String gzcorpId = "";
+    public static String gzsecret = "";
+    public static int gzagentid = 0;
     //服务器域名
-    //public static final String SERVER = "http://www.lk-mes.com:14235";
-    //测试微信id
-//    public final static String corpId = "ww41498ad663100e35";
-//    public final static String sercret = "gqAYsTX-4LNcteg18qobYJmNvmFhYgTKVIMfMcECpmg";
-//    public final static int agentid = 1000002; //应用号id
-//    public final static String groupid = "1"; //具备权限的顶级部门id
-//    public final static String grouprootid = "0";//顶级部门根id
+    public static String SERVER ="";
+    //部门树形结构
+    //public static List<Depart> departmentTree = new ArrayList<>();
+
+    //当前登陆用户
+    private static Map<String, User> USERS = new HashMap<>();
+    public static User getUserById(String userId){
+        User u = USERS.get(userId);
+        return u;
+    }
+//    public static void setUser(User user){
+//        USERS.put(user.getObjectId(), user);
+//    }
+//
+//    public static boolean isAdmin(User user){
+//        if(user.getRoleList() != null && user.getRoleList().size() > 0){
+//            for(Role role : user.getRoleList()){
+//                if(role.getCode().equals("admin")){
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
+//    public static boolean isKSZR(User user){
+//        if(user.getRoleList() != null && user.getRoleList().size() > 0){
+//            for(Role role : user.getRoleList()){
+//                if(role.getCode().equals("ZNKSZR")){
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
+//    public static boolean isRole(User user, String roleCode){
+//        if(user.getRoleList() != null && user.getRoleList().size() > 0){
+//            for(Role role : user.getRoleList()){
+//                if(role.getCode().equals(roleCode)){
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
 }

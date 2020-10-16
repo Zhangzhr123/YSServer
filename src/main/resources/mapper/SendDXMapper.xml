@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.SendDXDao" >
+  <resultMap id="SendDXMap" type="com.bean.SendDX" >
+    <result column="Mbl" property="Mbl" jdbcType="VARCHAR" />
+    <result column="SMSText" property="SMSText" jdbcType="VARCHAR" />
+      <result column="SendTime" property="SendTime" jdbcType="VARCHAR" />
+  </resultMap>
+    <select id="getSendDX" resultMap="SendDXMap">
+        SELECT Mbl,SMSText,convert(varchar(10), SendTime, 23)as SendTime FROM [172.16.251.212].[EIP].[dbo].[SMS_MT_FAIL_LOG] where smstitle = 'PRSYS' and Mbl != '' and Mbl is not null and convert(varchar(7), getDate(), 121)=convert(varchar(7), SendTime, 121)
+    </select>
+</mapper>

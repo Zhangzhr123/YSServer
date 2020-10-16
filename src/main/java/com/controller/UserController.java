@@ -4,85 +4,49 @@ package com.controller;
  * 用户表Controller
  */
 import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bean.*;
 import com.service.IUserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+@Api(description = "用户信息接口")
 @Controller
 @RequestMapping("User")
 public class UserController extends BaseController{
 
 	@Autowired
 	private IUserService userService;
-	
-	@RequestMapping()
-    public String index(HttpServletRequest request, Model model){
-		User operator = (User)request.getSession().getAttribute("operator");
-        model.addAttribute("operator", operator);
-        return "User";
+
+	@ApiOperation(value = "根据BPM部门人员同步钉钉部门人员", notes="根据BPM部门人员同步钉钉部门人员")
+    @ResponseBody
+    @GetMapping("updateUserList")
+    public Result<Map<String, String>> updateUserList(){
+    	Result<Map<String, String>> res = userService.updateUserList();
+    	return res;
     }
+
+	@ApiOperation(value = "同步BPM根目录下的人员信息", notes="同步BPM根目录下的人员信息")
 	@ResponseBody
-    @RequestMapping("getListDataPage")
-    public JqueryResult<User> getListData(@RequestParam(value="page", required=false) int page, 
-            @RequestParam(value="rows", required=false) int rows, User user, HttpServletRequest request, Model model){
-		if(rows == 0){
-			rows = 15;
-		}
-		if(page == 0){
-			page = 1;
-		}
-		long startIndex = (page-1)*rows + 1;
-		long endIndex = page*rows + 1;
-		JqueryResult<User> jres = new JqueryResult<>();
-		Result<List<User>> res = userService.searchWithPage(user);
-		jres.setRows(res.getData());
-		jres.setTotal(res.getCount());
-		return jres;
-    }
-    @ResponseBody
-    @RequestMapping("getListData")
-    public Result<List<User>> getListData(@RequestBody User user, HttpServletRequest request, HttpServletResponse response, Model model){
-    	Result<List<User>> res = userService.getAll();
-    	return res;
-    }
-    @ResponseBody
-	@RequestMapping("create")
-    public Result<User> create(User user, HttpServletRequest request, Model model){
-    	User operator = (User)request.getSession().getAttribute("operator");
-    	Result<User> res = userService.create(user, operator);
-    	return res;
-    } 
-    
-    @ResponseBody
-	@RequestMapping("update")
-    public Result<User> update(User user, HttpServletRequest request, Model model){
-    	User operator = (User)request.getSession().getAttribute("operator");
-    	Result<User> res = userService.updateSelective(user, operator);
-    	return res;
-    }
-    
-    @ResponseBody
-	@RequestMapping("delete")
-    public Result<User> delete(String objectId, HttpServletRequest request, Model model){
-    	User operator = (User)request.getSession().getAttribute("operator");
-    	Result<User> res = userService.delete(objectId, operator);
-    	return res;
-    }
-    
-    @ResponseBody
-	@RequestMapping("deleteAll")
-    public Result<User> deleteAll(@RequestBody Param<List<String>> param, HttpServletRequest request, Model model){
-    	User operator = (User)request.getSession().getAttribute("operator");
-    	Result<User> res = userService.deleteAll(param.getField(), operator);
-    	return res;
-    }
+	@GetMapping("updateBPMGMLUser")
+	public Result<List<User>> updateBPMGMLUser(){
+		Result<List<User>> res = userService.updateBPMGMLUser();
+		return res;
+	}
+
+	@ApiOperation(value = "根据BPM人员删除钉钉人员", notes="根据BPM人员删除钉钉人员")
+	@ResponseBody
+	@GetMapping("deleteUserList")
+	public Result<Map<String, String>> deleteUserList(){
+		Result<Map<String, String>> res = userService.deleteUserList();
+		return res;
+	}
+
 }

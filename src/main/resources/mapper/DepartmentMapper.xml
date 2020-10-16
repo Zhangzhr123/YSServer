@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.DepartmentDao">
+    <!-- =========================================================== -->
+    <!-- 定义resultMap        Created by zzr on 2019/06/10                                                                                                                                              -->
+    <!-- =========================================================== -->
+    <resultMap id="DepartmentMap" type="com.bean.Depart">
+        <result property="ObjectID" column="ObjectID" jdbcType="VARCHAR"/>
+        <result property="ParentID" column="ParentID" jdbcType="VARCHAR"/>
+        <result property="Name" column="Name" jdbcType="VARCHAR"/>
+        <result property="DesName" column="DesName" jdbcType="VARCHAR"/>
+        <result property="Code" column="Code" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!-- =========================================================== -->
+    <!-- 基本增删改查方法                                                                                                    		 -->
+    <!-- =========================================================== -->
+    <select id="selectDepartment" resultMap="DepartmentMap">
+        SELECT
+        a.ObjectID as ObjectID,
+        a.ParentID as ParentID,
+        a.Name as Name,
+        a.DesName as DesName,
+        a.Code as Code
+        FROM [H3Cloud].[dbo].[OT_OrganizationUnit] as a
+        where a.DesName not like '%项目组织%'
+        and a.DesName not like '%流程组织%'
+        and a.DesName not like '%管理员%'
+        and a.DesName not like '%协同创新部%'
+        and a.DesName not like '%战略发展部%'
+        and a.DesName not like '%软控新材%'
+        and a.DesName not like '%业务流程处理第三方公司%'
+        and a.State = 0
+    </select>
+    <select id="selectGMLDepartment" resultMap="DepartmentMap">
+        SELECT
+        a.ObjectID as ObjectID,
+        a.ParentID as ParentID,
+        a.Name as Name,
+        a.DesName as DesName,
+        a.Code as Code
+        FROM [H3Cloud].[dbo].[OT_OrganizationUnit] as a
+        where a.DesName not like '%项目组织%'
+        and a.DesName not like '%流程组织%'
+        and a.DesName not like '%管理员%'
+        and a.DesName not like '%协同创新部%'
+        and a.DesName not like '%战略发展部%'
+        and a.DesName not like '%软控新材%'
+        and a.DesName not like '%业务流程处理第三方公司%'
+        and a.ParentID = '18f923a7-5a5e-426d-94ae-a55ad1a4b240'
+        and a.State = 0
+    </select>
+    <select id="selectDepartByName" resultMap="DepartmentMap" parameterType="java.lang.String">
+        SELECT
+        a.ObjectID as ObjectID,
+        a.ParentID as ParentID,
+        a.Name as Name,
+        a.DesName as DesName,
+        a.Code as Code
+        FROM [H3Cloud].[dbo].[OT_OrganizationUnit] as a
+        where a.DesName not like '%项目组织%'
+        and a.DesName not like '%流程组织%'
+        and a.DesName not like '%管理员%'
+        and a.DesName not like '%协同创新部%'
+        and a.DesName not like '%战略发展部%'
+        and a.DesName not like '%软控新材%'
+        and a.DesName not like '%业务流程处理第三方公司%'
+        and a.DesName = #{name}
+        and a.State = 0
+    </select>
+    <select id="selectDepartByParentID" resultMap="DepartmentMap" parameterType="java.lang.String">
+        SELECT
+        a.ObjectID as ObjectID,
+        a.ParentID as ParentID,
+        a.Name as Name,
+        a.DesName as DesName,
+        a.Code as Code
+        FROM [H3Cloud].[dbo].[OT_OrganizationUnit] as a
+        where a.DesName not like '%项目组织%'
+        and a.DesName not like '%流程组织%'
+        and a.DesName not like '%管理员%'
+        and a.DesName not like '%协同创新部%'
+        and a.DesName not like '%战略发展部%'
+        and a.DesName not like '%软控新材%'
+        and a.DesName not like '%业务流程处理第三方公司%'
+        and a.ParentID = #{ParentID}
+        and a.State = 0
+    </select>
+</mapper>

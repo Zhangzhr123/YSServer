@@ -5,137 +5,110 @@
     <!-- 定义resultMap        Created by zzr on 2019/06/10                                                                                                                                              -->
     <!-- =========================================================== -->
     <resultMap id="UserMap" type="com.bean.User">
-        <id property="userCode" column="User_Code" jdbcType="VARCHAR"/>
-        <result property="passWord" column="User_PassWord" jdbcType="VARCHAR"/>
-		<result property="companyCode" column="Company_Code" jdbcType="VARCHAR"/>
-		<result property="companyName" column="Company_Name" jdbcType="VARCHAR"/>
-		<result property="factoryCode" column="Factory_Code" jdbcType="VARCHAR"/>
-		<result property="factoryName" column="Factory_Name" jdbcType="VARCHAR"/>
-		<result property="productLineCode" column="Product_Line_Code" jdbcType="VARCHAR"/>
-		<result property="productLineName" column="Product_Line_Name" jdbcType="VARCHAR"/>
-        <result property="userName" column="User_Name" jdbcType="VARCHAR"/>
-		<result property="deptName" column="Dept_Name" jdbcType="VARCHAR"/>
-		<result property="deptCode" column="Dept_Code" jdbcType="VARCHAR"/>
-		<result property="userTelNo" column="User_TelNo" jdbcType="VARCHAR"/>
-		<result property="userEMail" column="User_EMail" jdbcType="VARCHAR"/>
-		<result property="userImage" column="User_Image" jdbcType="VARCHAR"/>
-		<result property="remark" column="Remark" jdbcType="VARCHAR"/>
-		<result property="creationDate" column="Creation_Date" jdbcType="TIMESTAMP"/>
-		<result property="createdBy" column="Created_By" jdbcType="INTEGER"/>
-		<result property="lastUpdateDate" column="Last_Update_Date" jdbcType="TIMESTAMP"/>
-		<result property="lastUpdatedBy" column="Last_Updated_By" jdbcType="INTEGER"/>
+        <result property="Name" column="Name" jdbcType="VARCHAR"/>
+        <result property="DesName" column="DesName" jdbcType="VARCHAR"/>
+        <result property="EmployeeNumber" column="EmployeeNumber" jdbcType="VARCHAR"/>
+        <result property="Email" column="Email" jdbcType="VARCHAR"/>
+        <result property="Mobile" column="Mobile" jdbcType="VARCHAR"/>
+        <result property="ParentID" column="ParentID" jdbcType="VARCHAR"/>
+        <result property="Code" column="Code" jdbcType="VARCHAR"/>
     </resultMap>
-    <!-- =========================================================== -->
-    <!-- 一些公共变量设置                                                                                                                                                                             -->
-    <!-- =========================================================== -->
-    <!-- 字段 -->
-    <sql id="Base_Column_List">
-	  Company_Code
-      ,Company_Name
-      ,Factory_Code
-      ,Factory_Name
-      ,Product_Line_Code
-      ,Product_Line_Name
-      ,User_Code
-      ,User_Name
-      ,User_PassWord
-      ,Dept_Code
-      ,Dept_Name
-      ,User_TelNo
-      ,User_EMail
-      ,User_Image
-      ,Remark
-      ,Creation_Date
-      ,Created_By
-      ,Last_Update_Date
-      ,Last_Updated_By
-	</sql>
     <!-- =========================================================== -->
     <!-- 基本增删改查方法                                                                                                    		 -->
     <!-- =========================================================== -->
-    <insert id="insert" parameterType="com.bean.User">
-        insert into Sys_BaseUser
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-			User_Code
-			,User_PassWord
-        </trim>
-        values
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            #{userCode, jdbcType=VARCHAR},
-            #{passWord, jdbcType=VARCHAR}
-        </trim>
-    </insert>
-    <delete id="delete" parameterType="java.lang.String">
-		update Sys_BaseUser
-		set deleteFlag = 1, updateTime = GETDATE()
-		where User_Code = #{userCode}
-	</delete>
-    <delete id="deleteAll">
-        update Sys_BaseUser
-        set deleteFlag = 1, updateTime = GETDATE()
-        where User_Code in
-        <foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
-            #{item}
-        </foreach>
-    </delete>
-    <update id="update" parameterType="com.bean.User">
-		update Sys_BaseUser
-		set
-		User_Code = #{userCode, jdbcType=VARCHAR}
-		,User_PassWord = #{passWord, jdbcType=VARCHAR}
-		,User_Name = #{userName, jdbcType=VARCHAR}
-		,Dept_Code = #{deptCode, jdbcType=VARCHAR}
-		,Dept_Name = #{deptName, jdbcType=VARCHAR}
-		,User_TelNo = #{userTelNo, jdbcType=VARCHAR}
-		,User_EMail = #{userEMail, jdbcType=VARCHAR}
-		,User_Image = #{userImage, jdbcType=VARCHAR}
-		,Remark = #{remark, jdbcType=VARCHAR}
-		,Creation_Date = #{creationDate, jdbcType=TIMESTAMP}
-		,Created_By = #{createdBy, jdbcType=INTEGER}
-		,Last_Update_Date = #{lastUpdateDate, jdbcType=TIMESTAMP}
-		,Last_Updated_By = #{lastUpdatedBy, jdbcType=INTEGER}
-		where User_Code = #{userCode}
-	</update>
-    <select id="selectByPrimaryKey" resultMap="UserMap" parameterType="java.lang.String">
+    <select id="selectUser" resultMap="UserMap">
         select
-        <include refid="Base_Column_List"/>
-        from Sys_BaseUser
-        where User_Code = #{userCode}
+        a.Name as Name,
+        replace(b.DesName,'/','-') as DesName,
+        a.ParentID as ParentID,
+        b.Code as Code,
+        a.EmployeeNumber as EmployeeNumber,
+        a.Email as Email,
+        a.Mobile as Mobile
+        from OT_User as a
+        inner join OT_OrganizationUnit as b on a.ParentID = b.ObjectID
+        where a.State = 0
+        and b.DesName not like '%虚拟%'
+        and b.DesName not like '%项目组织%'
+        and b.DesName not like '%业务流程处理第三方公司%'
+        and b.DesName not like '%流程组织%'
+        and b.DesName not like '%管理员%'
+        and a.EmployeeNumber != 'NULL'
+        and a.EmployeeNumber != ''
+        and a.Mobile != 'NULL'
+        and a.Mobile != ''
+        order by b.Code
     </select>
-    <select id="selectAll" resultMap="UserMap">
+    <select id="selectRKGMLUser" resultMap="UserMap">
         select
-        <include refid="Base_Column_List"/>
-        from Sys_BaseUser
+        a.Name as 员工姓名,
+        replace(b.DesName,'/','-') as 部门,
+        b.Code as 部门Code,
+        a.ParentID as 部门ID,
+        a.EmployeeNumber as 工号,
+        a.Email as 邮箱,
+        a.Mobile as 手机号
+        from OT_User as a
+        inner join OT_OrganizationUnit as b on a.ParentID = b.ObjectID
+        where a.State = 0
+        and b.DesName not like '%虚拟%'
+        and b.DesName not like '%项目组织%'
+        and b.DesName not like '%业务流程处理第三方公司%'
+        and b.DesName not like '%流程组织%'
+        and b.DesName not like '%管理员%'
+        and a.EmployeeNumber != 'NULL'
+        and a.EmployeeNumber != ''
+        and a.Mobile != 'NULL'
+        and a.Mobile != ''
+        and a.ParentID = '18f923a7-5a5e-426d-94ae-a55ad1a4b240'
+        order by b.Code
     </select>
-    <select id="selectBySelectiveCount" resultType="java.lang.Long" parameterType="com.bean.User">
+    <select id="selectUserByDepartName" resultMap="UserMap" parameterType="java.lang.String">
         select
-        count(User_Code) c
-        from Sys_BaseUser
-        <where>
-            <if test="passWord!= null and passWord != '' ">
-                and User_PassWord = #{passWord, jdbcType=VARCHAR}
-            </if>
-        </where>
+        a.Name as Name,
+        b.DesName as DesName,
+        a.ParentID as ParentID,
+        b.Code as Code,
+        a.EmployeeNumber as EmployeeNumber,
+        a.Email as Email,
+        a.Mobile as Mobile
+        from OT_User as a
+        inner join OT_OrganizationUnit as b on a.ParentID = b.ObjectID
+        where a.State = 0
+        and b.DesName not like '%虚拟%'
+        and b.DesName not like '%项目组织%'
+        and b.DesName not like '%业务流程处理第三方公司%'
+        and b.DesName not like '%流程组织%'
+        and b.DesName not like '%管理员%'
+        and a.EmployeeNumber != 'NULL'
+        and a.EmployeeNumber != ''
+        and a.Mobile != 'NULL'
+        and a.Mobile != ''
+        and b.DesName = #{name}
+        order by b.Code
     </select>
-    <select id="selectBySelective" resultMap="UserMap" parameterType="com.bean.User">
+    <select id="selectUserByUserName" resultMap="UserMap" parameterType="java.lang.String">
         select
-        <include refid="Base_Column_List"/>
-        from Sys_BaseUser
-        <where>
-            <if test="userCode != null and userCode != '' ">
-                and User_Code = #{userCode, jdbcType=VARCHAR}
-            </if>
-
-            <if test="passWord!= null and passWord != '' ">
-                and User_PassWord = #{passWord, jdbcType=VARCHAR}
-            </if>
-
-        </where>
-    </select>
-    <select id="login" resultMap="UserMap" parameterType="java.lang.String">
-        select
-        <include refid="Base_Column_List"/>
-        from Sys_BaseUser
-        where User_Code = #{userCode} and User_PassWord = #{passWord}
+        a.Name as Name,
+        b.DesName as DesName,
+        a.ParentID as ParentID,
+        b.Code as Code,
+        a.EmployeeNumber as EmployeeNumber,
+        a.Email as Email,
+        a.Mobile as Mobile
+        from OT_User as a
+        inner join OT_OrganizationUnit as b on a.ParentID = b.ObjectID
+        where a.State = 0
+        and b.DesName not like '%虚拟%'
+        and b.DesName not like '%项目组织%'
+        and b.DesName not like '%业务流程处理第三方公司%'
+        and b.DesName not like '%流程组织%'
+        and b.DesName not like '%管理员%'
+        and a.EmployeeNumber != 'NULL'
+        and a.EmployeeNumber != ''
+        and a.Mobile != 'NULL'
+        and a.Mobile != ''
+        and a.Name = #{name}
+        order by b.Code
     </select>
 </mapper>

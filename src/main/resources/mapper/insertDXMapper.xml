@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.insertDXDao" >
+  <resultMap id="InsertDXMap" type="com.bean.GZD" >
+      <result column="id" property="id" jdbcType="VARCHAR" />
+      <result column="bt" property="bt" jdbcType="VARCHAR" />
+      <result column="fsnr" property="fsnr" jdbcType="VARCHAR" />
+      <result column="sjh" property="sjh" jdbcType="VARCHAR" />
+      <result column="fssj" property="fssj" jdbcType="VARCHAR" />
+      <result column="sffs" property="sffs" jdbcType="VARCHAR" />
+  </resultMap>
+    <insert id="insertDX" parameterType="com.bean.GZD">
+        INSERT into itdzi_FSDX (id,bt,fsnr,sjh,fssj,sffs) values (#{id, jdbcType=VARCHAR},#{bt, jdbcType=VARCHAR},#{fsnr, jdbcType=VARCHAR},#{sjh, jdbcType=VARCHAR},#{fssj, jdbcType=VARCHAR},#{sffs, jdbcType=VARCHAR})
+    </insert>
+    <select id="getByMbl" resultMap="InsertDXMap" parameterType="com.bean.GZD">
+        select id,bt,fsnr,sjh,fssj,sffs from itdzi_FSDX where sjh = #{sjh, jdbcType=VARCHAR} and DATE_FORMAT( fssj, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
+    </select>
+</mapper>

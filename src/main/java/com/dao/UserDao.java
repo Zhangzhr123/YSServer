@@ -11,32 +11,14 @@ import java.util.List;
 
 @Mapper
 public interface UserDao {
-	
-	public int insert(User user);
-	
-	public int insertSelective(User user);
-	
-	public int delete(String objectId);
-	
-	public void deleteAll(@Param("idList") List<String> idList);
-	
-	public int update(User user);
-	
-	public int updateSelective(User user);
-	
-	public User selectByPrimaryKey(String objectId);
-	
-	public List<User> selectAll();
-	
-	public long selectBySelectiveCount(User user);
 
-	public List<User> selectBySelectivePage(User user);
+	public List<User> selectUser();
 
-	public List<User> selectBySelective(User user);
+	public List<User> selectRKGMLUser();
 
-	public List<User> selectLikeString(String userLikeString);
+	public List<User> selectUserByDepartName(String name);
 
-	public List<User> selectByList(User user);
+	public List<User> selectUserByUserName(String name);
 
-	public User login(@Param("userCode")String usercode,@Param("passWord")String password);
+
 }

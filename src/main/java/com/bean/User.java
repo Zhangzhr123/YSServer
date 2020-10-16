@@ -3,175 +3,74 @@ package com.bean;
 import java.util.Date;
 
 public class User {
-    private String companyCode;
-    private String companyName;
-    private String factoryCode;
-    private String factoryName;
-    private String productLineCode;
-    private String productLineName;
-    private String userCode;
-    private String userName;
-    private String passWord;
-    private String deptCode;
-    private String deptName;
-    private String userTelNo;
-    private String userEMail;
-    private String userImage;
-    private String remark;
-    private Date creationDate;
-    private int createdBy;
-    private Date lastUpdateDate;
-    private int lastUpdatedBy;
+    //员工姓名
+    private String Name;
+    //部门全称
+    private String DesName;
+    //工号和员工ID
+    private String EmployeeNumber;
+    //邮箱
+    private String Email;
+    //手机号
+    private String Mobile;
+    //部门ID
+    private String ParentID;
+    //部门Code
+    private String Code;
 
-    public String getCompanyCode() {
-        return companyCode;
+    public String getCode() {
+        return Code;
     }
 
-    public void setCompanyCode(String companyCode) {
-        this.companyCode = companyCode;
+    public void setCode(String code) {
+        Code = code;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getName() {
+        return Name;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String getFactoryCode() {
-        return factoryCode;
+    public String getDesName() {
+        return DesName;
     }
 
-    public void setFactoryCode(String factoryCode) {
-        this.factoryCode = factoryCode;
+    public void setDesName(String desName) {
+        DesName = desName;
     }
 
-    public String getFactoryName() {
-        return factoryName;
+    public String getEmployeeNumber() {
+        return EmployeeNumber;
     }
 
-    public void setFactoryName(String factoryName) {
-        this.factoryName = factoryName;
+    public void setEmployeeNumber(String employeeNumber) {
+        EmployeeNumber = employeeNumber;
     }
 
-    public String getProductLineCode() {
-        return productLineCode;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setProductLineCode(String productLineCode) {
-        this.productLineCode = productLineCode;
+    public void setEmail(String email) {
+        Email = email;
     }
 
-    public String getProductLineName() {
-        return productLineName;
+    public String getMobile() {
+        return Mobile;
     }
 
-    public void setProductLineName(String productLineName) {
-        this.productLineName = productLineName;
+    public void setMobile(String mobile) {
+        Mobile = mobile;
     }
 
-    public String getUserCode() {
-        return userCode;
+    public String getParentID() {
+        return ParentID;
     }
 
-    public void setUserCode(String userCode) {
-        this.userCode = userCode;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassWord() {
-        return passWord;
-    }
-
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
-
-    public String getDeptCode() {
-        return deptCode;
-    }
-
-    public void setDeptCode(String deptCode) {
-        this.deptCode = deptCode;
-    }
-
-    public String getDeptName() {
-        return deptName;
-    }
-
-    public void setDeptName(String deptName) {
-        this.deptName = deptName;
-    }
-
-    public String getUserTelNo() {
-        return userTelNo;
-    }
-
-    public void setUserTelNo(String userTelNo) {
-        this.userTelNo = userTelNo;
-    }
-
-    public String getUserEMail() {
-        return userEMail;
-    }
-
-    public void setUserEMail(String userEMail) {
-        this.userEMail = userEMail;
-    }
-
-    public String getUserImage() {
-        return userImage;
-    }
-
-    public void setUserImage(String userImage) {
-        this.userImage = userImage;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public int getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(int createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Date getLastUpdateDate() {
-        return lastUpdateDate;
-    }
-
-    public void setLastUpdateDate(Date lastUpdateDate) {
-        this.lastUpdateDate = lastUpdateDate;
-    }
-
-    public int getLastUpdatedBy() {
-        return lastUpdatedBy;
-    }
-
-    public void setLastUpdatedBy(int lastUpdatedBy) {
-        this.lastUpdatedBy = lastUpdatedBy;
+    public void setParentID(String parentID) {
+        ParentID = parentID;
     }
 }
